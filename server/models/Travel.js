@@ -10,7 +10,7 @@ const travelSchema = new Schema({
         required: true
     },
 
-    vehicleMPG: {
+    vehicleMilesPerGallon: {
         type: Number,
         min: 0,
         default: 0,
