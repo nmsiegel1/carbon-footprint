@@ -7,6 +7,13 @@ const typeDefs = gql`
     water: Number
   }
 
+  type Travel {
+    vehicleMilesPerYear: Number,
+    vehicleMilesPerGallon: Number,
+    publicTravel: Number,
+    airTravel: Number
+  }
+
 `;
 
 module.exports = typeDefs;
