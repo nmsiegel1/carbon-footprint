@@ -15,6 +15,7 @@ const typeDefs = gql`
   }
 
   type Pledge {
+    pledgeId: String
     action: String
     description: String
     image: String
@@ -22,6 +23,7 @@ const typeDefs = gql`
   }
 
   input savedPledgeInput {
+    pledgeId: String
     action: String
     description: String
     image: String
@@ -40,6 +42,19 @@ const typeDefs = gql`
   type Auth {
     token: ID!
     user: User
+  }
+
+  type Query {
+    me: User
+    pledges: (username: String!): User
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    savePledge(input: savedPledgeInput): User
+    removePledge(pledgeId: String!): User
+
   }
 `;
 
