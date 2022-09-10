@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+:root {
+  --white: #f7f7ff;
+  --light-blue: #bdd5ea;
+  --dark-blue: #243b4a;
+  --green: #566e3d;
+  --wine: #6b2737;
+  --brown: #7a4419;
+  --light-brown: #baa898;
+}
