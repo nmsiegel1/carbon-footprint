@@ -23,6 +23,4 @@ const homeSchema = new Schema({
   },
 });
 
-const Home = mongoose.model('Home', homeSchema);
-
-module.exports = Home;
+module.exports = homeSchema;
