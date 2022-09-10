@@ -2,12 +2,14 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Home {
+    _id: ID
     size: Number
     electricity: Number
     water: Number
   }
 
   type Travel {
+    _id: ID
     vehicleMilesPerYear: Number
     vehicleMilesPerGallon: Number
     publicTravel: Number
@@ -15,6 +17,7 @@ const typeDefs = gql`
   }
 
   type Pledge {
+    _id: ID
     pledgeId: String
     action: String
     description: String
@@ -54,7 +57,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     savePledge(input: savedPledgeInput): User
     removePledge(pledgeId: String!): User
-
+    addTravel(vehicleMilesPerYear: Number!, vehicleMilesPerGallon: Number!): Travel
+    addHome(size: Number!, electricity: Number!, water: Number!): Home
   }
 `;
 

@@ -88,12 +88,27 @@ const resolvers = {
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    // what needs to replace _id since travel doesnt have an id?
                     { $push: { pledgeData: travel._id } },
                     { new: true }
                 )
 
                 return travel;
+            }
+
+            throw new AuthenticationError('Not logged in');
+        },
+
+        addHome: async (parent, args, context) => {
+            if (context.user) {
+                const home = await Home.create({ ...args, username: context.user.username });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { homeData: home._id } },
+                    { new: true }
+                )
+
+                return home;
             }
 
             throw new AuthenticationError('Not logged in');
