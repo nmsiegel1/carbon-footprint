@@ -20,6 +20,7 @@ const typeDefs = gql`
     email: String
     homeData: [Home]
     travelData: [Travel]
+    pledgeData: [Pledge]
   }
 
   type Auth {
