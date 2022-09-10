@@ -1,5 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+import homeSchema from './Home';
+import travelSchema from './Travel';
+import pledgeSchema from './Pledge';
 
 const userSchema = new Schema({
   username: {
@@ -19,8 +22,9 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  homeData: [Home.schema],
-  travelData: [Travel.schema],
+  homeData: [homeSchema],
+  travelData: [travelSchema],
+  pledgeData: [pledgeSchema],
 });
 
 // set up pre-save middleware to create password
