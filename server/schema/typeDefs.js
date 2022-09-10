@@ -14,6 +14,20 @@ const typeDefs = gql`
     airTravel: Number
   }
 
+  type Pledge {
+    action: String
+    description: String
+    image: String
+    link: String
+  }
+
+  input savedPledgeInput {
+    action: String
+    description: String
+    image: String
+    link: String
+  }
+
   type User {
     _id: ID
     username: String
