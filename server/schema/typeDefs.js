@@ -21,6 +21,11 @@ const typeDefs = gql`
     homeData: [Home]
     travelData: [Travel]
   }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
 `;
 
 module.exports = typeDefs;
