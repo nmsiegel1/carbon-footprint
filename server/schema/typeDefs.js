@@ -52,7 +52,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    # savePledge(input: savedPledgeInput): User
+    savePledge(input: savedPledgeInput): User
     # removePledge(action: String!): User
     # addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): Travel
     # addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Number!): Home

@@ -54,19 +54,21 @@ const resolvers = {
         },
 
         // saving a pledge
-        // savePledge: async (parnte, args, context) => {
-        //     if (context.user) {
-        //         let updatedUser = await User.findByIdAndUpdate(
-        //             { _id: context.user._id },
-        //             { $push: { pledgeData: args.input } },
-        //             { new: true }
-        //         )
+        savePledge: async (parnte, args, context) => {
+            if (context.user) {
+                const pledge = await Pledge.create({ ...args, username: context.user.username })
+                
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { pledgeData: pledge._id } },
+                    { new: true }
+                );
 
-        //         return updatedUser;
-        //     }
+                return pledge;
+            }
 
-        //     throw new AuthenticationError('Not logged in');
-        // },
+            throw new AuthenticationError('Not logged in');
+        },
 
         // // remove a pledge
         // removePledge: async (parent, args, context) => {
