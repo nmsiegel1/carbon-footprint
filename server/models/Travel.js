@@ -3,33 +3,26 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const travelSchema = new Schema({
-    vehicleMilesPerYear: {
+    vehicleEmissions: {
         type: Number,
         min: 0,
         default: 0,
         required: true
     },
 
-    vehicleMilesPerGallon: {
+    publicTransitEmissions: {
         type: Number,
         min: 0,
         default: 0,
         required: true
     },
 
-    publicTravel: {
+    planeEmissions: {
         type: Number,
         min: 0,
         default: 0,
         required: true
     },
-
-    airTravel: {
-        type: Number,
-        min: 0,
-        default: 0,
-        required: true
-    }
 })
 
 module.exports = travelSchema;

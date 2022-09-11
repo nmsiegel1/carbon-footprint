@@ -3,19 +3,19 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const homeSchema = new Schema({
-  size: {
+  waterEmissions: {
     type: Number,
     min: 0,
     default: 0,
     required: true,
   },
-  electricity: {
+  electricityEmissions: {
     type: Number,
     min: 0,
     default: 0,
     required: true,
   },
-  water: {
+  heatEmissions: {
     type: Number,
     min: 0,
     default: 0,
