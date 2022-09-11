@@ -9,7 +9,7 @@ const pledgeSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
+  icon: {
     type: String,
   },
   link: {

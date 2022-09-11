@@ -21,7 +21,7 @@ const typeDefs = gql`
     pledgeId: String
     action: String
     description: String
-    image: String
+    icon: String
     link: String
   }
 
@@ -29,7 +29,7 @@ const typeDefs = gql`
     pledgeId: String
     action: String
     description: String
-    image: String
+    icon: String
     link: String
   }
 
