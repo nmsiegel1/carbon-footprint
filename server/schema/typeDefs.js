@@ -17,7 +17,6 @@ const typeDefs = gql`
 
   type Pledge {
     _id: ID
-    pledgeId: String
     action: String
     description: String
     icon: String
@@ -25,7 +24,6 @@ const typeDefs = gql`
   }
 
   input savedPledgeInput {
-    pledgeId: String
     action: String
     description: String
     icon: String
@@ -48,14 +46,14 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    pledges: Pledge
+    pledges: [Pledge]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     # savePledge(input: savedPledgeInput): User
-    # removePledge(pledgeId: String!): User
+    # removePledge(action: String!): User
     # addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): Travel
     # addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Number!): Home
   }

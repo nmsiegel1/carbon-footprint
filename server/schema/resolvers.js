@@ -22,7 +22,8 @@ const resolvers = {
 
         // get all pledges for a user
         pledges: async () => {
-            return  await Pledge.find();
+            return  Pledge.find()
+                .select('-__v')
         }
     },
 
