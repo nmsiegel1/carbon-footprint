@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const pledgeSchema = new Schema({
   action: {
@@ -17,4 +17,6 @@ const pledgeSchema = new Schema({
   },
 });
 
-module.exports = pledgeSchema;
+const Pledge = model('Pledge', pledgeSchema);
+
+module.exports = Pledge;

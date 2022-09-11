@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-import homeSchema from './Home';
-import travelSchema from './Travel';
-import pledgeSchema from './Pledge';
+const homeSchema = require('./Home');
+const travelSchema = require('./Travel');
+const Pledge = require('./Pledge');
 
 const userSchema = new Schema({
   username: {
@@ -24,7 +24,10 @@ const userSchema = new Schema({
   },
   homeData: [homeSchema],
   travelData: [travelSchema],
-  pledgeData: [pledgeSchema],
+  pledgeData: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Pledge'
+  }],
 });
 
 // set up pre-save middleware to create password
@@ -41,8 +44,7 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
-g;
+
 
 const User = model('User', userSchema);
-
 module.exports = User;

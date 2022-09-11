@@ -3,16 +3,16 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Home {
     _id: ID
-    waterEmissions: Number
-    electricityEmissions: Number
-    heatEmissions: Number
+    waterEmissions: Int
+    electricityEmissions: Int
+    heatEmissions: Int
   }
 
   type Travel {
     _id: ID
-    vehicleEmissions: Number
-    publicTransitEmissions: Number
-    planeEmissions: Number
+    vehicleEmissions: Int
+    publicTransitEmissions: Int
+    planeEmissions: Int
   }
 
   type Pledge {
@@ -48,16 +48,16 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    pledges: (username: String!): User
+    pledges: Pledge
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    savePledge(input: savedPledgeInput): User
-    removePledge(pledgeId: String!): User
-    addTravel(vehicleEmissions: Number!, publicTransitEmissions: Number!, planeEmissions: Number!): Travel
-    addHome(waterEmissions: Number!, electricityEmissions: Number!, heatEmissions: Number!): Home
+    # savePledge(input: savedPledgeInput): User
+    # removePledge(pledgeId: String!): User
+    # addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): Travel
+    # addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Number!): Home
   }
 `;
 

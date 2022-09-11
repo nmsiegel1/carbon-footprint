@@ -1,4 +1,4 @@
-const { User, Home, Pledge, Travel } = require('../models');
+const { User, Home, Travel, Pledge } = require('../models');
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -13,16 +13,16 @@ const resolvers = {
                 .populate('homeData')
                 .populate('travelData')
                 .populate('pledgeData');
+
+                return userData;
             }
 
             throw new AuthenticationError('Not logged in');
         },
 
         // get all pledges for a user
-        pledges: async (parents, { username }) => {
-            return User.findOne({ username })
-                .select('-__v -password')
-                .populate('pledgeData');
+        pledges: async () => {
+            return  await Pledge.find();
         }
     },
 
@@ -53,66 +53,66 @@ const resolvers = {
         },
 
         // saving a pledge
-        savePledge: async (parnte, args, context) => {
-            if (context.user) {
-                let updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { pledgeData: args.input } },
-                    { new: true }
-                )
+        // savePledge: async (parnte, args, context) => {
+        //     if (context.user) {
+        //         let updatedUser = await User.findByIdAndUpdate(
+        //             { _id: context.user._id },
+        //             { $push: { pledgeData: args.input } },
+        //             { new: true }
+        //         )
 
-                return updatedUser;
-            }
+        //         return updatedUser;
+        //     }
 
-            throw new AuthenticationError('Not logged in');
-        },
+        //     throw new AuthenticationError('Not logged in');
+        // },
 
-        // remove a pledge
-        removePledge: async (parent, args, context) => {
-            if (context.user) {
-                let updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { pledgeData: { pledgeId: args.pledgeId } } },
-                    { new: true }
-                )
+        // // remove a pledge
+        // removePledge: async (parent, args, context) => {
+        //     if (context.user) {
+        //         let updatedUser = await User.findByIdAndUpdate(
+        //             { _id: context.user._id },
+        //             { $pull: { pledgeData: { pledgeId: args.pledgeId } } },
+        //             { new: true }
+        //         )
 
-                return updatedUser;
-            }
+        //         return updatedUser;
+        //     }
 
-            throw new AuthenticationError('Not logged in');
-        },
+        //     throw new AuthenticationError('Not logged in');
+        // },
 
-        addTravel: async (parent, args, context) => {
-            if (context.user) {
-                const travel = await Travel.create({ ...args, username: context.user.username });
+        // addTravel: async (parent, args, context) => {
+        //     if (context.user) {
+        //         const travel = await Travel.create({ ...args, username: context.user.username });
 
-                await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { pledgeData: travel._id } },
-                    { new: true }
-                )
+        //         await User.findByIdAndUpdate(
+        //             { _id: context.user._id },
+        //             { $push: { pledgeData: travel._id } },
+        //             { new: true }
+        //         )
 
-                return travel;
-            }
+        //         return travel;
+        //     }
 
-            throw new AuthenticationError('Not logged in');
-        },
+        //     throw new AuthenticationError('Not logged in');
+        // },
 
-        addHome: async (parent, args, context) => {
-            if (context.user) {
-                const home = await Home.create({ ...args, username: context.user.username });
+        // addHome: async (parent, args, context) => {
+        //     if (context.user) {
+        //         const home = await Home.create({ ...args, username: context.user.username });
 
-                await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { homeData: home._id } },
-                    { new: true }
-                )
+        //         await User.findByIdAndUpdate(
+        //             { _id: context.user._id },
+        //             { $push: { homeData: home._id } },
+        //             { new: true }
+        //         )
 
-                return home;
-            }
+        //         return home;
+        //     }
 
-            throw new AuthenticationError('Not logged in');
-        }
+        //     throw new AuthenticationError('Not logged in');
+        // }
     }
 
 };
