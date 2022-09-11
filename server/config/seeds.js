@@ -134,67 +134,96 @@ db.once('open', async () => {
       name: 'Greta Thunberg',
       email: 'gretasavestheworld@gmail.com',
       password: 'password12345',
-      vehicleEmissions: 85774,
-      publicTransitEmissions: 0,
-      planeEmissions: 327483.31,
-      waterEmissions: 1155122,
-      electricityEmissions: 13648,
-      heatEmissions: 17789,
+      travelData: [{
+        vehicleEmissions: 85774,
+        publicTransitEmissions: 0,
+        planeEmissions: 327483,
+      }],
+      homeData: [{
+        waterEmissions: 1155122,
+        electricityEmissions: 13648,
+        heatEmissions: 17789,
+      }],
+      pledgeData: []
      },
      { 
       name: 'John Muir',
       email: 'johninthewild@yahoo.com',
       password: 'password54321',
-      vehicleEmissions: 212862,
-      publicTransitEmissions: 18329,
-      planeEmissions: 0,
-      waterEmissions: 1130962,
-      electricityEmissions: 253638449,
-      heatEmissions: 5264,
+      travelData: [{
+        vehicleEmissions: 212862,
+        publicTransitEmissions: 18329,
+        planeEmissions: 0,
+      }],
+      homeData: [{
+        waterEmissions: 1130962,
+        electricityEmissions: 253638449,
+        heatEmissions: 5264,
+      }],
+      pledgeData: []
      },
      { 
       name: 'Wangari Maathai',
       email: 'wmaathai@earthsave.com',
       password: 'password23456',
-      vehicleEmissions: 71033,
-      publicTransitEmissions: 59284,
-      planeEmissions: 70175,
-      waterEmissions: 1125002,
-      electricityEmissions: 596360610,
-      heatEmissions: 0,
+      travelData: [{
+        vehicleEmissions: 71033,
+        publicTransitEmissions: 59284,
+        planeEmissions: 70175,
+      }],
+      homeData: [{
+        waterEmissions: 1125002,
+        electricityEmissions: 596360610,
+        heatEmissions: 0,
+      }],
+      pledgeData: []
      },
      { 
       name: 'David Brower',
       email: 'dbrowersierra@hotmail.com',
       password: 'password65432',
-      vehicleEmissions: 222160,
-      publicTransitEmissions: 31618,
-      planeEmissions: 0,
-      waterEmissions: 863174,
-      electricityEmissions: 223644490,
-      heatEmissions: 8502,
+      travelData: [{
+        vehicleEmissions: 222160,
+        publicTransitEmissions: 31618,
+        planeEmissions: 0,
+      }],
+      homeData: [{
+        waterEmissions: 863174,
+        electricityEmissions: 223644490,
+        heatEmissions: 8502,
+      }],
+      pledgeData: []
      },
      { 
       name: 'Winona LaDuke',
       email: 'winonald@example.com',
       password: 'password56789',
-      vehicleEmissions: 0,
-      publicTransitEmissions: 91647,
-      planeEmissions: 56140,
-      waterEmissions: 2197286,
-      electricityEmissions: 689639,
-      heatEmissions: 77,
+      travelData: [{
+        vehicleEmissions: 0,
+        publicTransitEmissions: 91647,
+        planeEmissions: 56140,
+      }],
+      homeData: [{
+        waterEmissions: 2197286,
+        electricityEmissions: 689639,
+        heatEmissions: 77,
+      }]
      },
      { 
       name: 'Chico Mendez',
       email: 'rainforestsforever@aol.com',
       password: 'password98765',
-      vehicleEmissions: 255434,
-      publicTransitEmissions: 0,
-      planeEmissions: 0,
-      waterEmissions: 1885962,
-      electricityEmissions: 966533,
-      heatEmissions: 0,
+      travelData: [{
+        vehicleEmissions: 255434,
+        publicTransitEmissions: 0,
+        planeEmissions: 0,
+      }],
+      homeData: [{
+        waterEmissions: 1885962,
+        electricityEmissions: 966533,
+        heatEmissions: 0,
+      }],
+      pledgeData: []
      }
   ]);
 
