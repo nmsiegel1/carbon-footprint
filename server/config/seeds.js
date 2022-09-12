@@ -114,107 +114,112 @@ db.once('open', async () => {
 
   console.log('Pledges seeded');
 
-  // await User.deleteMany();
+  await User.deleteMany();
 
-  // await User.create([
-  //   {
-  //     username: 'Greta Thunberg',
-  //     email: 'gretasavestheworld@gmail.com',
-  //     password: 'password12345',
-  //     travelData: [{
-  //       vehicleEmissions: 85774,
-  //       publicTransitEmissions: 0,
-  //       planeEmissions: 327483,
-  //     }],
-  //     homeData: [{
-  //       waterEmissions: 1155122,
-  //       electricityEmissions: 13648,
-  //       heatEmissions: 17789,
-  //     }],
-  //     pledgeData: []
-  //    },
-  //    { 
-  //     username: 'John Muir',
-  //     email: 'johninthewild@yahoo.com',
-  //     password: 'password54321',
-  //     travelData: [{
-  //       vehicleEmissions: 212862,
-  //       publicTransitEmissions: 18329,
-  //       planeEmissions: 0,
-  //     }],
-  //     homeData: [{
-  //       waterEmissions: 1130962,
-  //       electricityEmissions: 253638449,
-  //       heatEmissions: 5264,
-  //     }],
-  //     pledgeData: []
-  //    },
-  //    { 
-  //     username: 'Wangari Maathai',
-  //     email: 'wmaathai@earthsave.com',
-  //     password: 'password23456',
-  //     travelData: [{
-  //       vehicleEmissions: 71033,
-  //       publicTransitEmissions: 59284,
-  //       planeEmissions: 70175,
-  //     }],
-  //     homeData: [{
-  //       waterEmissions: 1125002,
-  //       electricityEmissions: 596360610,
-  //       heatEmissions: 0,
-  //     }],
-  //     pledgeData: []
-  //    },
-  //    { 
-  //     username: 'David Brower',
-  //     email: 'dbrowersierra@hotmail.com',
-  //     password: 'password65432',
-  //     travelData: [{
-  //       vehicleEmissions: 222160,
-  //       publicTransitEmissions: 31618,
-  //       planeEmissions: 0,
-  //     }],
-  //     homeData: [{
-  //       waterEmissions: 863174,
-  //       electricityEmissions: 223644490,
-  //       heatEmissions: 8502,
-  //     }],
-  //     pledgeData: []
-  //    },
-  //    { 
-  //     username: 'Winona LaDuke',
-  //     email: 'winonald@example.com',
-  //     password: 'password56789',
-  //     travelData: [{
-  //       vehicleEmissions: 0,
-  //       publicTransitEmissions: 91647,
-  //       planeEmissions: 56140,
-  //     }],
-  //     homeData: [{
-  //       waterEmissions: 2197286,
-  //       electricityEmissions: 689639,
-  //       heatEmissions: 77,
-  //     }]
-  //    },
-  //    { 
-  //     username: 'Chico Mendez',
-  //     email: 'rainforestsforever@aol.com',
-  //     password: 'password98765',
-  //     travelData: [{
-  //       vehicleEmissions: 255434,
-  //       publicTransitEmissions: 0,
-  //       planeEmissions: 0,
-  //     }],
-  //     homeData: [{
-  //       waterEmissions: 1885962,
-  //       electricityEmissions: 966533,
-  //       heatEmissions: 0,
-  //     }],
-  //     pledgeData: []
-  //    }
-  // ]);
+  await User.create([
+    {
+      username: 'Greta Thunberg',
+      email: 'gretasavestheworld@gmail.com',
+      password: 'password12345',
+      travelData: [{
+        vehicleEmissions: 85774,
+        publicTransitEmissions: 0,
+        planeEmissions: 327483,
+      }],
+      homeData: [{
+        waterEmissions: 1155122,
+        electricityEmissions: 13648,
+        heatEmissions: 17789,
+      }],
+      pledgeData: []
+     },
 
-  // console.log('Users seeded');
+     { 
+      username: 'John Muir',
+      email: 'johninthewild@yahoo.com',
+      password: 'password54321',
+      travelData: [{
+        vehicleEmissions: 212862,
+        publicTransitEmissions: 18329,
+        planeEmissions: 0,
+      }],
+      homeData: [{
+        waterEmissions: 1130962,
+        electricityEmissions: 253638449,
+        heatEmissions: 5264,
+      }],
+      pledgeData: []
+     },
+
+     { 
+      username: 'Wangari Maathai',
+      email: 'wmaathai@earthsave.com',
+      password: 'password23456',
+      travelData: [{
+        vehicleEmissions: 71033,
+        publicTransitEmissions: 59284,
+        planeEmissions: 70175,
+      }],
+      homeData: [{
+        waterEmissions: 1125002,
+        electricityEmissions: 596360610,
+        heatEmissions: 0,
+      }],
+      pledgeData: []
+     },
+
+     { 
+      username: 'David Brower',
+      email: 'dbrowersierra@hotmail.com',
+      password: 'password65432',
+      travelData: [{
+        vehicleEmissions: 222160,
+        publicTransitEmissions: 31618,
+        planeEmissions: 0,
+      }],
+      homeData: [{
+        waterEmissions: 863174,
+        electricityEmissions: 223644490,
+        heatEmissions: 8502,
+      }],
+      pledgeData: []
+     },
+
+     { 
+      username: 'Winona LaDuke',
+      email: 'winonald@example.com',
+      password: 'password56789',
+      travelData: [{
+        vehicleEmissions: 0,
+        publicTransitEmissions: 91647,
+        planeEmissions: 56140,
+      }],
+      homeData: [{
+        waterEmissions: 2197286,
+        electricityEmissions: 689639,
+        heatEmissions: 77,
+      }]
+     },
+     
+     { 
+      username: 'Chico Mendez',
+      email: 'rainforestsforever@aol.com',
+      password: 'password98765',
+      travelData: [{
+        vehicleEmissions: 255434,
+        publicTransitEmissions: 0,
+        planeEmissions: 0,
+      }],
+      homeData: [{
+        waterEmissions: 1885962,
+        electricityEmissions: 966533,
+        heatEmissions: 0,
+      }],
+      pledgeData: []
+     }
+  ]);
+
+  console.log('Users seeded');
 
   process.exit();
 });
