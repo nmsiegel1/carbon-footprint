@@ -54,7 +54,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     savePledge(input: savedPledgeInput): User
     # removePledge(action: String!): User
-    # addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): Travel
+    addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): User
     # addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Number!): Home
   }
 `;

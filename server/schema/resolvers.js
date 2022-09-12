@@ -1,4 +1,4 @@
-const { User, Home, Travel, Pledge } = require('../models');
+const { User, Pledge } = require('../models');
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -85,21 +85,29 @@ const resolvers = {
         //     throw new AuthenticationError('Not logged in');
         // },
 
-        // addTravel: async (parent, args, context) => {
-        //     if (context.user) {
-        //         const travel = await Travel.create({ ...args, username: context.user.username });
+        addTravel: async (parent, { vehicleEmissions, publicTransitEmissions, planeEmissions }, context) => {
+            if (context.user) {
+                // const travel = await Travel.create({ ...args, username: context.user.username });
 
-        //         await User.findByIdAndUpdate(
-        //             { _id: context.user._id },
-        //             { $push: { pledgeData: travel._id } },
-        //             { new: true }
-        //         )
+                // await User.findByIdAndUpdate(
+                    // { _id: context.user._id },
+                    // { $push: { travelData: travel._id } },
+                    // { new: true }
+                // )
 
-        //         return travel;
-        //     }
+                // return travel;
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { travelData: { vehicleEmissions, publicTransitEmissions, planeEmissions } } },
+                    { new: true }
+                )
+                .populate('travelData');
 
-        //     throw new AuthenticationError('Not logged in');
-        // },
+                return updatedUser;
+            }
+
+            throw new AuthenticationError('Not logged in');
+        },
 
         // addHome: async (parent, args, context) => {
         //     if (context.user) {
