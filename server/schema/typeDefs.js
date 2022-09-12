@@ -47,18 +47,15 @@ const typeDefs = gql`
   type Query {
     me: User
     pledges: [Pledge]
-    #userPledges (Pledge: ID): [Pledge]
-    #testProduct(_id: ID!): User
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    savePledge(input: savedPledgeInput): User
-    # removePledge(action: String!): User
     addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): User
     addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Int!): User
     addPledge(pledgeData: [ID]): User
+    # removePledge(action: String!): User
   }
 `;
 
