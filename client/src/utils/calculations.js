@@ -5,7 +5,7 @@ export const calculateTravel = (
   busMiles,
   planeMiles
 ) => {
-  switch (car) {
+  switch (carType) {
     case 'small':
       carEmissions = Math.round(4.2887(carMiles));
       break;
