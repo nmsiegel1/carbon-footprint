@@ -87,15 +87,6 @@ const resolvers = {
 
         addTravel: async (parent, { vehicleEmissions, publicTransitEmissions, planeEmissions }, context) => {
             if (context.user) {
-                // const travel = await Travel.create({ ...args, username: context.user.username });
-
-                // await User.findByIdAndUpdate(
-                    // { _id: context.user._id },
-                    // { $push: { travelData: travel._id } },
-                    // { new: true }
-                // )
-
-                // return travel;
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $push: { travelData: { vehicleEmissions, publicTransitEmissions, planeEmissions } } },
@@ -109,21 +100,20 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
 
-        // addHome: async (parent, args, context) => {
-        //     if (context.user) {
-        //         const home = await Home.create({ ...args, username: context.user.username });
+        addHome: async (parent, { waterEmissions, electricityEmissions, heatEmissions }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { homeData: { waterEmissions, electricityEmissions, heatEmissions } } },
+                    { new: true }
+                )
+                .populate('homeData');
 
-        //         await User.findByIdAndUpdate(
-        //             { _id: context.user._id },
-        //             { $push: { homeData: home._id } },
-        //             { new: true }
-        //         )
+                return updatedUser;
+            }
 
-        //         return home;
-        //     }
-
-        //     throw new AuthenticationError('Not logged in');
-        // }
+            throw new AuthenticationError('Not logged in');
+        }
     }
 
 };

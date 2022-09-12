@@ -55,7 +55,7 @@ const typeDefs = gql`
     savePledge(input: savedPledgeInput): User
     # removePledge(action: String!): User
     addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): User
-    # addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Number!): Home
+    addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Int!): User
   }
 `;
 
