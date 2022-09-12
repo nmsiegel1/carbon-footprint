@@ -26,32 +26,32 @@ const resolvers = {
                 .select('-__v')
         },
 
-        testProduct: async (parent, { _id }, context) => {
-            if (context.user) {
-                const user = await User.findById(context.user._id)
-                .populate({'pledgeData'})
+        // testProduct: async (parent, { _id }, context) => {
+        //     if (context.user) {
+        //         const user = await User.findById(context.user._id)
+        //         .populate('pledgeData')
 
-                return user.pledgeData.id(_id);
-            }
-            throw new AuthenticationError('Not logged in');
-        },
+        //         return user.pledgeData.id(_id);
+        //     }
+        //     throw new AuthenticationError('Not logged in');
+        // },
 
 
-        userPledges: async (parent, { pledge, action }) => {
-            const params = {};
+        // userPledges: async (parent, { pledge, action }) => {
+        //     const params = {};
 
-            if (pledge) {
-                params.pledge = pledge;
-            }
+        //     if (pledge) {
+        //         params.pledge = pledge;
+        //     }
 
-            if (action) {
-                params.action = {
-                    $search: action
-                }
-            }
+        //     if (action) {
+        //         params.action = {
+        //             $search: action
+        //         }
+        //     }
 
-            return await User.find(params).populate('pledgeData');
-        }
+        //     return await User.find(params).populate('pledgeData');
+        // }
 
 
     },
@@ -152,6 +152,13 @@ const resolvers = {
                 return updatedUser;
             }
 
+            throw new AuthenticationError('Not logged in');
+        },
+
+        addPledge: async (parent, args, context) => {
+            if (context.user) {
+                return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+            }
             throw new AuthenticationError('Not logged in');
         }
     }
