@@ -20,11 +20,40 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
 
-        // get all pledges for a user
+        // get all pledges
         pledges: async () => {
             return  Pledge.find()
                 .select('-__v')
+        },
+
+        testProduct: async (parent, { _id }, context) => {
+            if (context.user) {
+                const user = await User.findById(context.user._id)
+                .populate({'pledgeData'})
+
+                return user.pledgeData.id(_id);
+            }
+            throw new AuthenticationError('Not logged in');
+        },
+
+
+        userPledges: async (parent, { pledge, action }) => {
+            const params = {};
+
+            if (pledge) {
+                params.pledge = pledge;
+            }
+
+            if (action) {
+                params.action = {
+                    $search: action
+                }
+            }
+
+            return await User.find(params).populate('pledgeData');
         }
+
+
     },
 
     Mutation: {
@@ -55,18 +84,29 @@ const resolvers = {
 
         // saving a pledge
         savePledge: async (parnte, args, context) => {
-            if (context.user) {
-                const pledge = await Pledge.create({ ...args, username: context.user.username })
+            // if (context.user) {
+            //     const pledge = await Pledge.create({ ...args, username: context.user.username })
                 
-                await User.findByIdAndUpdate(
+            //     await User.findByIdAndUpdate(
+            //         { _id: context.user._id },
+            //         { $push: { pledgeData: pledge._id } },
+            //         { new: true }
+            //     );
+
+            //     return pledge;
+            // }
+
+            // throw new AuthenticationError('Not logged in');
+
+            if (context.user) {
+                let updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { pledgeData: pledge._id } },
+                    { $push: { pledgeData: args.input } },
                     { new: true }
-                );
+                )
 
-                return pledge;
+                return updatedUser;
             }
-
             throw new AuthenticationError('Not logged in');
         },
 

@@ -47,6 +47,8 @@ const typeDefs = gql`
   type Query {
     me: User
     pledges: [Pledge]
+    userPledges (Pledge: ID): [Pledge]
+    testProduct(_id: ID!): User
   }
 
   type Mutation {

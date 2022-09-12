@@ -2,7 +2,9 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const homeSchema = require('./Home');
 const travelSchema = require('./Travel');
+// const pledgeSchema = require('./Pledge');
 const Pledge = require('./Pledge');
+
 
 const userSchema = new Schema({
   username: {
@@ -28,6 +30,7 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Pledge'
   }],
+  // pledgeData: [pledgeSchema]
 });
 
 // set up pre-save middleware to create password
