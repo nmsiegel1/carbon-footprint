@@ -30,11 +30,23 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_PLEDGES = gql`
-  pledges {
-    _id
-    action
-    description
-    icon
-    link
+query Pledges {
+    pledges {
+      _id
+      action
+      description
+      icon
+      link
+    }
   }
+
 `;
+
+// OR IS IT
+// pledges {
+//   _id
+//   action
+//   description
+//   icon
+//   link
+// }
