@@ -90,26 +90,29 @@ const resolvers = {
                 // save a pledge to a user
                 addPledge: async (parent, args, context) => {
                     if (context.user) {
-                        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+                        return await User.findByIdAndUpdate(
+                            context.user._id,
+                            { $addToSet: args },
+                            { new: true });
                     }
                     throw new AuthenticationError('Not logged in');
                 },
 
 
-                // // remove a pledge
-                // removePledge: async (parent, args, context) => {
-                //     if (context.user) {
-                //         let updatedUser = await User.findByIdAndUpdate(
-                //             { _id: context.user._id },
-                //             { $pull: { pledgeData: { pledgeId: args.pledgeId } } },
-                //             { new: true }
-                //         )
+                // remove a pledge
+                removePledge: async (parent, args, context) => {
+                    if (context.user) {
+                        let updatedUser = await User.findByIdAndUpdate(
+                            { _id: context.user._id },
+                            { $pull: args },
+                            { new: true }
+                        )
 
-                //         return updatedUser;
-                //     }
+                        return updatedUser;
+                    }
 
-                //     throw new AuthenticationError('Not logged in');
-                // },
+                    throw new AuthenticationError('Not logged in');
+                },
     }
 
 };

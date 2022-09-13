@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './signup_login.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -38,9 +39,9 @@ const Signup = () => {
   };
 
   return (
-    <main className="">
+    <main className="signup-main">
       <div className="signup">
-        <h2 className="signup-form">Sign Up</h2>
+        <h2>Sign Up</h2>
         <form className="signup-form" onSubmit={handleFormSubmit}>
           <input
             className="signup-input"
@@ -69,9 +70,7 @@ const Signup = () => {
             value={formState.password}
             onChange={handleChange}
           />
-          <button className="" type="submit">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
           {error && <div>Sign up failed</div>}
         </form>
         <p>Already have an account? Log in</p>

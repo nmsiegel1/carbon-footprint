@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   color: var(--dark-blue);
   font-family: 'Nanum Gothic', sans-serif;
 }
@@ -16,53 +16,8 @@
   --light-brown: #baa898;
 }
 
-header {
-  padding: 50px 10px;
-}
-
 button {
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
-}
-
-/* SIGN UP PAGES */
-
-.signup {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.signup h2 {
-  font-size: 35px;
-  color: var(--wine);
-}
-
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.signup-form input {
-  margin: 10px 0;
-  padding: 20px 10px;
-  width: 200px;
-  border-radius: 10px;
-  border: var(--wine) solid 2px;
-  font-size: 18px;
-}
-
-.signup-form button {
-  margin-top: 10px;
-  border: none;
-  background-color: var(--wine);
-  color: var(--white);
-}
-
-.signup p {
-  margin-top: 20px;
   font-size: 20px;
 }
