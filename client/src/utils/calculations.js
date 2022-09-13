@@ -1,3 +1,21 @@
+import { useMutation } from '@apollo/client';
+import { ADD_TRAVEL, ADD_HOME } from './mutations';
+
+const [addTravel] = useMutation(ADD_TRAVEL, {
+    update(cache) {
+       try {
+          // update me array's cache
+          const { me } = cache.readQuery({ query: QUERY_ME });
+          cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, travelData: [...me.travelData] } },
+       });
+      } catch (e) {
+          console.warn(e);
+      }
+  }
+});
+
 export const calculateTravel = (
   carType,
   carMiles,
@@ -5,6 +23,7 @@ export const calculateTravel = (
   busMiles,
   planeMiles
 ) => {
+  let carEmissions; 
   switch (carType) {
     case 'small':
       carEmissions = Math.round(4.2887(carMiles));
@@ -54,6 +73,7 @@ export const calculateHome = (
     showerEmissions + laundryEmissions + flushesEmissions + bottlesEmissions
   );
 
+let fridgeEmissions;
   if (!fridge) {
     fridgeEmissions = 0;
   } else {
@@ -65,6 +85,7 @@ export const calculateHome = (
   const laptopEmissions = 7.73625(laptop);
   const monitorEmissions = 4.512814(monitor);
 
+let ACEmissions, gasEmissions, oilEmissions;
   switch (climate) {
     case 'cold':
       ACEmissions = 2637.648(size)(acDays);

@@ -73,5 +73,14 @@ export const ADD_PLEDGE = gql`
 }
 `;
 
-// export const REMOVE_PLEDGE = gql`
-// `;
+export const REMOVE_PLEDGE = gql`
+mutation RemovePledge($pledgeData: ID) {
+  removePledge(pledgeData: $pledgeData) {
+    username
+    email
+    pledgeData {
+      _id
+    }
+  }
+}
+`;
