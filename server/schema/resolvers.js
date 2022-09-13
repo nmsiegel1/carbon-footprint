@@ -90,7 +90,10 @@ const resolvers = {
                 // save a pledge to a user
                 addPledge: async (parent, args, context) => {
                     if (context.user) {
-                        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+                        return await User.findByIdAndUpdate(
+                            context.user._id,
+                            { $addToSet: args },
+                            { new: true });
                     }
                     throw new AuthenticationError('Not logged in');
                 },
@@ -101,7 +104,7 @@ const resolvers = {
                     if (context.user) {
                         let updatedUser = await User.findByIdAndUpdate(
                             { _id: context.user._id },
-                            { $pull: { pledgeData: { _id: args._id} } },
+                            { $pull: args },
                             { new: true }
                         )
 
