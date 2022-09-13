@@ -84,3 +84,12 @@
 .signup-link {
   color: var(--white);
 }
+
+/* Error message */
+.signup div,
+.login div {
+  margin-top: 10px;
+  color: var(--white);
+  font-weight: bold;
+  text-align: center;
+}
