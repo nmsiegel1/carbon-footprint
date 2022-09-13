@@ -96,20 +96,20 @@ const resolvers = {
                 },
 
 
-                // // remove a pledge
-                // removePledge: async (parent, args, context) => {
-                //     if (context.user) {
-                //         let updatedUser = await User.findByIdAndUpdate(
-                //             { _id: context.user._id },
-                //             { $pull: { pledgeData: { pledgeId: args.pledgeId } } },
-                //             { new: true }
-                //         )
+                // remove a pledge
+                removePledge: async (parent, args, context) => {
+                    if (context.user) {
+                        let updatedUser = await User.findByIdAndUpdate(
+                            { _id: context.user._id },
+                            { $pull: { pledgeData: { _id: args._id} } },
+                            { new: true }
+                        )
 
-                //         return updatedUser;
-                //     }
+                        return updatedUser;
+                    }
 
-                //     throw new AuthenticationError('Not logged in');
-                // },
+                    throw new AuthenticationError('Not logged in');
+                },
     }
 
 };
