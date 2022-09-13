@@ -15,7 +15,7 @@ import Signup from './pages/Signup';
 import Calculator from './pages/Calculator';
 import MyPledges from './pages/MyPledges';
 
-import Header from './components/Header';
+//import Header from './components/Header';
 import Navbar from './components/Navbar';
 
 // const httpLink = createHttpLink({
@@ -42,7 +42,6 @@ function App() {
     // <ApolloProvider client={client}>
     <Router>
       <div>
-        <Header />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

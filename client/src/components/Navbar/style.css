@@ -1,4 +1,68 @@
 .navBar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
   position: relative;
-  margin-left: 90%;
+  padding: 0.5rem 0rem;
+  background-color: #f7f7ff;
+  color: #243b4a;
+  box-shadow: 0 2px 2px 2px #243b4a;
+}
+
+.brand-name {
+  text-decoration: none;
+  color: #243b4a;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.navBar button {
+  position: fixed;
+  left: 90%;
+  top: 2%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.menuNav {
+  margin-left: auto;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+}
+
+.menuNav ul {
+  display: flex;
+  padding: 0;
+}
+.menuNav li {
+  list-style-type: none;
+  margin: 0 1rem;
+}
+.menuNav li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #283b8b;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #243b4a;
 }
