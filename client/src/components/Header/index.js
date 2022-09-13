@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = () => {
-  return <div>Logo and Dropdown Menu always seen?</div>;
+  return <header>Logo and Dropdown Menu always seen?</header>;
 };
 
 export default Header;
