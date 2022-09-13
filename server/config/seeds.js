@@ -107,7 +107,7 @@ db.once('open', async () => {
       action: 'Reduce Waste',
       description:
         'The methane emissions from municipal solid waste landfills in 2020 were approximately equivalent to the greenhouse gas emissions from about 20.3 million passenger vehicles driven for one year or the CO2 emissions from nearly 11.9 million homes’ energy use for one year. Collectively reducing waste can help decrease emissions dramatically.',
-      icon: 'bx:water',
+      icon: 'fa6-solid:trash-can',
       link: 'https://www.epa.gov/lmop/basic-information-about-landfill-gas',
     },
   ]);
@@ -121,102 +121,126 @@ db.once('open', async () => {
       username: 'Greta Thunberg',
       email: 'gretasavestheworld@gmail.com',
       password: 'password12345',
-      travelData: [{
-        vehicleEmissions: 85774,
-        publicTransitEmissions: 0,
-        planeEmissions: 327483,
-      }],
-      homeData: [{
-        waterEmissions: 1155122,
-        electricityEmissions: 13648,
-        heatEmissions: 17789,
-      }],
-      pledgeData: []
-     },
+      travelData: [
+        {
+          vehicleEmissions: 85774,
+          publicTransitEmissions: 0,
+          planeEmissions: 327483,
+        },
+      ],
+      homeData: [
+        {
+          waterEmissions: 1155122,
+          electricityEmissions: 13648,
+          heatEmissions: 17789,
+        },
+      ],
+      pledgeData: [],
+    },
 
-     { 
+    {
       username: 'John Muir',
       email: 'johninthewild@yahoo.com',
       password: 'password54321',
-      travelData: [{
-        vehicleEmissions: 212862,
-        publicTransitEmissions: 18329,
-        planeEmissions: 0,
-      }],
-      homeData: [{
-        waterEmissions: 1130962,
-        electricityEmissions: 253638449,
-        heatEmissions: 5264,
-      }],
-      pledgeData: []
-     },
+      travelData: [
+        {
+          vehicleEmissions: 212862,
+          publicTransitEmissions: 18329,
+          planeEmissions: 0,
+        },
+      ],
+      homeData: [
+        {
+          waterEmissions: 1130962,
+          electricityEmissions: 253638449,
+          heatEmissions: 5264,
+        },
+      ],
+      pledgeData: [],
+    },
 
-     { 
+    {
       username: 'Wangari Maathai',
       email: 'wmaathai@earthsave.com',
       password: 'password23456',
-      travelData: [{
-        vehicleEmissions: 71033,
-        publicTransitEmissions: 59284,
-        planeEmissions: 70175,
-      }],
-      homeData: [{
-        waterEmissions: 1125002,
-        electricityEmissions: 596360610,
-        heatEmissions: 0,
-      }],
-      pledgeData: []
-     },
+      travelData: [
+        {
+          vehicleEmissions: 71033,
+          publicTransitEmissions: 59284,
+          planeEmissions: 70175,
+        },
+      ],
+      homeData: [
+        {
+          waterEmissions: 1125002,
+          electricityEmissions: 596360610,
+          heatEmissions: 0,
+        },
+      ],
+      pledgeData: [],
+    },
 
-     { 
+    {
       username: 'David Brower',
       email: 'dbrowersierra@hotmail.com',
       password: 'password65432',
-      travelData: [{
-        vehicleEmissions: 222160,
-        publicTransitEmissions: 31618,
-        planeEmissions: 0,
-      }],
-      homeData: [{
-        waterEmissions: 863174,
-        electricityEmissions: 223644490,
-        heatEmissions: 8502,
-      }],
-      pledgeData: []
-     },
+      travelData: [
+        {
+          vehicleEmissions: 222160,
+          publicTransitEmissions: 31618,
+          planeEmissions: 0,
+        },
+      ],
+      homeData: [
+        {
+          waterEmissions: 863174,
+          electricityEmissions: 223644490,
+          heatEmissions: 8502,
+        },
+      ],
+      pledgeData: [],
+    },
 
-     { 
+    {
       username: 'Winona LaDuke',
       email: 'winonald@example.com',
       password: 'password56789',
-      travelData: [{
-        vehicleEmissions: 0,
-        publicTransitEmissions: 91647,
-        planeEmissions: 56140,
-      }],
-      homeData: [{
-        waterEmissions: 2197286,
-        electricityEmissions: 689639,
-        heatEmissions: 77,
-      }]
-     },
-     
-     { 
+      travelData: [
+        {
+          vehicleEmissions: 0,
+          publicTransitEmissions: 91647,
+          planeEmissions: 56140,
+        },
+      ],
+      homeData: [
+        {
+          waterEmissions: 2197286,
+          electricityEmissions: 689639,
+          heatEmissions: 77,
+        },
+      ],
+    },
+
+    {
       username: 'Chico Mendez',
       email: 'rainforestsforever@aol.com',
       password: 'password98765',
-      travelData: [{
-        vehicleEmissions: 255434,
-        publicTransitEmissions: 0,
-        planeEmissions: 0,
-      }],
-      homeData: [{
-        waterEmissions: 1885962,
-        electricityEmissions: 966533,
-        heatEmissions: 0,
-      }],
-      pledgeData: []
-     }
+      travelData: [
+        {
+          vehicleEmissions: 255434,
+          publicTransitEmissions: 0,
+          planeEmissions: 0,
+        },
+      ],
+      homeData: [
+        {
+          waterEmissions: 1885962,
+          electricityEmissions: 966533,
+          heatEmissions: 0,
+        },
+      ],
+      pledgeData: [],
+    },
   ]);
 
   console.log('Users seeded');
