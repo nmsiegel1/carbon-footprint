@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import './style.css';
+import menu_icon from './menu.png';
 
 const Navbar = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
   return (
     <nav className="navBar">
       <a href="/" className="brand-name">
         Carbon Footsteps
       </a>
-      <button className="hamburger">
-        {/* icon from heroicons.com */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="white"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
+      <button
+        className="hamburger"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      >
+        <img
+          src={menu_icon}
+          alt="3 lines to representing the menu"
+          className="navLogo"
+        />
       </button>
-      <div className="menuNav">
+      <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
         <ul>
           <li>
             <a href="/home">Home</a>
