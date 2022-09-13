@@ -1,15 +1,16 @@
 .navBar {
-  height: 60px;
+  height: 40px;
   width: 100%;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0.5rem 0rem;
-  background-color: #f7f7ff;
+  padding: 0.5rem 0rem 1rem 0rem;
   color: #243b4a;
-  box-shadow: 0 2px 2px 2px #243b4a;
 }
 
+.navLogo {
+  height: 40px;
+}
 .brand-name {
   text-decoration: none;
   color: #243b4a;
@@ -28,8 +29,6 @@
   flex-direction: column;
   width: 100%;
   height: calc(100vh - 77px);
-  background-color: white;
-  border-top: 1px solid black;
   display: none;
 }
 
@@ -40,17 +39,22 @@
 .menuNav li {
   text-align: center;
   margin: 0;
+  padding: 2rem;
+  font-size: larger;
 }
 
 .menuNav li a {
   color: black;
   width: 100%;
-  padding: 1.5rem 0;
   text-decoration: none;
 }
 
 .menuNav li:hover {
-  background-color: #eee;
+  background-color: #bdd5ea;
+}
+
+.menuNav a:hover {
+  background-color: #bdd5ea;
 }
 
 .hamburger {
@@ -65,41 +69,5 @@
   transform: translateY(-50%);
 }
 
-.hamburger:hover {
-  background-color: #2642af;
-}
-
 @media screen and (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .menuNav ul {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 77px);
-    background-color: white;
-    border-top: 1px solid black;
-    display: none;
-  }
-
-  .menuNav.expanded ul {
-    display: block;
-  }
-
-  .menuNav li {
-    text-align: center;
-    margin: 0;
-  }
-  .menuNav li a {
-    color: black;
-    width: 100%;
-    padding: 1.5rem 0;
-  }
-  .menuNav li:hover {
-    background-color: #eee;
-  }
 }
