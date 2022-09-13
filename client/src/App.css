@@ -14,3 +14,7 @@
   --brown: #7a4419;
   --light-brown: #baa898;
 }
+
+header {
+  padding: 50px 10px;
+}
