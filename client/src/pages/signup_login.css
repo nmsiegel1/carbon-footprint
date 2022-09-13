@@ -79,3 +79,8 @@
   font-size: 20px;
   color: var(--dark-blue);
 }
+
+.login-link,
+.signup-link {
+  color: var(--white);
+}

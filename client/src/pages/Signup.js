@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './signup_login.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -73,7 +74,12 @@ const Signup = () => {
           <button type="submit">Submit</button>
           {error && <div>Sign up failed</div>}
         </form>
-        <p>Already have an account? Log in</p>
+        <p>
+          Already have an account?{' '}
+          <Link to="/login" className="signup-link">
+            Log in
+          </Link>
+        </p>
       </div>
     </main>
   );
