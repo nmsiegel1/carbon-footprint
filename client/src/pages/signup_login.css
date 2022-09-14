@@ -1,13 +1,17 @@
 .signup-main {
   background-image: url(./images/right-wave-red.png);
   background-size: cover;
-  background-position: bottom right;
+  background-position: top right;
+  height: 100%;
+  background-repeat: no-repeat;
 }
 
 .login-main {
   background-image: url(./images/right-wave-blue.png);
   background-size: cover;
-  background-position: bottom right;
+  background-position: top right;
+  height: 100%;
+  background-repeat: no-repeat;
 }
 
 .signup,
