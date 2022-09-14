@@ -31,7 +31,7 @@ const [addHome] = useMutation(ADD_HOME, {
   }
 });
 
-export const calculateTravel = (
+export const calculateTravel = async (
   carType,
   carMiles,
   trainMiles,
@@ -59,11 +59,17 @@ export const calculateTravel = (
   );
 
   const planeEmissions = Math.round(4.678333(planeMiles));
-
-  addTravel(carEmissions, publicTravelEmissions, planeEmissions);
+    try{
+        await addTravel({
+            variables: { carEmissions: carEmissions, publicTravelEmissions: publicTravelEmissions, planeEmissions: planeEmissions }
+            });
+        addTravel(carEmissions, publicTravelEmissions, planeEmissions);
+    } catch (err) {
+        console.error(err);
+    }
 };
 
-export const calculateHome = (
+export const calculateHome = async (
   showerNumber,
   minutes,
   laundry,
@@ -139,6 +145,12 @@ let ACEmissions, gasEmissions, oilEmissions;
   );
 
   const heatEmissions = Math.round(gasEmissions + oilEmissions);
-
-  addHome(waterEmissions, electricityEmissions, heatEmissions);
+    try {
+        await addHome({
+            variables: {waterEmissions: waterEmissions, electricityEmissions: electricityEmissions, heatEmissions: heatEmissions}
+        });
+        addHome(waterEmissions, electricityEmissions, heatEmissions);
+    } catch (err) {
+        console.error(err);
+    }
 };
