@@ -45,10 +45,15 @@ p {
   padding-bottom: 15px;
 }
 
-button {
+.donation-card button {
   background-color: var(--dark-blue);
   color: var(--white);
   border: none;
+}
+
+.donation-card button:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
 }
 
 .resource {
@@ -68,4 +73,9 @@ button {
   background-color: var(--white);
   color: var(--dark-blue);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.resources button:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
