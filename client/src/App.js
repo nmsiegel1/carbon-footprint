@@ -14,8 +14,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Calculator from './pages/Calculator';
 import MyPledges from './pages/MyPledges';
+import NoMatch from './pages/NoMatch';
 
-//import Header from './components/Header';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -49,6 +49,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/mypledges" element={<MyPledges />} />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
       </Router>

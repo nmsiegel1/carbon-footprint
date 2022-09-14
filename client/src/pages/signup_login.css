@@ -1,0 +1,104 @@
+.signup-main {
+  background-image: url(./images/right-blue-blue.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.login-main {
+  background-image: url(./images/left-green-blue.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.signup,
+.login {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup h2 {
+  font-size: 35px;
+  color: var(--dark-blue);
+}
+
+.login h2 {
+  font-size: 35px;
+  color: var(--green);
+}
+
+.signup-form,
+.login-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.signup-form input,
+.login-form input {
+  margin: 10px 0;
+  padding: 20px 10px;
+  width: 200px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.signup-form input {
+  border: var(--dark-blue) solid 2px;
+}
+
+.login-form input {
+  border: var(--green) solid 2px;
+}
+
+.signup-form button,
+.login-form button {
+  margin-top: 10px;
+  border: none;
+  color: var(--white);
+}
+
+.signup-form button {
+  background-color: var(--dark-blue);
+}
+
+.login-form button {
+  background-color: var(--green);
+}
+
+.signup p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--dark-blue);
+}
+
+.login p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--green);
+}
+
+.signup-link {
+  color: var(--white);
+}
+
+.login-link {
+  color: var(--green);
+}
+
+/* Error message */
+.login-form p,
+.signup-form p {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--dark-blue);
+  height: 10px;
+  padding: 10px;
+}
