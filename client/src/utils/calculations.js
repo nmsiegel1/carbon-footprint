@@ -16,6 +16,21 @@ const [addTravel] = useMutation(ADD_TRAVEL, {
   }
 });
 
+const [addHome] = useMutation(ADD_HOME, {
+    update(cache) {
+       try {
+          // update me array's cache
+          const { me } = cache.readQuery({ query: QUERY_ME });
+          cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, homeData : [...me.homeData] } },
+       });
+      } catch (e) {
+          console.warn(e);
+      }
+  }
+});
+
 export const calculateTravel = (
   carType,
   carMiles,
@@ -45,7 +60,7 @@ export const calculateTravel = (
 
   const planeEmissions = Math.round(4.678333(planeMiles));
 
-  return { carEmissions, publicTravelEmissions, planeEmissions };
+  addTravel(carEmissions, publicTravelEmissions, planeEmissions);
 };
 
 export const calculateHome = (
@@ -124,5 +139,6 @@ let ACEmissions, gasEmissions, oilEmissions;
   );
 
   const heatEmissions = Math.round(gasEmissions + oilEmissions);
-  return { waterEmissions, electricityEmissions, heatEmissions };
+
+  addHome(waterEmissions, electricityEmissions, heatEmissions);
 };
