@@ -1,5 +1,5 @@
 .signup-main {
-  background-image: url(./images/right-wave-blue.png);
+  background-image: url(./images/right-blue-blue.png);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -7,7 +7,7 @@
 }
 
 .login-main {
-  background-image: url(./images/right-wave-blue.png);
+  background-image: url(./images/left-green-blue.png);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -84,16 +84,21 @@
   color: var(--green);
 }
 
-.login-link,
 .signup-link {
   color: var(--white);
 }
 
+.login-link {
+  color: var(--green);
+}
+
 /* Error message */
-.signup div,
-.login div {
+.login-form p,
+.signup-form p {
   margin-top: 10px;
-  color: var(--white);
   font-weight: bold;
   text-align: center;
+  color: var(--dark-blue);
+  height: 10px;
+  padding: 10px;
 }
