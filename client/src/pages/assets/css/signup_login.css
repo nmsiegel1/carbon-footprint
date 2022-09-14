@@ -1,5 +1,5 @@
 .signup-main {
-  background-image: url(./images/right-blue-blue.png);
+  background-image: url(../images/right-blue-blue.png);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -7,7 +7,7 @@
 }
 
 .login-main {
-  background-image: url(./images/left-green-blue.png);
+  background-image: url(../images/left-green-blue.png);
   background-size: cover;
   background-position: center;
   height: 100%;
