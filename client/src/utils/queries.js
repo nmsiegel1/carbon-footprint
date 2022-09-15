@@ -40,12 +40,3 @@ export const QUERY_PLEDGES = gql`
     }
   }
 `;
-
-// OR IS IT
-// pledges {
-//   _id
-//   action
-//   description
-//   icon
-//   link
-// }
