@@ -225,10 +225,10 @@ const Calculator = () => {
   };
 
 
-  function sliderText (value) {
-    console.log(value);
-    return `${value}`;
-  }
+  // function sliderText (value) {
+  //   console.log(value);
+  //   return `${value}`;
+  // }
 
   function handleChange (event) {
     // console.log(event.target.value);
@@ -238,6 +238,7 @@ const Calculator = () => {
     // // let climate = setSelectClimateText(event.target.value);
     // // add climate below once ready
     setFormState({...formState, [event.target.name]: event.target.value});
+    console.log(event.target.value);
   }
   
   
@@ -293,8 +294,6 @@ const Calculator = () => {
                   <Slider
                   aria-label='Car Miles'
                   defaultValue={0}
-                  // getAriaLabel={sliderText}
-                  getAriaValueText={sliderText}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'carMiles'
