@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './signup_login.css';
+import './assets/css/signup_login.css';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import { Link } from 'react-router-dom';

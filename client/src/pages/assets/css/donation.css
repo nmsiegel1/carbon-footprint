@@ -1,0 +1,83 @@
+.donation-main {
+  background-image: url(../images/right-wave-green.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  margin: 10px 25px 45px 25px;
+  font-size: 35px;
+}
+
+.donate {
+  margin: 10px 25px 0 25px;
+  font-size: 30px;
+}
+
+.donation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.donation-card {
+  flex: 25%;
+  border: var(--dark-blue) solid 2px;
+  margin: 15px 25px 25px 25px;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h4 {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+p {
+  padding-bottom: 15px;
+}
+
+.donation-card button {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+}
+
+.donation-card button:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
+
+.resource {
+  margin: 50px 25px 0 25px;
+  font-size: 30px;
+}
+
+.resources {
+  margin: 25px;
+}
+
+.resources a {
+  margin-right: 20px;
+}
+
+.resources button {
+  background-color: var(--white);
+  color: var(--dark-blue);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+  margin: 10px 0;
+}
+
+.resources button:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
