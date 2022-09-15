@@ -225,10 +225,6 @@ const Calculator = () => {
   };
 
 
-  function sliderText (value) {
-    console.log(value);
-    return `${value}`;
-  }
 
   function handleChange (event) {
     // console.log(event.target.value);
@@ -238,6 +234,8 @@ const Calculator = () => {
     // // let climate = setSelectClimateText(event.target.value);
     // // add climate below once ready
     setFormState({...formState, [event.target.name]: event.target.value});
+    console.log(event.target.name, event.target.value);
+    // console.log(event.target.value);
   }
   
   
@@ -288,13 +286,14 @@ const Calculator = () => {
                   <MenuItem value={"SUV"}>SUV</MenuItem>
                   <MenuItem value={"Hybrid"}>Hybrid</MenuItem>
                 </Select>
+              </FormControl>
+
 
                 <Box sx={{ m:1, width: 300 }}>
+                  <label>Car Miles</label>
                   <Slider
                   aria-label='Car Miles'
                   defaultValue={0}
-                  // getAriaLabel={sliderText}
-                  getAriaValueText={sliderText}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'carMiles'
@@ -302,14 +301,311 @@ const Calculator = () => {
                   marks
                   min={0}
                   max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Bus Miles</label>
+                  <Slider
+                  aria-label='Bus Miles'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'busMiles'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Train Miles</label>
+                  <Slider
+                  aria-label='Bus Miles'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'trainMiles'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Plane Miles</label>
+                  <Slider
+                  aria-label='Bus Miles'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'planeMiles'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+            </div>
+
+            <div>
+              <h2>My Home</h2>
+              <div>
+              <FormControl variant='filled' sx={{ m:1, minWidth: 120 }}>
+                <InputLabel id='fridgeLabel'>Fridge</InputLabel>
+                <Select
+                  labelId='fridgeLabel'
+                  id='fridge'
+                  name = 'fridge'
+                  defaultValue = {fridge}
+                  value={fridge}
+                  onChange={handleChange}
                 >
-                </Slider>
-              </Box>
-              <button type='submit'>Find My Footprint</button>
+                  <MenuItem value={"Yes"}>Yes</MenuItem>
+                  <MenuItem value={"No"}>No</MenuItem>
+                </Select>
               </FormControl>
 
+              <FormControl variant='filled' sx={{ m:1, minWidth: 120 }}>
+                <InputLabel id='climate'>Climate</InputLabel>
+                <Select
+                  labelId='fridgeLabel'
+                  id='fridge'
+                  name = 'climate'
+                  defaultValue = {climate}
+                  value={climate}
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"Cold"}>Cold</MenuItem>
+                  <MenuItem value={"Cool"}>Cool</MenuItem>
+                  <MenuItem value={"Moderate"}>Moderate</MenuItem>
+                  <MenuItem value={"Warm"}>Warm</MenuItem>
+                  <MenuItem value={"Hot"}>Hot</MenuItem>
+                </Select>
+              </FormControl>
+
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Number of Showers</label>
+                  <Slider
+                  aria-label='Number of Showers'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'showerNumber'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Time spent in Shower</label>
+                  <Slider
+                  aria-label='Time spent in Shower'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'minutes'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Loads of Laundry</label>
+                  <Slider
+                  aria-label='Loads of Laundry'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'laundry'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Flushes</label>
+                  <Slider
+                  aria-label='Flushes'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'flushes'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Bottles of Water</label>
+                  <Slider
+                  aria-label='Bottles of Water'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'bottles'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Hours of TV</label>
+                  <Slider
+                  aria-label='Hours of TV'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'TV'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Hours of Laptop</label>
+                  <Slider
+                  aria-label='Hours of Laptop'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'laptop'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Hours of Desktop</label>
+                  <Slider
+                  aria-label='Hours of Desktop'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'desktop'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Hours of Monitor</label>
+                  <Slider
+                  aria-label='Hours of Monitor'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'monitor'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Square Feet</label>
+                  <Slider
+                  aria-label='Square Feet'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'size'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>AC Days</label>
+                  <Slider
+                  aria-label='AC Days'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'acDays'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Gas Days</label>
+                  <Slider
+                  aria-label='Gas Days'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'gasDays'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+
+                <Box sx={{ m:1, width: 300 }}>
+                  <label>Oil Days</label>
+                  <Slider
+                  aria-label='Oil Days'
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name = 'oilDays'
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                  >
+                  </Slider>
+                </Box>
+              </div>
             </div>
+
+
+              <button type='submit'>Find My Footprint</button>
+
           </form>
+
         </section>
       <Pledges />
     </main>
