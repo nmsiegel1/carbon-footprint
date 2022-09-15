@@ -169,27 +169,27 @@ const Calculator = () => {
     let ACEmissions, gasEmissions, oilEmissions;
     switch (climate) {
       case 'cold':
-        ACEmissions = 2637.648(size)(acDays);
+        ACEmissions = 0.158259(size)(acDays);
         gasEmissions = (0.07644(size) / 365)(gasDays);
         oilEmissions = (32.68055(size) / 365)(oilDays);
         break;
       case 'cool':
-        ACEmissions = 5275.296(size)(acDays);
+        ACEmissions = 0.13188(size)(acDays);
         gasEmissions = (0.0637(size) / 365)(gasDays);
         oilEmissions = (26.68412(size) / 365)(oilDays);
         break;
       case 'moderate':
-        ACEmissions = 10550.6(size)(acDays);
+        ACEmissions = 0.10551(size)(acDays);
         gasEmissions = (0.05733(size) / 365)(gasDays);
         oilEmissions = (20.68769(size) / 365)(oilDays);
         break;
       case 'warm':
-        ACEmissions = 13188.25(size)(acDays);
+        ACEmissions = 0.051133(size)(acDays);
         gasEmissions = (0.05096(size) / 365)(gasDays);
         oilEmissions = (13.9919(size) / 365)(oilDays);
         break;
       default:
-        ACEmissions = 15825.9(size)(acDays);
+        ACEmissions = 0.026376(size)(acDays);
         gasEmissions = (0.0446(size) / 365)(gasDays);
         oilEmissions = (8.09518(size) / 365)(oilDays);
         break;
