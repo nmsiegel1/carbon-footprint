@@ -1,17 +1,23 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_PLEDGES } from '../../utils/queries';
+import Pledge from '../Pledge';
 
 const Pledges = () => {
   const data = useQuery(QUERY_PLEDGES);
 
-  const pledges = data.pledges || [];
+  const pledges = data.data?.pledges || [];
 
   return (
     <div>
-      These are pledges to choose from
       <h2>Pledge to reduce your carbon footprint!</h2>
-      {pledges.length(<div>{pledges.action}</div>)}
+      <div>
+        {pledges.map((pledge) => (
+          <div key={pledge.action}>
+            <Pledge pledge={pledge} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

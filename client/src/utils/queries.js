@@ -30,7 +30,7 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_PLEDGES = gql`
-query Pledges {
+  {
     pledges {
       _id
       action
@@ -39,7 +39,6 @@ query Pledges {
       link
     }
   }
-
 `;
 
 // OR IS IT
