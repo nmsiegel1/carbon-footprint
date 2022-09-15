@@ -232,7 +232,8 @@ const Calculator = () => {
   // }
 
   function sliderText (value) {
-    return `${value}`
+    console.log(value);
+    return `${value}`;
   }
 
   function handleChange (event) {
@@ -242,6 +243,7 @@ const Calculator = () => {
 
   // console.log(carType);
   console.log(carTypeTest);
+  
 
   // form handler
   function handleSubmit(event) {
@@ -292,8 +294,9 @@ const Calculator = () => {
                 <Slider
                   aria-label='Temperature'
                   defaultValue={0}
-                  getAriaLabel={sliderText}
-                  valueLabelDisplay="auto"
+                  // getAriaLabel={sliderText}
+                  getAriaValueText={sliderText}
+                  valueLabelDisplay="on"
                   step={10}
                   marks
                   min={0}
