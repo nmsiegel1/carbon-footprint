@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import Pledges from '../components/Pledges';
 
-import Slider from '@mui/material/Slider';
+// import Slider from '@mui/material/Slider';
 import Select from '@mui/material/Select';
+import { FormControl, InputLabel, MenuItem, Slider } from '@mui/material';
 
 import { useMutation } from '@apollo/client';
 import { ADD_TRAVEL, ADD_HOME } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
+import { Box } from '@mui/system';
+
 
 const Calculator = () => {
+
+  const [carTypeTest, setCarTypeTest] = React.useState('');
+
   // set state of user form
   const [formState, setFormState] = useState({
     carType: '',
@@ -219,11 +225,23 @@ const Calculator = () => {
     }
   };
 
-  function handleChange(event) {
-    // use spread operator to retain the other key-value pairs in the object
-    // not sure if we can use name?
-    setFormState({ ...formState, [event.target.name]: event.target.value });
+  // function handleChange(event) {
+  //   // use spread operator to retain the other key-value pairs in the object
+  //   // not sure if we can use name?
+  //   setFormState({ ...formState, [event.target.name]: event.target.value });
+  // }
+
+  function sliderText (value) {
+    return `${value}`
   }
+
+  function handleChange (event) {
+    setCarTypeTest(event.target.value);
+    // setFormState(event.target.value);
+  }
+
+  // console.log(carType);
+  console.log(carTypeTest);
 
   // form handler
   function handleSubmit(event) {
@@ -254,26 +272,48 @@ const Calculator = () => {
         <section>
           <h2>My Home</h2>
           <form onSubmit={handleSubmit}>
-            <input></input>
-            <Select
-            labelId="car-type"
-            id="carType"
-            value={carType}
-            label="Car Type"
-            onChange={handleChange}
-            ></Select>
+            <div>
+              <FormControl variant='filled' sx={{ m:1, minWidth: 120 }}>
+                <InputLabel id='car-type'>Car Type</InputLabel>
+                <Select
+                  labelId='car-type'
+                  id='carType'
+                  value={carTypeTest}
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"Small"}>Small</MenuItem>
+                  <MenuItem value={"Average"}>Average</MenuItem>
+                  <MenuItem value={"SUV"}>SUV</MenuItem>
+                  <MenuItem value={"Hybrid"}>Hybrid</MenuItem>
+                </Select>
+              </FormControl>
 
-            <input></input>
-            <Slider
-            aria-label="car-miles"
-            defaultValue={0}
-            // getAriaValueText={valuetext}
-            step={10}
-            marks
-            min={0}
-            max={40}
-            valueLabelDisplay="on"
-            ></Slider>
+              <Box sx={{ m:1, width: 300 }}>
+                <Slider
+                  aria-label='Temperature'
+                  defaultValue={0}
+                  getAriaLabel={sliderText}
+                  valueLabelDisplay="auto"
+                  step={10}
+                  marks
+                  min={0}
+                  max={40}
+                >
+                </Slider>
+              </Box>
+
+              {/* <input></input>
+              <Slider
+              aria-label="car-miles"
+              defaultValue={0}
+              // getAriaValueText={valuetext}
+              step={10}
+              marks
+              min={0}
+              max={40}
+              valueLabelDisplay="on"
+              ></Slider> */}
+            </div>
           </form>
         </section>
       <Pledges />
