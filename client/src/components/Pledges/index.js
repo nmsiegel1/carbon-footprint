@@ -47,35 +47,26 @@ const Pledges = () => {
   return (
     <div>
       <h2>Take action to reduce your carbon footprint!</h2>
-      <div>
-        {pledges.map((pledge) => (
-          <div key={pledge.action}>
-            <div>
-              <h3>
-                <Icon
-                  icon={pledge.icon}
-                  color="#243B4A"
-                  width="20"
-                  height="20"
-                />
-                {pledge.action}
-              </h3>
-              <p>{pledge.description}</p>
-              <a href={pledge.link} target="_blank" rel="noopener noreferrer">
-                Learn more about this action
-              </a>
-              <button onClick={handleSavedPledge}>
-                {/* {savedPledgeIds?.some(
+      {pledges.map((pledge) => (
+        <div key={pledge.action}>
+          <h3>
+            <Icon icon={pledge.icon} color="#243B4A" width="20" height="20" />
+            {pledge.action}
+          </h3>
+          <p>{pledge.description}</p>
+          <a href={pledge.link} target="_blank" rel="noopener noreferrer">
+            Learn more about this action
+          </a>
+          <button onClick={handleSavedPledge}>
+            {/* {savedPledgeIds?.some(
                         (savedPledgeId) => savedPledgeId === pledge._id
                       )
                         ? "Pledge saved!"
                         : "Make This Pledge"} */}
-                Make This Pledge
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+            Make This Pledge
+          </button>
+        </div>
+      ))}
     </div>
   );
 };
