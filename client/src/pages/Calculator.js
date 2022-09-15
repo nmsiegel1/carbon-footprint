@@ -13,8 +13,6 @@ import { Box } from '@mui/system';
 
 const Calculator = () => {
 
-  const [carTypeTest, setCarTypeTest] = React.useState('');
-
   // set state of user form
   const [formState, setFormState] = useState({
     carType: '',
@@ -32,13 +30,14 @@ const Calculator = () => {
     laptop: 0,
     desktop: 0,
     monitor: 0,
-    size: 0,
     climate: '',
+    size: 0,
     acDays: 0,
     gasDays: 0,
     oilDays: 0,
   });
-  const {
+
+  let {
     carType,
     carMiles,
     busMiles,
@@ -175,7 +174,7 @@ const Calculator = () => {
     let ACEmissions, gasEmissions, oilEmissions;
     switch (climate) {
       case 'cold':
-        ACEmissions = 0.0126(size)(acDays);
+        ACEmissions = 0.01260(size)(acDays);
         gasEmissions = (0.07644(size) / 365)(gasDays);
         oilEmissions = (32.68055(size) / 365)(oilDays);
         break;
@@ -225,11 +224,6 @@ const Calculator = () => {
     }
   };
 
-  // function handleChange(event) {
-  //   // use spread operator to retain the other key-value pairs in the object
-  //   // not sure if we can use name?
-  //   setFormState({ ...formState, [event.target.name]: event.target.value });
-  // }
 
   function sliderText (value) {
     console.log(value);
@@ -237,42 +231,46 @@ const Calculator = () => {
   }
 
   function handleChange (event) {
-    setCarTypeTest(event.target.value);
-    // setFormState(event.target.value);
+    // console.log(event.target.value);
+    // console.log(event.target.name);
+    // // setSelectCarText(event.target.value);
+    // // let carType = event.target.value;
+    // // let climate = setSelectClimateText(event.target.value);
+    // // add climate below once ready
+    setFormState({...formState, [event.target.name]: event.target.value});
   }
-
-  // console.log(carType);
-  console.log(carTypeTest);
   
-
+  
+  
   // form handler
   function handleSubmit(event) {
     event.preventDefault();
-    calculateTravel(carType, carMiles, busMiles, trainMiles, planeMiles);
-    calculateHome(
-      showerNumber,
-      minutes,
-      laundry,
-      flushes,
-      bottles,
-      fridge,
-      TV,
-      laptop,
-      desktop,
-      monitor,
-      size,
-      climate,
-      acDays,
-      gasDays,
-      oilDays
-    );
+    console.log(formState)
+    // calculateTravel(carType, carMiles, busMiles, trainMiles, planeMiles);
+    // calculateHome(
+    //   showerNumber,
+    //   minutes,
+    //   laundry,
+    //   flushes,
+    //   bottles,
+    //   fridge,
+    //   TV,
+    //   laptop,
+    //   desktop,
+    //   monitor,
+    //   size,
+    //   climate,
+    //   acDays,
+    //   gasDays,
+    //   oilDays
+    // );
   }
   // not sure how to put the name on each slider or select...might have to rethink the change handler, use event.target.id?
   return (
     <main>
-      <div>EXAMPLE Calculator TEXT</div>
+      <div>My Carbon Footprint</div>
         <section>
-          <h2>My Home</h2>
+          <h2>My Travel</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <FormControl variant='filled' sx={{ m:1, minWidth: 120 }}>
@@ -280,7 +278,9 @@ const Calculator = () => {
                 <Select
                   labelId='car-type'
                   id='carType'
-                  value={carTypeTest}
+                  name = 'carType'
+                  defaultValue = {carType}
+                  value={carType}
                   onChange={handleChange}
                 >
                   <MenuItem value={"Small"}>Small</MenuItem>
@@ -288,15 +288,16 @@ const Calculator = () => {
                   <MenuItem value={"SUV"}>SUV</MenuItem>
                   <MenuItem value={"Hybrid"}>Hybrid</MenuItem>
                 </Select>
-              </FormControl>
 
-              <Box sx={{ m:1, width: 300 }}>
-                <Slider
-                  aria-label='Temperature'
+                <Box sx={{ m:1, width: 300 }}>
+                  <Slider
+                  aria-label='Car Miles'
                   defaultValue={0}
                   // getAriaLabel={sliderText}
                   getAriaValueText={sliderText}
+                  onChange={handleChange}
                   valueLabelDisplay="on"
+                  name = 'carMiles'
                   step={10}
                   marks
                   min={0}
@@ -304,18 +305,9 @@ const Calculator = () => {
                 >
                 </Slider>
               </Box>
+              <button type='submit'>Find My Footprint</button>
+              </FormControl>
 
-              {/* <input></input>
-              <Slider
-              aria-label="car-miles"
-              defaultValue={0}
-              // getAriaValueText={valuetext}
-              step={10}
-              marks
-              min={0}
-              max={40}
-              valueLabelDisplay="on"
-              ></Slider> */}
             </div>
           </form>
         </section>
