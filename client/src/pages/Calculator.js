@@ -102,13 +102,13 @@ const Calculator = () => {
   ) => {
     let carEmissions;
     switch (carType) {
-      case 'small':
+      case 'Small':
         carEmissions = Math.round(4.2887(carMiles));
         break;
-      case 'average':
+      case 'Average':
         carEmissions = Math.round(5.32155(carMiles));
         break;
-      case 'hybrid':
+      case 'Hybrid':
         carEmissions = Math.round(2.9597(carMiles));
         break;
       default:
@@ -175,27 +175,27 @@ const Calculator = () => {
     let ACEmissions, gasEmissions, oilEmissions;
     switch (climate) {
       case 'cold':
-        ACEmissions = 0.158259(size)(acDays);
+        ACEmissions = 0.0126(size)(acDays);
         gasEmissions = (0.07644(size) / 365)(gasDays);
         oilEmissions = (32.68055(size) / 365)(oilDays);
         break;
       case 'cool':
-        ACEmissions = 0.13188(size)(acDays);
+        ACEmissions = 0.0252(size)(acDays);
         gasEmissions = (0.0637(size) / 365)(gasDays);
         oilEmissions = (26.68412(size) / 365)(oilDays);
         break;
       case 'moderate':
-        ACEmissions = 0.10551(size)(acDays);
+        ACEmissions = 0.0504(size)(acDays);
         gasEmissions = (0.05733(size) / 365)(gasDays);
         oilEmissions = (20.68769(size) / 365)(oilDays);
         break;
       case 'warm':
-        ACEmissions = 0.051133(size)(acDays);
+        ACEmissions = 0.06301(size)(acDays);
         gasEmissions = (0.05096(size) / 365)(gasDays);
         oilEmissions = (13.9919(size) / 365)(oilDays);
         break;
       default:
-        ACEmissions = 0.026376(size)(acDays);
+        ACEmissions = 0.07561(size)(acDays);
         gasEmissions = (0.0446(size) / 365)(gasDays);
         oilEmissions = (8.09518(size) / 365)(oilDays);
         break;
