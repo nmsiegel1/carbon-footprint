@@ -1,5 +1,5 @@
 .donation-main {
-  background-image: url(../images/right-wave-green.png);
+  background-image: url(../images/left-green-blue.png);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -80,4 +80,16 @@ p {
 .resources button:hover {
   background-color: var(--dark-blue);
   color: var(--white);
+}
+
+@media screen and (min-width: 1100px) {
+  .donation-main {
+    height: 110vh;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .donation {
+    flex-direction: column;
+  }
 }
