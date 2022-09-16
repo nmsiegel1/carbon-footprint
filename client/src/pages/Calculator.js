@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-// import Slider from '@mui/material/Slider';
 import Select from '@mui/material/Select';
 import { FormControl, InputLabel, MenuItem, Slider } from '@mui/material';
 
@@ -35,7 +35,6 @@ const Calculator = () => {
     gasDays: 0,
     oilDays: 0,
   });
-
   let {
     carType,
     carMiles,
@@ -59,7 +58,10 @@ const Calculator = () => {
     oilDays,
   } = formState;
 
-  // set useMutation to populate meQuery
+  // navigate to new page 
+  const navigate = useNavigate();
+
+  // set useMutation to populate meQuery for both ADD_TRAVEL and ADD_HOME
   const [addTravel] = useMutation(ADD_TRAVEL, {
     update(cache) {
       try {
@@ -74,8 +76,6 @@ const Calculator = () => {
       }
     },
   });
-
-
   const [addHome,{ error }] = useMutation(ADD_HOME, {
     update(cache) {
       try {
@@ -92,13 +92,28 @@ const Calculator = () => {
     },
   });
 
-  // function to calculate Travel data and use mutation to input to database
-  const calculateTravel = async (
+  // function to calculate home and travel data
+  const calculateFootprint = async (
     carType,
     carMiles,
     trainMiles,
     busMiles,
-    planeMiles
+    planeMiles,
+    showerNumber,
+    minutes,
+    laundry,
+    flushes,
+    bottles,
+    fridge,
+    TV,
+    laptop,
+    desktop,
+    monitor,
+    size,
+    climate,
+    acDays,
+    gasDays,
+    oilDays,
   ) => {
     let vehicleEmissions;
     switch (carType) {
@@ -123,36 +138,6 @@ const Calculator = () => {
 
     const planeEmissions = Math.round(4.678333 * planeMiles);
 
-
-
-    try {
-      await addTravel({
-        variables: { vehicleEmissions, publicTransitEmissions, planeEmissions }
-      });
-    }
-
-    catch (err) {
-      console.error(err);
-    }
-  };
-  // function to calculate Home data and use mutation to input to database
-  const calculateHome = async (
-    showerNumber,
-    minutes,
-    laundry,
-    flushes,
-    bottles,
-    fridge,
-    TV,
-    laptop,
-    desktop,
-    monitor,
-    size,
-    climate,
-    acDays,
-    gasDays,
-    oilDays
-  ) => {
     const showerEmissions = 78 * (showerNumber) * (minutes);
     const laundryEmissions = 170 * (laundry);
     const flushesEmissions = 582.4 * (flushes);
@@ -168,7 +153,6 @@ const Calculator = () => {
     else {
       fridgeEmissions = 495;
     }
-
 
     const TVEmissions = 14.8272 * (TV);
     const desktopEmissions = 29.01095 * (desktop);
@@ -216,27 +200,34 @@ const Calculator = () => {
     const heatEmissions = Math.round(gasEmissions + oilEmissions);
 
     try {
-      await addHome({
-        variables: { waterEmissions, electricityEmissions, heatEmissions, }
+      await addTravel({
+        variables: { vehicleEmissions, publicTransitEmissions, planeEmissions }
       });
+      await addHome({
+        variables: { waterEmissions, electricityEmissions, heatEmissions }
+      });
+      navigate('/');
     }
+
     catch (err) {
       console.error(err);
     }
   };
 
-
-
+  // function to handle the change of state for the form
   function handleChange (event) {
     setFormState({...formState, [event.target.name]: event.target.value});
-  }
+  };
 
-  // form handler
+  // form handler to submit to calculation functions
   function handleSubmit(event) {
     event.preventDefault();
-    calculateTravel(carType, carMiles, busMiles, trainMiles, planeMiles);
-
-    calculateHome(
+    calculateFootprint(
+      carType,
+      carMiles,
+      busMiles,
+      trainMiles,
+      planeMiles,
       showerNumber,
       minutes,
       laundry,
@@ -251,9 +242,26 @@ const Calculator = () => {
       climate,
       acDays,
       gasDays,
-      oilDays
-    );
-  }
+      oilDays);
+
+    // calculateHome(
+    //   showerNumber,
+    //   minutes,
+    //   laundry,
+    //   flushes,
+    //   bottles,
+    //   fridge,
+    //   TV,
+    //   laptop,
+    //   desktop,
+    //   monitor,
+    //   size,
+    //   climate,
+    //   acDays,
+    //   gasDays,
+    //   oilDays
+    // );
+  };
 
   return (
     <main>
@@ -591,7 +599,6 @@ const Calculator = () => {
                 </Box>
               </div>
             </div>
-
 
               <button type='submit'>Find My Footprint</button>
 
