@@ -1,0 +1,21 @@
+.calculator-main {
+  background-image: url(../images/right-blue-blue.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.calculator-main h2 {
+  margin: 20px;
+  font-size: 35px;
+}
+
+.calculator-main h3 {
+  margin: 20px;
+  font-size: 30px;
+}
+
+.slider-sections {
+  margin: 20px;
+}

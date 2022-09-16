@@ -17,6 +17,7 @@ const MyFootprint = () => {
       <section className="my-footprint">
         <div className="footprint-data">
           <h2 className="footprint-title">{username}'s Carbon Footprint</h2>
+          {/* SHOWING THE DATA WITHOUT MAPPING */}
           {/* <div>
             <p>Water emissions: {homeData[0].waterEmissions}</p>
             <p>Electricity emissions: {homeData[0].electricityEmissions}</p>
@@ -28,6 +29,7 @@ const MyFootprint = () => {
             <p>Plane emissions: {travelData[0].planeEmissions}</p>
           </div> */}
 
+          {/* SHOWING THE DATA MAPPING */}
           {/* {homeData.map((data) => (
             <div key={data._id}>
               <p>Water emissions: {data.waterEmissions}</p>
@@ -44,7 +46,7 @@ const MyFootprint = () => {
           ))} */}
           <h3 className="total">Your total Carbon Footprint: </h3>
         </div>
-        {/* <div className="graph">GRAPH GOES HERE</div> */}
+        <div className="graph">{/* GRAPH GOES HERE */}</div>
       </section>
       <section>
         <Pledges />
