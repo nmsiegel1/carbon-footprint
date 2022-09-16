@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
 }
 
-h2 {
+.donation-title {
   margin: 10px 25px 45px 25px;
   font-size: 35px;
 }
@@ -36,7 +36,7 @@ h2 {
   justify-content: space-between;
 }
 
-h4 {
+.donation-card-title {
   font-size: 25px;
   padding-bottom: 15px;
 }

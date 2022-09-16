@@ -8,14 +8,14 @@ db.once('open', async () => {
     {
       action: 'Purchase Electric Vehicle',
       description:
-        'A typical passenger vehicle emits about 4.6 metric tons of carbon dioxide per year. This number can vary based on a vehicle’s fuel, fuel economy, and the number of miles driven per year. Switching to a fully electrict car brings this down to zero!',
+        'A typical passenger vehicle emits about 4.6 metric tons of carbon dioxide per year. This number can vary based on a vehicle’s fuel, fuel economy, and the number of miles driven per year. Switching to a fully electric car brings this down to zero!',
       icon: 'bxs:car',
       link: 'https://www.epa.gov/greenvehicles/explaining-electric-plug-hybrid-electric-vehicles',
     },
     {
       action: 'Purchase Hybrid Vehicle',
       description:
-        'A typical passenger vehicle emits about 4.6 metric tons of carbon dioxide per year. This number can vary based on a vehicle’s fuel, fuel economy, and the number of miles driven per year. This number can vary based on a vehicle’s fuel, fuel economy, and the number of miles driven per year. Tailpipe emissions of hybrid cars vary depending on battery capacity, how it is driven and how often it is charged but there is huge potential to reduce emissions from driving a hybrid.',
+        'A typical passenger vehicle emits about 4.6 metric tons of carbon dioxide per year. This number can vary based on a vehicle’s fuel, fuel economy, and the number of miles driven per year. Tailpipe emissions of hybrid cars vary depending on battery capacity, how it is driven and how often it is charged but there is huge potential to reduce emissions from driving a hybrid.',
       icon: 'bxs:car',
       link: 'https://www.epa.gov/greenvehicles/explaining-electric-plug-hybrid-electric-vehicles',
     },
@@ -57,14 +57,14 @@ db.once('open', async () => {
     {
       action: 'Reduce Air Travel',
       description:
-        'A two hour flight produces emissions equal to about a month of typical driving. Reducing plane travel is one of the best thinkgs you can do to reduce your carbon footprint.',
+        'A two hour flight produces emissions equal to about a month of typical driving. Reducing plane travel is one of the best things you can do to reduce your carbon footprint.',
       icon: 'fa6-solid:plane',
       link: 'https://www.epa.gov/regulations-emissions-vehicles-and-engines/regulations-greenhouse-gas-emissions-aircraft',
     },
     {
       action: 'Eat a Low Carbon Diet',
       description:
-        'A third of all food emissions in the United States come from red meat and dairy products, while chicken and vegetables have up to ten times smaller footprints per serving. Small diet changes can truly make a big impact!.',
+        'A third of all food emissions in the United States come from red meat and dairy products, while chicken and vegetables have up to ten times smaller footprints per serving. Small diet changes can truly make a big impact!',
       icon: 'fluent:food-24-filled',
       link: 'https://shrinkthatfootprint.com/food-carbon-footprint-diet/',
     },

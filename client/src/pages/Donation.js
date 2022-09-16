@@ -39,12 +39,14 @@ const Donation = () => {
   return (
     <main className="donation-main">
       <div>
-        <h2>Looking for more ways to help the environment?</h2>
+        <h2 className="donation-title">
+          Looking for more ways to help the environment?
+        </h2>
         <h3 className="donate">Donate to fight climate change:</h3>
         <div className="donation">
           {donations.map(({ title, link, description }) => (
             <div className="donation-card" key={title}>
-              <h4>{title}</h4>
+              <h4 className="donation-card-title">{title}</h4>
               <p>{description}</p>
               <a href={link} target="_blank" rel="noreferrer">
                 <button type="submit">Donate Now!</button>
