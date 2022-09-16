@@ -14,7 +14,7 @@ const Calculator = () => {
 
   // set state of user form
   const [formState, setFormState] = useState({
-    carType: '',
+    carType: 'Small',
     carMiles: 0,
     busMiles: 0,
     trainMiles: 0,
@@ -24,12 +24,12 @@ const Calculator = () => {
     laundry: 0,
     flushes: 0,
     bottles: 0,
-    fridge: '',
+    fridge: 'Yes',
     TV: 0,
     laptop: 0,
     desktop: 0,
     monitor: 0,
-    climate: '',
+    climate: 'Cold',
     size: 0,
     acDays: 0,
     gasDays: 0,
@@ -289,49 +289,49 @@ const Calculator = () => {
 
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Car Miles</label>
+                  <label>Car Miles Per Year</label>
                   <Slider
                   aria-label='Car Miles'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'carMiles'
-                  step={10}
+                  step={10000}
                   marks
                   min={0}
-                  max={40}
+                  max={40000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Bus Miles</label>
+                  <label>Bus Miles Per Year</label>
                   <Slider
                   aria-label='Bus Miles'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'busMiles'
-                  step={10}
+                  step={10000}
                   marks
                   min={0}
-                  max={40}
+                  max={40000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Train Miles</label>
+                  <label>Train Miles Per Year</label>
                   <Slider
                   aria-label='Bus Miles'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'trainMiles'
-                  step={10}
+                  step={10000}
                   marks
                   min={0}
-                  max={40}
+                  max={40000}
                   >
                   </Slider>
                 </Box>
@@ -344,10 +344,10 @@ const Calculator = () => {
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'planeMiles'
-                  step={10}
+                  step={2000}
                   marks
                   min={0}
-                  max={40}
+                  max={10000}
                   >
                   </Slider>
                 </Box>
@@ -391,23 +391,23 @@ const Calculator = () => {
 
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Number of Showers</label>
+                  <label>Number of Showers Per Year</label>
                   <Slider
                   aria-label='Number of Showers'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'showerNumber'
-                  step={10}
+                  step={400}
                   marks
                   min={0}
-                  max={40}
+                  max={2000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Time spent in Shower</label>
+                  <label>Time spent in the Shower (Minutes)</label>
                   <Slider
                   aria-label='Time spent in Shower'
                   defaultValue={0}
@@ -417,183 +417,183 @@ const Calculator = () => {
                   step={10}
                   marks
                   min={0}
-                  max={40}
+                  max={120}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Loads of Laundry</label>
+                  <label>Loads of Laundry Per Year</label>
                   <Slider
                   aria-label='Loads of Laundry'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'laundry'
-                  step={10}
+                  step={50}
                   marks
                   min={0}
-                  max={40}
+                  max={600}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Flushes</label>
+                  <label>Number of Flushes Per Year</label>
                   <Slider
                   aria-label='Flushes'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'flushes'
-                  step={10}
+                  step={500}
                   marks
                   min={0}
-                  max={40}
+                  max={5000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Bottles of Water</label>
+                  <label>Bottles of Water Per Year</label>
                   <Slider
                   aria-label='Bottles of Water'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'bottles'
-                  step={10}
+                  step={500}
                   marks
                   min={0}
-                  max={40}
+                  max={3000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Hours of TV</label>
+                  <label>Hours of TV Per Year</label>
                   <Slider
-                  aria-label='Hours of TV'
+                  aria-label='Hours of TV Watched Per Year'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'TV'
-                  step={10}
+                  step={100}
                   marks
                   min={0}
-                  max={40}
+                  max={5000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Hours of Laptop</label>
+                  <label>Hours of Laptop Use (Plugged In) Per Year</label>
                   <Slider
                   aria-label='Hours of Laptop'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'laptop'
-                  step={10}
+                  step={100}
                   marks
                   min={0}
-                  max={40}
+                  max={5000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Hours of Desktop</label>
+                  <label>Hours of Desktop Use Per Year</label>
                   <Slider
                   aria-label='Hours of Desktop'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'desktop'
-                  step={10}
+                  step={100}
                   marks
                   min={0}
-                  max={40}
+                  max={5000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Hours of Monitor</label>
+                  <label>Hours of Monitor Use Per Year</label>
                   <Slider
                   aria-label='Hours of Monitor'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'monitor'
-                  step={10}
+                  step={100}
                   marks
                   min={0}
-                  max={40}
+                  max={5000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Square Feet</label>
+                  <label>Square Feet of Your Residence</label>
                   <Slider
                   aria-label='Square Feet'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'size'
-                  step={10}
+                  step={500}
                   marks
                   min={0}
-                  max={40}
+                  max={8000}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>AC Days</label>
+                  <label>Days You Run Your A/C</label>
                   <Slider
                   aria-label='AC Days'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'acDays'
-                  step={10}
+                  step={5}
                   marks
                   min={0}
-                  max={40}
+                  max={365}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Gas Days</label>
+                  <label>Days You Run Your Heat (Natural Gas)</label>
                   <Slider
                   aria-label='Gas Days'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'gasDays'
-                  step={10}
+                  step={5}
                   marks
                   min={0}
-                  max={40}
+                  max={365}
                   >
                   </Slider>
                 </Box>
 
                 <Box sx={{ m:1, width: 300 }}>
-                  <label>Oil Days</label>
+                  <label>Days You Run Your Heat (Oil)</label>
                   <Slider
                   aria-label='Oil Days'
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name = 'oilDays'
-                  step={10}
+                  step={5}
                   marks
                   min={0}
-                  max={40}
+                  max={365}
                   >
                   </Slider>
                 </Box>
