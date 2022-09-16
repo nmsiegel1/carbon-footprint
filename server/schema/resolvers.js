@@ -61,7 +61,7 @@ const resolvers = {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $push: { travelData: { vehicleEmissions, publicTransitEmissions, planeEmissions } } },
+                    { $set: { travelData: { vehicleEmissions, publicTransitEmissions, planeEmissions } } },
                     { new: true }
                     )
                     .populate('travelData');
@@ -76,7 +76,7 @@ const resolvers = {
                 if (context.user) {
                     const updatedUser = await User.findOneAndUpdate(
                         { _id: context.user._id },
-                        { $push: { homeData: { waterEmissions, electricityEmissions, heatEmissions } } },
+                        { $set: { homeData: { waterEmissions, electricityEmissions, heatEmissions } } },
                         { new: true }
                         )
                         .populate('homeData');

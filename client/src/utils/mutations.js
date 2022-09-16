@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN = gql`
-    mutation Login($email: String!, $password: String!) {
+    mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
         token
         user {
@@ -12,7 +12,7 @@ export const LOGIN = gql`
 `;
 
 export const ADD_USER = gql`
-    mutation AddUser($username: String!, $email: String!, $password: String!) {
+    mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
         token
         user {
@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_TRAVEL = gql`
-    mutation AddTravel($vehicleEmissions: Int!, $publicTransitEmissions: Int!, $planeEmissions: Int!) {
+    mutation addTravel($vehicleEmissions: Int!, $publicTransitEmissions: Int!, $planeEmissions: Int!) {
     addTravel(vehicleEmissions: $vehicleEmissions, publicTransitEmissions: $publicTransitEmissions, planeEmissions: $planeEmissions) {
         _id
         username
@@ -41,7 +41,7 @@ export const ADD_TRAVEL = gql`
 `;
 
 export const ADD_HOME = gql`
-    mutation AddHome($waterEmissions: Int!, $electricityEmissions: Int!, $heatEmissions: Int!) {
+    mutation addHome($waterEmissions: Int!, $electricityEmissions: Int!, $heatEmissions: Int!) {
     addHome(waterEmissions: $waterEmissions, electricityEmissions: $electricityEmissions, heatEmissions: $heatEmissions) {
         _id
         username
@@ -57,7 +57,7 @@ export const ADD_HOME = gql`
 `;
 
 export const ADD_PLEDGE = gql`
-    mutation AddPledge($pledgeData: [ID]) {
+    mutation addPledge($pledgeData: [ID]) {
     addPledge(pledgeData: $pledgeData) {
         _id
         username
@@ -74,7 +74,7 @@ export const ADD_PLEDGE = gql`
 `;
 
 export const REMOVE_PLEDGE = gql`
-mutation RemovePledge($pledgeData: ID) {
+mutation removePledge($pledgeData: ID) {
   removePledge(pledgeData: $pledgeData) {
     username
     email
