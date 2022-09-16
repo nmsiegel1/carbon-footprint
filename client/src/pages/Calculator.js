@@ -121,7 +121,7 @@ const Calculator = () => {
       1.832934 * trainMiles + 3.952283 * busMiles
     );
 
-    const planeEmissions = Math.round(4.678333* planeMiles);
+    const planeEmissions = Math.round(4.678333 * planeMiles);
 
 
 
