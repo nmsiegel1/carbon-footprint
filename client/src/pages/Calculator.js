@@ -219,7 +219,6 @@ const Calculator = () => {
       await addHome({
         variables: { waterEmissions, electricityEmissions, heatEmissions, }
       });
-      addHome(waterEmissions, electricityEmissions, heatEmissions);
     }
     catch (err) {
       console.error(err);
