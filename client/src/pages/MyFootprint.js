@@ -8,6 +8,9 @@ const MyFootprint = () => {
   const { data } = useQuery(QUERY_ME);
   console.log('data', data);
   const { username, homeData, travelData } = data?.me || [];
+  console.log(username);
+  console.log(homeData);
+  console.log(travelData);
   return (
     <div className="footprint">
       <section>
@@ -22,7 +25,7 @@ const MyFootprint = () => {
           <p>Public Transit emissions: {travelData.publicEmissions}</p>
           <p>Plane emissions: {travelData.waterEmissions}</p>
         </div> */}
-        <h3>Your total Carbon Footprint:</h3>
+        <h3 className="total">Your total Carbon Footprint:</h3>
       </section>
       <section>
         <Pledges />
