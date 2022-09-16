@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Pledges from '../components/Pledges';
 
 // import Slider from '@mui/material/Slider';
 import Select from '@mui/material/Select';
@@ -77,7 +76,7 @@ const Calculator = () => {
   });
 
 
-  const [addHome] = useMutation(ADD_HOME, {
+  const [addHome,{ error }] = useMutation(ADD_HOME, {
     update(cache) {
       try {
         // update me array's cache
@@ -87,6 +86,7 @@ const Calculator = () => {
           data: { me: { ...me, homeData: [...me.homeData] } },
         });
       } catch (e) {
+        console.log(error);
         console.warn(e);
       }
     },
@@ -217,11 +217,7 @@ const Calculator = () => {
 
     try {
       await addHome({
-        variables: {
-          waterEmissions,
-          electricityEmissions,
-          heatEmissions,
-        },
+        variables: { waterEmissions, electricityEmissions, heatEmissions, }
       });
       addHome(waterEmissions, electricityEmissions, heatEmissions);
     }
@@ -259,7 +255,7 @@ const Calculator = () => {
       oilDays
     );
   }
-  // not sure how to put the name on each slider or select...might have to rethink the change handler, use event.target.id?
+
   return (
     <main>
       <div>My Carbon Footprint</div>
@@ -603,7 +599,6 @@ const Calculator = () => {
           </form>
 
         </section>
-      <Pledges />
     </main>
   );
 };

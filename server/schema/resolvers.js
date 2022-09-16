@@ -72,47 +72,47 @@ const resolvers = {
                 throw new AuthenticationError('Not logged in');
             },
 
-            addHome: async (parent, { waterEmissions, electricityEmissions, heatEmissions }, context) => {
-                if (context.user) {
-                    const updatedUser = await User.findOneAndUpdate(
-                        { _id: context.user._id },
-                        { $set: { homeData: { waterEmissions, electricityEmissions, heatEmissions } } },
-                        { new: true }
-                        )
-                        .populate('homeData');
+        addHome: async (parent, { waterEmissions, electricityEmissions, heatEmissions }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $set: { homeData: { waterEmissions, electricityEmissions, heatEmissions } } },
+                    { new: true }
+                    )
+                    .populate('homeData');
 
-                        return updatedUser;
-                    }
+                    return updatedUser;
+                }
 
-                    throw new AuthenticationError('Not logged in');
-                },
+                throw new AuthenticationError('Not logged in');
+            },
 
-                // save a pledge to a user
-                addPledge: async (parent, args, context) => {
-                    if (context.user) {
-                        return await User.findByIdAndUpdate(
-                            context.user._id,
-                            { $addToSet: args },
-                            { new: true });
-                    }
-                    throw new AuthenticationError('Not logged in');
-                },
+        // save a pledge to a user
+        addPledge: async (parent, args, context) => {
+            if (context.user) {
+                return await User.findByIdAndUpdate(
+                    context.user._id,
+                    { $addToSet: args },
+                    { new: true });
+            }
+            throw new AuthenticationError('Not logged in');
+        },
 
 
-                // remove a pledge
-                removePledge: async (parent, args, context) => {
-                    if (context.user) {
-                        let updatedUser = await User.findByIdAndUpdate(
-                            { _id: context.user._id },
-                            { $pull: args },
-                            { new: true }
-                        )
+        // remove a pledge
+        removePledge: async (parent, args, context) => {
+            if (context.user) {
+                let updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: args },
+                    { new: true }
+                )
 
-                        return updatedUser;
-                    }
+                return updatedUser;
+            }
 
-                    throw new AuthenticationError('Not logged in');
-                },
+            throw new AuthenticationError('Not logged in');
+        },
     }
 
 };
