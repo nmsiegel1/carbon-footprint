@@ -3,22 +3,21 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-This application is for an avid reader who wants to search for new books to read so that they can keep a list of books that they want to purchase. The following were the additional requirements of the application:
+This application is for an enviromentally-conscious user who wants to calculate their carbon footprint and learn more about how to offset it in order to positively impact the world's climate. The following were the additional requirements of the application:
 
-* When the user loads the search engine, they are presented with a menu with the options Search for Books and Login/Signup, and an input field to search for books and a submit button.
-* When the user clicks on the Search for Books menu option, then they are presented with an input field to search for books and a submit button.
-* When the user is not logged in and enters a search term in the input field and clicks the submit button, then they are presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site.
-* When the user clicks on the Login/Signup menu option, then a modal appears on the screen with a toggle between the option to log in or sign up.
-* When the toggle is set to Signup, then the user is presented with three inputs for a username, an email address, and a password, and a signup button.
-* When the toggle is set to Login, the user is presented with two inputs for an email address and a password and login button.
-* When the user enters a valid email address, creates a password and clicks on the signup button, then their user account is created and they are logged in to the site.
-* When the user enters their account’s email address and password and clicks on the login button, then the modal closes and they are logged in to the site.
-* When the user is logged in to the site, the menu options change to Search for Books, an option to see their saved books, and Logout.
-* When the user is logged in and enters a search term in the input field and clicks the submit button, they are presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to their account.
-* When the user clicks on the Save button on a book, then that book’s information is saved to their account.
-* When the user clicks on the option to see their saved books, they are presented with all of the books they have saved to their account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from their account.
-* When the user clicks on the Remove button on a book, then that book is deleted from their saved books list.
-* When the user clicks the Logout button, then they are logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button.
+* When the user loads the application, they are presented with the Home page that displays the carbon emissions of the average American.
+* When the user clicks on the menu icon, they will see the option to log in to the application.
+* When the user clicks on Login in the menu, they will be directed to the Login page where they can login or click to sign up.
+* When the user clicks the option to sign up on the Login page, they will be redirected to the Signup page where they can sign up as a user of the application.
+* When the user has logged in or signed up, they will be redirected to the Home page.
+* When the logged-in user clicks on the menu, they will see the options to calculate their footprint (Calculator page), see their results (My Results page), see their pledges (My Pledges Page), or logout.
+* When the logged-in user clicks on the My Results or My Pledges pages in the menu before completing the calculator, they will be prompted to visit the calculator page to calculate their carbon footprint.
+* When the logged-in user clicks on Calculator in the menu, they will be directed to the Calculator page where they can fill out their information to calculate their carbon footprint.
+* When the logged-in user enters their information for the calculator and clicks the button, they will be redirected to their My Results page.
+* When the logged-in user is redirected to their My Results page after completing the calculator, they will see their carbon emissions listed by category, a graph to see the breakdown of their carbon footprint, and the option to add pledges.
+* When the logged-in user clicks to add a pledge, the pledge they click will be removed from the My Results page, but will be listed on their My Pledges page.
+* When the logged-in user clicks on the My Pledges option in the menu, they will a list of the pleges they selecte on the My Results page.
+* When the logged-in user clicks the Logout option in the menu, the user will be logged out and will only see the option to login in the menu.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -29,34 +28,40 @@ This application is for an avid reader who wants to search for new books to read
 - [Questions](#questions)
 
 ## Installation
-Visit the GitHub repository, AK-Book-Search-Engine (see the link below in the Links section), to fork and clone the repository. The package.json in the root directory will have the necessary dependencies. Use
+Visit the GitHub repository, carbon-footprint (see the link below in the Links section), to fork and clone the repository. The package.json in the root directory will have the necessary dependencies. Use
 ````````````
 npm install
 ````````````
 in the root of the application to install the dependencies locally.
 
 ## Links
-- [GitHub Repo](https://github.com/amklenk/AK-Book-Search-Engine)
-- [Deployed Application](https://ak-book-search-engine.herokuapp.com/)
+- [GitHub Repo](https://github.com/nmsiegel1/carbon-footprint)
+- [Deployed Application]()
 
 ## Usage
 The following are screenshots of the deployed site:
 
-Home:
-![Home](/client/src/assets/home.png)
+Home Page:
+![Home](/client/src/pages/assets/images/home.png)
 
-Home (With Search and Logged In):
-![Home Search](/client/src/assets/search.png)
+Login Page:
+![Login](/client/src/pages/assets/images/login.png)
 
-Modal (Login/Signup)
-![Modal](/client/src/assets/log-sign.png)
+Signup Page:
+![Signup](/client/src/pages/assets/images/signup.png)
 
-Saved Books:
-![Saved Books](/client/src/assets/saved.png)
+Calculator Page:
+![Calculator](/client/src/pages/assets/images/calculator.png)
 
-The application has the React app in the client directory, which contains the public directory, the src directory, the .gitignore file, the package.json file, and the README. The public directory contains the index.html file, where the root div (from index.js in the root of src) is rendered, along with the manifest.json and robots.txt. The src folder contains the assets directory, the components directory, the pages directory, the utils directory, App.js (where all of the components are rendered), index.css (the main style sheet), and index.js (for rendering App). The assets directory contains the README images. The components directory contains directories for each component that contains an index.js for rendering each. The pages directory contains the JS files for each page component (routed in App.js). The utils directory contains the JS files for the API functions, the authorization with JWTs, the localStorage functions, the mutations, and the queries.
+My Results Page (with Emissions, Graph, and Pledges):
+![Results](/client/src/assets/images/results.png)
 
-The application accesses the database via the server directory, which contains the config, models, schemas, and utils directories along with the .gitignore, the package.json, and server.js files. The server file details how the application will access the back-end server and instantiates Express and Apollo. The config directory has connection.js, which details how the MongoDB database is accessed. The models directory has the Mongoose schemas (User and Book) and the index.js file to export them. The utils folder has the typeDefs and resolvers files along with an index.js file to export them.
+My Pledges Page (with Selected Pledges):
+![Pledges](/client/src/assets/images/pledges.png)
+
+The application has the React app in the client directory, which contains the public directory, the src directory, the .gitignore file, and the package.json file. The public directory contains the index.html file, where the root div (from index.js in the root of src) is rendered, along with the React icons/logos, the manifest.json, and robots.txt. The src directory contains the components directory, the pages directory, the utils directory, App.js (where all of the components are rendered), App.css (the main style sheet), and index.js (for rendering App). The components directory contains directories for each component that contains an index.js for rendering each. The pages directory contains the assets directory and the JS files for each page component (routed in App.js). The assets directory contains the css and images directories. The css directory contains the styling sheets for each page. The images directory contains the background images and the README images. The utils directory contains the JS files for authorization with JWTs, the localStorage functions, the mutations, and the queries.
+
+The application accesses the database via the server directory, which contains the config, models, schemas, and utils directories along with the .gitignore, the package.json, and server.js files. The server file details how the application will access the back-end server and instantiates Express and Apollo. The config directory has connection.js, which details how the MongoDB database is accessed, and the seeds.js file to seed mock data. The models directory has the Mongoose schemas (User, Travel, Home, and Pledge) and the index.js file to export them. The schema directory has the typeDefs and resolvers files along with an index.js file to export them. The utils directory contains the auth.js file for authorization on the backend with JWTs. The root of the application contains the .eslintignore, the .eslintrc.json, the .gitignore, the .prettierignore, the .prettierrc.json, the package.json, and the README files.
 The entire app is run in the terminal with the concurrent server in the root directory by typing
 ````````````````
 npm run develop
@@ -79,5 +84,9 @@ The badge at the top of the page shows that this project is licensed under MIT. 
 Please fork and clone the repository and use a pull request to add or make changes to the current repository.
 
 ## Questions
-Please direct any questions to amandamklenk3@gmail.com. To see more projects, visit the link below for amklenk's respository:
-- [Amanda Klenk's GitHub Repository](https://github.com/amklenk)
+Please direct any questions to any of the team members below. To see more projects, visit the links below for each team member's respository:
+- Gilina McBride: gilinamcbride@gmail.com, [GitHub Repository](https://github.com/gilinamcbride)
+- Mtende Roll: rollmtende@gmail.com, [GitHub Repository](https://github.com/MtendeRoll)
+- Nina Siegel: siegel.nina.m@gmail.com, [GitHub Repository](https://github.com/nmsiegel1)
+- Daniel Conlon: danielcconlon@gmail.com, [GitHub Repository](https://github.com/DanielCConlon)
+- Amanda Klenk: amandamklenk3@gmail.com, [GitHub Repository](https://github.com/amklenk)
