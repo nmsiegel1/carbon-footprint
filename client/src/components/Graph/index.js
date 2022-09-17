@@ -34,8 +34,14 @@ export const data = {
 
 export function Graph() {
   return (
-    <Pie data={data}>
-        <canvas id="myChart" width="400" height="400"></canvas>
-    </Pie>
+    <div>
+        <Pie 
+            data={data}
+            height={'400px'}
+            width={'400px'}
+            options={{ maintainAspectRatio: false }}
+        >
+        </Pie>
+    </div>
   );
 }
