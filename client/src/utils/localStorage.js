@@ -3,12 +3,14 @@ export const getSavedPledgeIds = () => {
     ? JSON.parse(localStorage.getItem('saved_pledges'))
     : [];
 
+  console.log('savedPledgeIds', savedPledgeIds);
   return savedPledgeIds;
 };
 
-export const savePledgeIds = (pledgeData) => {
-  if (pledgeData.length) {
-    localStorage.setItem('saved_pledges', JSON.stringify(pledgeData));
+export const savePledgeIds = (pledgeIdArr) => {
+  console.log('pledgeIdArr', pledgeIdArr);
+  if (pledgeIdArr.length) {
+    localStorage.setItem('saved_pledges', JSON.stringify(pledgeIdArr));
   } else {
     localStorage.removeItem('saved_pledges');
   }

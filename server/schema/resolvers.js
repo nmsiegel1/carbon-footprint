@@ -60,7 +60,7 @@ const resolvers = {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           {
-            $push: {
+            $set: {
               travelData: {
                 vehicleEmissions,
                 publicTransitEmissions,
@@ -86,7 +86,7 @@ const resolvers = {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           {
-            $push: {
+            $set: {
               homeData: { waterEmissions, electricityEmissions, heatEmissions },
             },
           },
