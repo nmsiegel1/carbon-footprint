@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useQuery, useMutation } from '@apollo/client';
 
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_PLEDGE } from '../utils/mutations';
-import { removePledgeId } from '../utils/localStorage';
+import {
+  removePledgeId,
+  getCompletedPledgeIds,
+  completePledgeIds,
+} from '../utils/localStorage';
 
 const MyPledges = () => {
   const { data, loading } = useQuery(QUERY_ME);
   const myPledges = data?.me.pledgeData || [];
+
+  const [completedPledgeIds, setCompletedPledgeIds] = useState(
+    getCompletedPledgeIds()
+  );
+
+  useEffect(() => {
+    return () => completePledgeIds(completedPledgeIds);
+  });
 
   const [removePledge] = useMutation(REMOVE_PLEDGE, {
     update(cache) {
@@ -24,6 +36,16 @@ const MyPledges = () => {
       }
     },
   });
+
+  const handleCompletedPledge = async (pledgeId) => {
+    const markComplete = myPledges.find((pledge) => pledge._id === pledgeId);
+
+    try {
+      setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // create function that accepts the pledges's mongo _id value as param and deletes the pledge from the database
   const handleDeletePledge = async (pledgeId) => {
@@ -51,6 +73,15 @@ const MyPledges = () => {
 
       {myPledges.map((pledge) => (
         <div key={pledge.action}>
+          <span onClick={() => handleDeletePledge(pledge._id)}>
+            {' '}
+            <Icon
+              icon="akar-icons:circle-x-fill"
+              color="#243B4A"
+              width="20"
+              height="20"
+            />
+          </span>
           <h3>
             <Icon icon={pledge.icon} color="#243B4A" width="20" height="20" />
             {pledge.action}
@@ -59,8 +90,12 @@ const MyPledges = () => {
           <a href={pledge.link} target="_blank" rel="noopener noreferrer">
             Learn more about this action
           </a>
-          <button onClick={() => handleDeletePledge(pledge._id)}>
-            Remove Pledge
+          <button onClick={() => handleCompletedPledge(pledge._id)}>
+            {completedPledgeIds?.some(
+              (completedPledgeId) => completedPledgeId === pledge._id
+            )
+              ? 'Complete!'
+              : 'Mark as Complete'}
           </button>
         </div>
       ))}

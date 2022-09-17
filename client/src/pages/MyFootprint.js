@@ -7,53 +7,63 @@ import { QUERY_ME } from '../utils/queries';
 import { Graph } from '../components/Graph';
 
 const MyFootprint = () => {
-  const { data } = useQuery(QUERY_ME);
+  const { data, loading } = useQuery(QUERY_ME);
   console.log('data', data);
   const { username, homeData, travelData } = data?.me || [];
 
   console.log(username);
   console.log(homeData);
   console.log(travelData);
+
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
   return (
     <div className="footprint">
       <section className="my-footprint">
         <div className="footprint-data">
-          <h2 className="footprint-title">{username}'s Carbon Footprint</h2>
-          {/* SHOWING THE DATA WITHOUT MAPPING */}
-          {/* <div>
-            <p>Water emissions: {homeData[0].waterEmissions}</p>
-            <p>Electricity emissions: {homeData[0].electricityEmissions}</p>
-            <p>Heat emissions: {homeData[0].heatEmissions}</p>
-          </div>
-          <div>
-            <p>Vehicle emissions: {travelData[0].vehicleEmissions}</p>
-            <p>Public Transit emissions: {travelData[0].publicEmissions}</p>
-            <p>Plane emissions: {travelData[0].planeEmissions}</p>
-          </div> */}
-
-          {/* SHOWING THE DATA MAPPING */}
-          {/* {homeData.map((data) => (
-            <div key={data._id}>
-              <p>Water emissions: {data.waterEmissions}</p>
-              <p>Electricity emissions: {data.electricityEmissions}</p>
-              <p>Heat emissions: {data.heatEmissions}</p>
+          {homeData.length || travelData.length ? (
+            <div>
+              <h2 className="footprint-title">{username}'s Carbon Footprint</h2>
+              <div>
+                <p>Water emissions: {homeData[0].waterEmissions} kg CO2</p>
+                <p>
+                  Electricity emissions: {homeData[0].electricityEmissions} kg
+                  CO2
+                </p>
+                <p>Heat emissions: {homeData[0].heatEmissions} kg CO2</p>
+                <p>
+                  Vehicle emissions: {travelData[0].vehicleEmissions} kg CO2
+                </p>
+                <p>
+                  Public Transit emissions:{' '}
+                  {travelData[0].publicTransitEmissions} kg CO2
+                </p>
+                <p>Plane emissions: {travelData[0].planeEmissions} kg CO2</p>
+              </div>
+              <p className="total">
+                Your total Carbon Footprint:{' '}
+                {homeData[0].heatEmissions +
+                  homeData[0].electricityEmissions +
+                  homeData[0].waterEmissions +
+                  travelData[0].vehicleEmissions +
+                  travelData[0].publicTransitEmissions +
+                  travelData[0].planeEmissions}{' '}
+                kg CO2
+              </p>
             </div>
-          ))}
-          {travelData.map((data) => (
-            <div key={data._id}>
-              <p>Vehicle emissions: {data.vehicleEmissions}</p>
-              <p>Public Transit emissions: {data.publicEmissions}</p>
-              <p>Plane emissions: {data.planeEmissions}</p>
-            </div>
-          ))} */}
-          <h3 className="total">Your total Carbon Footprint: </h3>
+          ) : (
+            <h2 className="no-info-title">
+              You haven't calculated your carbon footprint yet!
+            </h2>
+          )}
         </div>
         <div className="graph">
           <Graph />
         </div>
       </section>
       <section>
-        <Pledges />
+        {homeData.length || travelData.length ? <Pledges /> : ''}
       </section>
     </div>
   );
