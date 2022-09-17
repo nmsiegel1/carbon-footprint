@@ -18,6 +18,7 @@ import MyPledges from './pages/MyPledges';
 import NoMatch from './pages/NoMatch';
 import Donation from './pages/Donation';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -56,6 +57,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }
