@@ -35,6 +35,7 @@ const MyPledges = () => {
         console.warn('Pledge deleted by user!');
       }
     },
+    refetchQueries: [{ query: QUERY_ME }],
   });
 
   const handleCompletedPledge = async (pledgeId) => {
@@ -72,7 +73,7 @@ const MyPledges = () => {
       </h2>
 
       {myPledges.map((pledge) => (
-        <div key={pledge.action}>
+        <div key={pledge._id}>
           <span onClick={() => handleDeletePledge(pledge._id)}>
             {' '}
             <Icon

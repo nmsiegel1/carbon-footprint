@@ -57,7 +57,7 @@ const Pledges = () => {
       </p>
       <div className="pledge-data">
         {pledges.map((pledge) => (
-          <div className="pledge" key={pledge.action}>
+          <div className="pledge" key={pledge._id}>
             <h3 className="pledge-title">
               <Icon icon={pledge.icon} color="#243B4A" width="25" height="25" />
               {'  '}
