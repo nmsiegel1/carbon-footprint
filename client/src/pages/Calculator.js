@@ -241,23 +241,7 @@ const Calculator = () => {
       oilDays
     );
 
-    // calculateHome(
-    //   showerNumber,
-    //   minutes,
-    //   laundry,
-    //   flushes,
-    //   bottles,
-    //   fridge,
-    //   TV,
-    //   laptop,
-    //   desktop,
-    //   monitor,
-    //   size,
-    //   climate,
-    //   acDays,
-    //   gasDays,
-    //   oilDays
-    // );
+
   }
 
   return (

@@ -1,16 +1,26 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
-export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+export function Graph(graphData) {
+
+  let electricityEmissions = graphData.graphData.homeData[0].electricityEmissions;
+  let vehicleEmissions = graphData.graphData.travelData[0].vehicleEmissions;
+  let planeEmissions = graphData.graphData.travelData[0].planeEmissions;
+  let waterEmissions = graphData.graphData.homeData[0].waterEmissions;
+  let heatEmissions = graphData.graphData.homeData[0].heatEmissions;
+  let publicTransitEmissions = graphData.graphData.travelData[0].publicTransitEmissions;
+
+
+  const data = {
+    labels: ['Electricity Emissions', 'Vehicle Emissions', 'Plane Emissions', 'Water Emissions', 'Heat Emissions', 'Public Transit Emissions'],
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [electricityEmissions, vehicleEmissions, planeEmissions, waterEmissions, heatEmissions, publicTransitEmissions],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -30,18 +40,17 @@ export const data = {
       borderWidth: 1,
     },
   ],
-};
+  }
 
-export function Graph() {
   return (
     <div>
-        <Pie 
+        <Doughnut 
             data={data}
             height={'400px'}
             width={'400px'}
             options={{ maintainAspectRatio: false }}
         >
-        </Pie>
+        </Doughnut>
     </div>
   );
 }

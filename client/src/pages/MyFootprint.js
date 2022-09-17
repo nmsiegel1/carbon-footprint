@@ -15,6 +15,8 @@ const MyFootprint = () => {
   console.log(homeData);
   console.log(travelData);
 
+
+
   if (loading) {
     return <h2>LOADING...</h2>;
   }
@@ -59,7 +61,7 @@ const MyFootprint = () => {
           )}
         </div>
         <div className="graph">
-          <Graph />
+          <Graph graphData={{homeData, travelData}}/>
         </div>
       </section>
       <section>
