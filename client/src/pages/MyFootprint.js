@@ -8,12 +8,8 @@ import { Graph } from '../components/Graph';
 
 const MyFootprint = () => {
   const { data, loading } = useQuery(QUERY_ME);
-  console.log('data', data);
-  const { username, homeData, travelData } = data?.me || [];
 
-  console.log(username);
-  console.log(homeData);
-  console.log(travelData);
+  const { username, homeData, travelData } = data?.me || [];
 
 
 
