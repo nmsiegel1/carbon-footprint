@@ -14,9 +14,9 @@ const Calculator = () => {
   // set state of user form
   const [formState, setFormState] = useState({
     carType: 'SUV',
-    carMiles: 12000,
-    busMiles: 12000,
-    trainMiles: 6000,
+    carMiles: 1000,
+    busMiles: 1000,
+    trainMiles: 500,
     planeMiles: 0,
     showerNumber: 8,
     minutes: 10,
