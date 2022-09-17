@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useQuery, useMutation } from '@apollo/client';
 
 import { QUERY_PLEDGES, QUERY_ME } from '../../utils/queries';
 import { ADD_PLEDGE } from '../../utils/mutations';
+import { savePledgeIds, getSavedPledgeIds } from '../../utils/localStorage';
 
 const Pledges = () => {
   const { data } = useQuery(QUERY_PLEDGES);
   const pledges = data?.pledges || [];
 
-  const { pledgeData } = useQuery(QUERY_ME);
-  console.log('pledgeData', pledgeData);
+  const [savedPledgeIds, setSavedPledgeIds] = useState(getSavedPledgeIds());
+  const [buttonText, setButtonText] = useState('Pledge Saved!');
+
+  useEffect(() => {
+    return () => savePledgeIds(savedPledgeIds);
+  });
 
   const [addPledge] = useMutation(ADD_PLEDGE, {
     update(cache) {
@@ -26,15 +31,22 @@ const Pledges = () => {
     },
   });
 
+  const button = () => {
+    setButtonText('Make This Pledge');
+  };
+
   // create function to handle saving a pledge to our database
   const handleSavedPledge = async (pledgeId) => {
-    // get access to user
-
+    // find pledge in the in state by matching id
+    // const pledgeToSave = pledges.find((pledge) => pledge._id === pledgeId);
     try {
       await addPledge({
         variables: { pledgeData: pledgeId },
       });
-      console.log('pledgeId', pledgeId);
+      // if (pledgeId === pledge._id) {
+      button();
+      // }
+      // setSavedPledgeIds([...savedPledgeIds, pledgeToSave.pledgeId]);
     } catch (err) {
       console.error(err);
     }
@@ -54,12 +66,12 @@ const Pledges = () => {
             Learn more about this action
           </a>
           <button onClick={() => handleSavedPledge(pledge._id)}>
+            {buttonText}
             {/* {savedPledgeIds?.some(
-                        (savedPledgeId) => savedPledgeId === pledge._id
-                      )
-                        ? "Pledge saved!"
-                        : "Make This Pledge"} */}
-            Make This Pledge
+              (savedPledgeId) => savedPledgeId === pledge._id
+            )
+              ? 'Pledge saved!'
+              : 'Make This Pledge'} */}
           </button>
         </div>
       ))}
