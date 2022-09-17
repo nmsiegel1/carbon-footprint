@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useQuery, useMutation } from '@apollo/client';
 
-import { QUERY_PLEDGES, QUERY_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 import { REMOVE_PLEDGE } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { removePledgeId } from '../utils/localStorage';
 
 const MyPledges = () => {
   const { data, loading } = useQuery(QUERY_ME);
-  console.log('data', data);
   const myPledges = data?.me.pledgeData || [];
-  console.log('my pledges', myPledges);
 
   const [removePledge] = useMutation(REMOVE_PLEDGE, {
     update(cache) {
@@ -29,16 +27,12 @@ const MyPledges = () => {
 
   // create function that accepts the pledges's mongo _id value as param and deletes the pledge from the database
   const handleDeletePledge = async (pledgeId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
     try {
       await removePledge({
         variables: { pledgeData: pledgeId },
       });
+      // upon success remove pledgeId from localStorage
+      removePledgeId(pledgeId);
     } catch (err) {
       console.error(err);
     }
