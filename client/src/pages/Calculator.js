@@ -240,29 +240,12 @@ const Calculator = () => {
       gasDays,
       oilDays
     );
-
-    // calculateHome(
-    //   showerNumber,
-    //   minutes,
-    //   laundry,
-    //   flushes,
-    //   bottles,
-    //   fridge,
-    //   TV,
-    //   laptop,
-    //   desktop,
-    //   monitor,
-    //   size,
-    //   climate,
-    //   acDays,
-    //   gasDays,
-    //   oilDays
-    // );
   }
 
   return (
     <main className="calculator-main">
       <h2>My Carbon Footprint</h2>
+      <h3>Click each dropdown and slider and then then the button below to calculate your carbon footprint. The numbers you see are the average American's data. You can use those numbers to help you figure out your own usage!</h3>
       <section className="slider-sections">
         <h3>My Travel</h3>
         <form onSubmit={handleSubmit}>
@@ -442,17 +425,17 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Bottles of Water Per Year</label>
+                <label>Bottles of Water From the Sink Per Day</label>
                 <Slider
                   aria-label="Bottles of Water"
                   defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="bottles"
-                  step={500}
+                  step={1}
                   marks
                   min={0}
-                  max={3000}
+                  max={10}
                 ></Slider>
               </Box>
 
