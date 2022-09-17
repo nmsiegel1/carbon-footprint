@@ -13,26 +13,26 @@ import { Box } from '@mui/system';
 const Calculator = () => {
   // set state of user form
   const [formState, setFormState] = useState({
-    carType: 'Small',
-    carMiles: 0,
-    busMiles: 0,
-    trainMiles: 0,
+    carType: 'SUV',
+    carMiles: 12000,
+    busMiles: 12000,
+    trainMiles: 6000,
     planeMiles: 0,
-    showerNumber: 0,
-    minutes: 0,
-    laundry: 0,
-    flushes: 0,
-    bottles: 0,
+    showerNumber: 365,
+    minutes: 10,
+    laundry: 100,
+    flushes: 1800,
+    bottles: 2,
     fridge: 'Yes',
-    TV: 0,
-    laptop: 0,
-    desktop: 0,
-    monitor: 0,
-    climate: 'Cold',
-    size: 0,
-    acDays: 0,
-    gasDays: 0,
-    oilDays: 0,
+    TV: 1400,
+    laptop: 800,
+    desktop: 3000,
+    monitor: 2000,
+    climate: 'Warm',
+    size: 2000,
+    acDays: 243,
+    gasDays: 180,
+    oilDays: 180,
   });
   let {
     carType,
@@ -245,7 +245,7 @@ const Calculator = () => {
   return (
     <main className="calculator-main">
       <h2>My Carbon Footprint</h2>
-      <h3>Click each dropdown and slider and then then the button below to calculate your carbon footprint. The numbers you see are the average American's data. You can use those numbers to help you figure out your own usage!</h3>
+      <h3>Click each dropdown and slider and then the button below to calculate your carbon footprint. The numbers you see are the average American's data. You can use those numbers to help you figure out your own usage! Disclaimer: Plane miles are set to 0 to reflect the decrease in air travel due to COVID.</h3>
       <section className="slider-sections">
         <h3>My Travel</h3>
         <form onSubmit={handleSubmit}>
@@ -271,14 +271,14 @@ const Calculator = () => {
               <label>Car Miles Per Year</label>
               <Slider
                 aria-label="Car Miles"
-                defaultValue={0}
+                defaultValue={12000}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="carMiles"
-                step={10000}
+                step={6000}
                 marks
                 min={0}
-                max={40000}
+                max={36000}
               ></Slider>
             </Box>
 
@@ -286,14 +286,14 @@ const Calculator = () => {
               <label>Bus Miles Per Year</label>
               <Slider
                 aria-label="Bus Miles"
-                defaultValue={0}
+                defaultValue={12000}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="busMiles"
-                step={10000}
+                step={6000}
                 marks
                 min={0}
-                max={40000}
+                max={36000}
               ></Slider>
             </Box>
 
@@ -301,14 +301,14 @@ const Calculator = () => {
               <label>Train Miles Per Year</label>
               <Slider
                 aria-label="Bus Miles"
-                defaultValue={0}
+                defaultValue={6000}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="trainMiles"
-                step={10000}
+                step={500}
                 marks
                 min={0}
-                max={40000}
+                max={6000}
               ></Slider>
             </Box>
 
@@ -320,10 +320,10 @@ const Calculator = () => {
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="planeMiles"
-                step={2000}
+                step={1000}
                 marks
                 min={0}
-                max={10000}
+                max={40000}
               ></Slider>
             </Box>
           </div>
@@ -368,14 +368,14 @@ const Calculator = () => {
                 <label>Number of Showers Per Year</label>
                 <Slider
                   aria-label="Number of Showers"
-                  defaultValue={0}
+                  defaultValue={364}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="showerNumber"
-                  step={400}
+                  step={182}
                   marks
                   min={0}
-                  max={2000}
+                  max={1092}
                 ></Slider>
               </Box>
 
@@ -383,7 +383,7 @@ const Calculator = () => {
                 <label>Time spent in the Shower (Minutes)</label>
                 <Slider
                   aria-label="Time spent in Shower"
-                  defaultValue={0}
+                  defaultValue={10}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="minutes"
@@ -398,7 +398,7 @@ const Calculator = () => {
                 <label>Loads of Laundry Per Year</label>
                 <Slider
                   aria-label="Loads of Laundry"
-                  defaultValue={0}
+                  defaultValue={100}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="laundry"
@@ -413,14 +413,14 @@ const Calculator = () => {
                 <label>Number of Flushes Per Year</label>
                 <Slider
                   aria-label="Flushes"
-                  defaultValue={0}
+                  defaultValue={1800}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="flushes"
                   step={500}
                   marks
                   min={0}
-                  max={5000}
+                  max={3000}
                 ></Slider>
               </Box>
 
@@ -428,7 +428,7 @@ const Calculator = () => {
                 <label>Bottles of Water From the Sink Per Day</label>
                 <Slider
                   aria-label="Bottles of Water"
-                  defaultValue={0}
+                  defaultValue={2}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="bottles"
@@ -443,14 +443,14 @@ const Calculator = () => {
                 <label>Hours of TV Per Year</label>
                 <Slider
                   aria-label="Hours of TV Watched Per Year"
-                  defaultValue={0}
+                  defaultValue={1400}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="TV"
                   step={100}
                   marks
                   min={0}
-                  max={5000}
+                  max={4000}
                 ></Slider>
               </Box>
 
@@ -458,14 +458,14 @@ const Calculator = () => {
                 <label>Hours of Laptop Use (Plugged In) Per Year</label>
                 <Slider
                   aria-label="Hours of Laptop"
-                  defaultValue={0}
+                  defaultValue={800}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="laptop"
                   step={100}
                   marks
                   min={0}
-                  max={5000}
+                  max={3000}
                 ></Slider>
               </Box>
 
@@ -473,7 +473,7 @@ const Calculator = () => {
                 <label>Hours of Desktop Use Per Year</label>
                 <Slider
                   aria-label="Hours of Desktop"
-                  defaultValue={0}
+                  defaultValue={3000}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="desktop"
@@ -488,14 +488,14 @@ const Calculator = () => {
                 <label>Hours of Monitor Use Per Year</label>
                 <Slider
                   aria-label="Hours of Monitor"
-                  defaultValue={0}
+                  defaultValue={2000}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="monitor"
                   step={100}
                   marks
                   min={0}
-                  max={5000}
+                  max={3000}
                 ></Slider>
               </Box>
 
@@ -503,7 +503,7 @@ const Calculator = () => {
                 <label>Square Feet of Your Residence</label>
                 <Slider
                   aria-label="Square Feet"
-                  defaultValue={0}
+                  defaultValue={2000}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="size"
@@ -518,7 +518,7 @@ const Calculator = () => {
                 <label>Days You Run Your A/C</label>
                 <Slider
                   aria-label="AC Days"
-                  defaultValue={0}
+                  defaultValue={243}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="acDays"
@@ -533,7 +533,7 @@ const Calculator = () => {
                 <label>Days You Run Your Heat (Natural Gas)</label>
                 <Slider
                   aria-label="Gas Days"
-                  defaultValue={0}
+                  defaultValue={180}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="gasDays"
@@ -548,7 +548,7 @@ const Calculator = () => {
                 <label>Days You Run Your Heat (Oil)</label>
                 <Slider
                   aria-label="Oil Days"
-                  defaultValue={0}
+                  defaultValue={180}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="oilDays"
