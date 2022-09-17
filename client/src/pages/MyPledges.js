@@ -51,6 +51,15 @@ const MyPledges = () => {
 
       {myPledges.map((pledge) => (
         <div key={pledge.action}>
+          <span onClick={() => handleDeletePledge(pledge._id)}>
+            {' '}
+            <Icon
+              icon="akar-icons:circle-x-fill"
+              color="#243B4A"
+              width="20"
+              height="20"
+            />
+          </span>
           <h3>
             <Icon icon={pledge.icon} color="#243B4A" width="20" height="20" />
             {pledge.action}
@@ -59,9 +68,6 @@ const MyPledges = () => {
           <a href={pledge.link} target="_blank" rel="noopener noreferrer">
             Learn more about this action
           </a>
-          <button onClick={() => handleDeletePledge(pledge._id)}>
-            Remove Pledge
-          </button>
         </div>
       ))}
     </div>
