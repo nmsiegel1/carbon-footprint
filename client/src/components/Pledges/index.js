@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useQuery, useMutation } from '@apollo/client';
 import './pledges.css';
 
 import { QUERY_PLEDGES, QUERY_ME } from '../../utils/queries';
 import { ADD_PLEDGE } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import { savePledgeIds, getSavedPledgeIds } from '../../utils/localStorage';
 
 const Pledges = () => {
-  const data = useQuery(QUERY_PLEDGES);
-  const pledges = data.data?.pledges || [];
+  const { data } = useQuery(QUERY_PLEDGES);
+  const pledges = data?.pledges || [];
+
+  const [savedPledgeIds, setSavedPledgeIds] = useState(getSavedPledgeIds());
+
+  useEffect(() => {
+    return () => savePledgeIds(savedPledgeIds);
+  });
 
   const [addPledge] = useMutation(ADD_PLEDGE, {
     update(cache) {
@@ -27,22 +33,18 @@ const Pledges = () => {
 
   // create function to handle saving a pledge to our database
   const handleSavedPledge = async (pledgeId) => {
-    // find the pledge in `searchedBooks` state by the matching id
-    // const pledgeToSave = pledges.find((pledge) => pledge.pledgeId === pledgeId);
-    // // get token
-    // const token = Auth.loggedIn() ? Auth.getToken() : null;
-    // if (!token) {
-    //   return false;
-    // }
-    // try {
-    //   await addPledge({
-    //     variables: { input: bookToSave },
-    //   });
-    //   // if book successfully saves to user's account, save book id to state
-    //   setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-    // } catch (err) {
-    //   console.error(err);
-    // }
+    // find pledge in the in state by matching id
+    const pledgeToSave = pledges.find((pledge) => pledge._id === pledgeId);
+
+    try {
+      await addPledge({
+        variables: { pledgeData: pledgeId },
+      });
+
+      setSavedPledgeIds([...savedPledgeIds, pledgeToSave._id]);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -65,13 +67,16 @@ const Pledges = () => {
             <a href={pledge.link} target="_blank" rel="noopener noreferrer">
               Learn more about this action
             </a>
-            <button className="pledge-btn" onClick={handleSavedPledge}>
-              {/* {savedPledgeIds?.some(
-                        (savedPledgeId) => savedPledgeId === pledge._id
-                      )
-                        ? "Pledge saved!"
-                        : "Make This Pledge"} */}
-              Make This Pledge
+            <button
+              id={pledge._id}
+              className="pledge-btn"
+              onClick={() => handleSavedPledge(pledge._id)}
+            >
+              {savedPledgeIds?.some(
+                (savedPledgeId) => savedPledgeId === pledge._id
+              )
+                ? 'Pledge saved!'
+                : 'Make This Pledge'}
             </button>
           </div>
         ))}
