@@ -23,13 +23,6 @@ const typeDefs = gql`
     link: String
   }
 
-  input savedPledgeInput {
-    action: String
-    description: String
-    icon: String
-    link: String
-  }
-
   type User {
     _id: ID
     username: String
@@ -52,8 +45,16 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addTravel(vehicleEmissions: Int!, publicTransitEmissions: Int!, planeEmissions: Int!): User
-    addHome(waterEmissions: Int!, electricityEmissions: Int!, heatEmissions: Int!): User
+    addTravel(
+      vehicleEmissions: Int!
+      publicTransitEmissions: Int!
+      planeEmissions: Int!
+    ): User
+    addHome(
+      waterEmissions: Int!
+      electricityEmissions: Int!
+      heatEmissions: Int!
+    ): User
     addPledge(pledgeData: [ID]): User
     removePledge(pledgeData: ID): User
   }
