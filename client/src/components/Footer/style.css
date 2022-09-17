@@ -1,0 +1,28 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+
+.footer a {
+  margin: 0 0.05rem;
+}
+
+.fa {
+  color: #243b4a;
+}
+
+.fa:hover {
+  color: #566e3d;
+  text-shadow: 0.1rem 0.1rem 1rem #f7f7ff;
+}
+
+.copyright p {
+  letter-spacing: normal;
+  font-size: xx-small !important;
+  color: #243b4a;
+}
