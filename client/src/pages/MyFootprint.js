@@ -4,6 +4,8 @@ import './assets/css/footprint.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
+import { Graph } from '../components/Graph';
+
 const MyFootprint = () => {
   const { data } = useQuery(QUERY_ME);
   console.log('data', data);
@@ -46,7 +48,9 @@ const MyFootprint = () => {
           ))} */}
           <h3 className="total">Your total Carbon Footprint: </h3>
         </div>
-        <div className="graph">{/* GRAPH GOES HERE */}</div>
+        <div className="graph">
+          <Graph />
+        </div>
       </section>
       <section>
         <Pledges />
