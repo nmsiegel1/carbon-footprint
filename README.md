@@ -23,6 +23,7 @@ This application is for an enviromentally-conscious user who wants to calculate 
 - [Installation](#installation)
 - [Links](#links)
 - [Usage](#usage)
+- [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Questions](#questions)
@@ -36,7 +37,7 @@ in the root of the application to install the dependencies locally.
 
 ## Links
 - [GitHub Repo](https://github.com/nmsiegel1/carbon-footprint)
-- [Deployed Application]()
+- [Deployed Application](https://carbon-footsteps.herokuapp.com/)
 
 ## Usage
 The following are screenshots of the deployed site:
@@ -75,6 +76,11 @@ into the terminal. To just run Apollo Studio, cd into the server directory and t
 npm run watch
 ``````````````
 into the terminal.
+
+## Credits
+The following links were used for inspiration and calculation:
+
+
 
 ## License
 The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.
