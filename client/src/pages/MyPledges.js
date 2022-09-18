@@ -14,15 +14,19 @@ import {
 } from '../utils/localStorage';
 
 const MyPledges = () => {
+  // get data from Me query
   const { data, loading } = useQuery(QUERY_ME);
   const myPledges = data?.me.pledgeData || [];
 
+  // state for recording completed pledge ids
   const [completedPledgeIds, setCompletedPledgeIds] = useState(
     getCompletedPledgeIds()
   );
 
+  // state for confetti firework upon complete
   const [active, setActive] = useState(false);
 
+  // confetti configuration
   const config = {
     angle: 180,
     spread: 360,
@@ -41,18 +45,22 @@ const MyPledges = () => {
     return () => completePledgeIds(completedPledgeIds);
   });
 
+  // function that marks pledge as complete and triggers state change to activate firework
   const handleCompletedPledge = async (pledgeId) => {
     const markComplete = myPledges.find((pledge) => pledge._id === pledgeId);
 
     try {
       setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
+      // change state to activate confetti
       setActive(true);
+      // revert state of confetti
       setTimeout(() => setActive(false), 1000);
     } catch (err) {
       console.error(err);
     }
   };
 
+  // remove pledge mutation
   const [removePledge] = useMutation(REMOVE_PLEDGE, {
     update(cache) {
       try {
@@ -69,7 +77,7 @@ const MyPledges = () => {
     refetchQueries: [{ query: QUERY_ME }],
   });
 
-  // create function that accepts the pledges's mongo _id value as param and deletes the pledge from the database
+  // function that accepts the pledges's mongo _id value as param and deletes the pledge from the database
   const handleDeletePledge = async (pledgeId) => {
     try {
       await removePledge({
@@ -82,7 +90,7 @@ const MyPledges = () => {
     }
   };
 
-  // if data isn't here yet, say so
+  // loading message if waiting on data
   if (loading) {
     return <h2>LOADING...</h2>;
   }
