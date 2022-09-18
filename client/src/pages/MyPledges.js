@@ -47,7 +47,7 @@ const MyPledges = () => {
     try {
       setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
       setActive(true);
-      setTimeout(() => setActive(false), 3000);
+      setTimeout(() => setActive(false), 1000);
     } catch (err) {
       console.error(err);
     }
