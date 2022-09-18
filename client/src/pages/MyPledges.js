@@ -19,10 +19,6 @@ const MyPledges = () => {
     getCompletedPledgeIds()
   );
 
-  useEffect(() => {
-    return () => completePledgeIds(completedPledgeIds);
-  });
-
   const [active, setActive] = useState(false);
 
   const config = {
@@ -37,6 +33,22 @@ const MyPledges = () => {
     height: '10px',
     perspective: '500px',
     colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+  };
+
+  useEffect(() => {
+    return () => completePledgeIds(completedPledgeIds);
+  });
+
+  const handleCompletedPledge = async (pledgeId) => {
+    const markComplete = myPledges.find((pledge) => pledge._id === pledgeId);
+
+    try {
+      setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
+      setActive(true);
+      setTimeout(() => setActive(false), 5000);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const [removePledge] = useMutation(REMOVE_PLEDGE, {
@@ -54,17 +66,6 @@ const MyPledges = () => {
     },
     refetchQueries: [{ query: QUERY_ME }],
   });
-
-  const handleCompletedPledge = async (pledgeId) => {
-    const markComplete = myPledges.find((pledge) => pledge._id === pledgeId);
-
-    try {
-      setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
-      setActive(true);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   // create function that accepts the pledges's mongo _id value as param and deletes the pledge from the database
   const handleDeletePledge = async (pledgeId) => {
@@ -88,8 +89,8 @@ const MyPledges = () => {
     <div>
       <h2>
         {myPledges.length ? 'My Pledges' : "You haven't saved any pledges yet!"}
+        <Confetti active={active} config={config} />
       </h2>
-
       {myPledges.map((pledge) => (
         <div key={pledge._id}>
           <span onClick={() => handleDeletePledge(pledge._id)}>
@@ -116,7 +117,6 @@ const MyPledges = () => {
               ? 'Complete!'
               : 'Mark as Complete'}
           </button>
-          <Confetti active={active} config={config} />
         </div>
       ))}
     </div>
