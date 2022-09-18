@@ -1,5 +1,6 @@
 .calculator-main {
   background-image: url(../images/right-blue-blue.png);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100%;
