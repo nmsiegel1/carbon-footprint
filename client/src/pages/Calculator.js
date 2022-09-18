@@ -240,11 +240,6 @@ const Calculator = () => {
       gasDays,
       oilDays
     );
-<<<<<<< HEAD
-=======
-
-
->>>>>>> develop
   }
 
   return (
