@@ -75,7 +75,7 @@ const Calculator = () => {
       }
     },
   });
-  const [addHome, { error }] = useMutation(ADD_HOME, {
+  const [addHome] = useMutation(ADD_HOME, {
     update(cache) {
       try {
         // update me array's cache
@@ -84,8 +84,8 @@ const Calculator = () => {
           query: QUERY_ME,
           data: { me: { ...me, homeData: [...me.homeData] } },
         });
-      } catch (e) {
-        console.log(error);
+      }
+      catch (e) {
         console.warn(e);
       }
     },
@@ -240,6 +240,11 @@ const Calculator = () => {
       gasDays,
       oilDays
     );
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> develop
   }
 
   return (
