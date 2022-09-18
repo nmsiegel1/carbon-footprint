@@ -36,4 +36,21 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 30px 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* @media screen and (max-width: 990px) {
+  .calculator {
+    justify-content: flex-end;
+  }
+} */
+
+@media screen and (max-width: 660px) {
+  .calculator {
+    text-align: center;
+  }
 }

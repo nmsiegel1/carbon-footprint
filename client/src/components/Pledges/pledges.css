@@ -4,6 +4,7 @@
   background-position: center;
   height: 100%;
   background-repeat: no-repeat;
+  padding: 20px;
 }
 
 .pledge-main h2 {
@@ -51,9 +52,3 @@
   background-color: var(--light-blue);
   color: var(--dark-blue);
 }
-
-/* @media screen and (min-width: 900px) {
-  .pledge-main {
-    height: 110vh;
-  }
-} */
