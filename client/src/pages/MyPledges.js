@@ -22,16 +22,16 @@ const MyPledges = () => {
   const [active, setActive] = useState(false);
 
   const config = {
-    angle: 90,
+    angle: 180,
     spread: 360,
     startVelocity: 40,
-    elementCount: 70,
+    elementCount: 100,
     dragFriction: 0.12,
     duration: 3000,
     stagger: 3,
     width: '10px',
     height: '10px',
-    perspective: '500px',
+    perspective: '1000px',
     colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
 
@@ -45,7 +45,7 @@ const MyPledges = () => {
     try {
       setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
       setActive(true);
-      setTimeout(() => setActive(false), 5000);
+      setTimeout(() => setActive(false), 3000);
     } catch (err) {
       console.error(err);
     }
@@ -89,8 +89,10 @@ const MyPledges = () => {
     <div>
       <h2>
         {myPledges.length ? 'My Pledges' : "You haven't saved any pledges yet!"}
-        <Confetti active={active} config={config} />
       </h2>
+      <div style={{ 'margin-left': '500px' }}>
+        <Confetti active={active} config={config} />
+      </div>
       {myPledges.map((pledge) => (
         <div key={pledge._id}>
           <span onClick={() => handleDeletePledge(pledge._id)}>
