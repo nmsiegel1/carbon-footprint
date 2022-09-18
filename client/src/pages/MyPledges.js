@@ -92,7 +92,7 @@ const MyPledges = () => {
       <h2>
         {myPledges.length ? 'My Pledges' : "You haven't saved any pledges yet!"}
       </h2>
-      <div style={{ 'margin-left': '500px' }}>
+      <div className="confetti-div">
         <Confetti active={active} config={config} />
       </div>
       <div className="my-pledges">
