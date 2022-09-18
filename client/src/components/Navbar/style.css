@@ -15,12 +15,6 @@
 .navLogo {
   height: 40px;
 }
-/* .brand-name {
-  text-decoration: none;
-  color: #243b4a;
-  font-size: 1.3rem;
-  margin-left: 1rem;
-} */
 
 .menuNav {
   margin-left: auto;
@@ -30,27 +24,34 @@
 .menuNav ul {
   position: absolute;
   top: 60px;
-  left: 0;
+  right: 0;
   flex-direction: column;
   width: 100%;
   height: calc(100vh - 77px);
   display: none;
+  list-style: none;
 }
 
 .menuNav.expanded ul {
   display: block;
+  background-image: url(../../pages/assets/images/bottom-wave-blue.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200vh;
+  background-color: white;
 }
 
 .menuNav li {
   text-align: center;
   margin: 0;
-  padding: 2rem;
+  padding: 0.4rem;
   font-size: larger;
 }
 
-.menuNav li a {
+.menuNav a {
   color: black;
-  width: 100%;
   text-decoration: none;
 }
 
@@ -58,20 +59,21 @@
   background-color: #bdd5ea;
 }
 
-.menuNav a:hover {
+/* .menuNav a:hover {
   background-color: #bdd5ea;
-}
+} */
 
 .hamburger {
   border: 0;
-  height: 40px;
+  height: 10px;
   width: 40px;
   padding: 1rem;
   cursor: pointer;
   position: absolute;
   top: 0%;
   right: 25px;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
+  background-color: white;
 }
 
 @media screen and (max-width: 768px) {

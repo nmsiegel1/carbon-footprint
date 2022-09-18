@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import menu_icon from './images/menu.png';
+// import menu_icon from './images/menu.png';
 import logo from './images/logo.png';
 
 const Navbar = () => {
@@ -21,22 +21,32 @@ const Navbar = () => {
           setIsNavExpanded(!isNavExpanded);
         }}
       >
-        <img src={menu_icon} alt="3 lines to representing the menu" />
+        {/* <img src={menu_icon} alt="3 lines to representing the menu" /> */}
+        <i className="fa fa-bars fa-lg" aria-hidden="true"></i>
       </button>
       <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
         <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/mypledges">Pledges</a>
-          </li>
-          <li>
-            <a href="/calculator">Calculator</a>
-          </li>
-          <li>
-            <a href="/login">Log in</a>
-          </li>
+          <a href="/">
+            <li>Home</li>
+          </a>
+          <a href="/mypledges">
+            <li>Pledges</li>
+          </a>
+          <a href="/calculator">
+            <li>Calculator</li>
+          </a>
+          <a href="/myfootprint">
+            <li>My Footprint</li>
+          </a>
+          <a href="/donation">
+            <li>Donate</li>
+          </a>
+          <a href="/login">
+            <li>Log in</li>
+          </a>
+          {/* <a href="/logout">
+            <li>Log out</li>
+          </a> */}
         </ul>
       </div>
     </nav>
