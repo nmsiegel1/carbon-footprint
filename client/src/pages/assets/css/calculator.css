@@ -39,6 +39,15 @@
   padding: 30px 0;
 }
 
+.calculator-btn button {
+  border: var(--dark-blue) solid 2px;
+}
+
+.calculator-btn button:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
 label {
   font-weight: bold;
 }

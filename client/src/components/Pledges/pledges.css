@@ -41,6 +41,11 @@
   margin-bottom: 10px;
 }
 
+.pledge a {
+  /* text-decoration: none; */
+  color: var(--dark-blue);
+}
+
 .pledge-btn {
   background-color: var(--dark-blue);
   border: none;
