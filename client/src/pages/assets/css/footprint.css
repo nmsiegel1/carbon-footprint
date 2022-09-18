@@ -1,13 +1,39 @@
+.my-footprint {
+  margin-bottom: 50px;
+}
+
+.footprint-data {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.calculations {
+  margin: 20px;
+  flex: 40%;
+  border: solid var(--dark-blue) 2px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .footprint-title {
   font-size: 35px;
-  margin: 20px;
+  padding-bottom: 20px;
 }
 
 .total {
   font-size: 20px;
-  margin: 20px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
-.footprint-data div {
+.graph {
+  flex: 40%;
+  border: solid var(--dark-blue) 2px;
+  border-radius: 10px;
   margin: 20px;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

@@ -51,3 +51,9 @@
   background-color: var(--light-blue);
   color: var(--dark-blue);
 }
+
+/* @media screen and (min-width: 900px) {
+  .pledge-main {
+    height: 110vh;
+  }
+} */
