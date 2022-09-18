@@ -23,6 +23,7 @@ This application is for an enviromentally-conscious user who wants to calculate 
 - [Installation](#installation)
 - [Links](#links)
 - [Usage](#usage)
+- [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Questions](#questions)
@@ -36,7 +37,7 @@ in the root of the application to install the dependencies locally.
 
 ## Links
 - [GitHub Repo](https://github.com/nmsiegel1/carbon-footprint)
-- [Deployed Application]()
+- [Deployed Application](https://carbon-footsteps.herokuapp.com/)
 
 ## Usage
 The following are screenshots of the deployed site:
@@ -75,6 +76,28 @@ into the terminal. To just run Apollo Studio, cd into the server directory and t
 npm run watch
 ``````````````
 into the terminal.
+
+## Credits
+The following links were used for
+Site Inspiration:
+* [Berkeley's CoolClimate Calculator](https://coolclimate.berkeley.edu/calculator)
+* [65 Creative Green Company Names](https://thebrandboy.com/65-creative-green-company-names/)
+* [Green Company Names](https://namesbee.com/green-company-names/)
+* [Sustainable Web Design](https://sustainablewebdesign.org/category/design/)
+* [UsTwo](https://www.ustwo.com/)
+
+Calculations:
+* [Functions for SCU's Climate Calculator](https://www.scu.edu/media/ethics-center/environmental-ethics/carbon-footprint/Math_and_Methodologies_Behind_This_Calculator.pdf)
+* [The Facts on Heating Oil](https://fueloilnews.com/2008/05/01/the-facts-on-heating-oil-part-two/#:~:text=Heating%20oil%20used%20in%20homes,oil%2C%20coal%20and%20wood%20stoves.)
+* [Heating and Cooling Climate Zones](https://inspectapedia.com/heat/Heating-Cooling-Climate-Zone-BTU-Requirements.php)
+* [US Dept of Transportation Passenger Mile Data](https://www.bts.gov/content/us-passenger-miles)
+* [US Census Growth of US by Region](https://www.census.gov/popclock/data_tables.php?component=growth)
+
+Donations:
+* [Best Charities for Climate Change](https://impactful.ninja/best-charities-for-climate-change/)
+* [Clean Air Task Force](https://www.catf.us/)
+* [Cool Air](https://www.coolearth.org/)
+* [Carbon180](https://carbon180.org/)
 
 ## License
 The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.

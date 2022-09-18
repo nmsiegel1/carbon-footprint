@@ -13,26 +13,26 @@ import { Box } from '@mui/system';
 const Calculator = () => {
   // set state of user form
   const [formState, setFormState] = useState({
-    carType: 'Small',
-    carMiles: 0,
-    busMiles: 0,
-    trainMiles: 0,
+    carType: 'SUV',
+    carMiles: 1000,
+    busMiles: 1000,
+    trainMiles: 500,
     planeMiles: 0,
-    showerNumber: 0,
-    minutes: 0,
-    laundry: 0,
-    flushes: 0,
-    bottles: 0,
+    showerNumber: 8,
+    minutes: 10,
+    laundry: 10,
+    flushes: 5,
+    bottles: 14,
     fridge: 'Yes',
-    TV: 0,
-    laptop: 0,
-    desktop: 0,
-    monitor: 0,
-    climate: 'Cold',
-    size: 0,
-    acDays: 0,
-    gasDays: 0,
-    oilDays: 0,
+    TV: 4,
+    laptop: 2,
+    desktop: 8,
+    monitor: 6,
+    climate: 'Warm',
+    size: 2000,
+    acDays: 150,
+    gasDays: 150,
+    oilDays: 150,
   });
   let {
     carType,
@@ -160,27 +160,27 @@ const Calculator = () => {
     let ACEmissions, gasEmissions, oilEmissions;
     switch (climate) {
       case 'cold':
-        ACEmissions = 0.0126 * size * acDays;
+        ACEmissions = 0 * size * acDays;
         gasEmissions = ((0.07644 * size) / 365) * gasDays;
         oilEmissions = ((32.68055 * size) / 365) * oilDays;
         break;
       case 'cool':
-        ACEmissions = 0.0252 * size * acDays;
+        ACEmissions =  0.0125 * size * acDays;
         gasEmissions = ((0.0637 * size) / 365) * gasDays;
         oilEmissions = ((26.68412 * size) / 365) * oilDays;
         break;
       case 'moderate':
-        ACEmissions = 0.0504 * size * acDays;
+        ACEmissions =  0.0252 * size * acDays;
         gasEmissions = ((0.05733 * size) / 365) * gasDays;
         oilEmissions = ((20.68769 * size) / 365) * oilDays;
         break;
       case 'warm':
-        ACEmissions = 0.06301 * size * acDays;
+        ACEmissions =  0.0504 * size * acDays;
         gasEmissions = ((0.05096 * size) / 365) * gasDays;
         oilEmissions = ((13.9919 * size) / 365) * oilDays;
         break;
       default:
-        ACEmissions = 0.07561 * size * acDays;
+        ACEmissions = 0.06301 * size * acDays;
         gasEmissions = ((0.0446 * size) / 365) * gasDays;
         oilEmissions = ((8.09518 * size) / 365) * oilDays;
         break;
@@ -240,13 +240,12 @@ const Calculator = () => {
       gasDays,
       oilDays
     );
-
-
   }
 
   return (
     <main className="calculator-main">
       <h2>My Carbon Footprint</h2>
+      <h3>Click each dropdown and slider and then the button below to calculate your carbon footprint. The numbers you see are the average American's data. You can use those numbers to help you figure out your own usage! Disclaimer: Plane miles are set to 0 to reflect the decrease in air travel due to COVID.</h3>
       <section className="slider-sections">
         <h3>My Travel</h3>
         <form onSubmit={handleSubmit}>
@@ -269,62 +268,62 @@ const Calculator = () => {
             </FormControl>
 
             <Box sx={{ m: 1, width: 300 }}>
-              <label>Car Miles Per Year</label>
+              <label>Car Miles Per Month</label>
               <Slider
                 aria-label="Car Miles"
-                defaultValue={0}
+                defaultValue={1000}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="carMiles"
-                step={10000}
+                step={500}
                 marks
                 min={0}
-                max={40000}
+                max={3000}
               ></Slider>
             </Box>
 
             <Box sx={{ m: 1, width: 300 }}>
-              <label>Bus Miles Per Year</label>
+              <label>Bus Miles Per Month</label>
               <Slider
                 aria-label="Bus Miles"
-                defaultValue={0}
+                defaultValue={1000}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="busMiles"
-                step={10000}
+                step={500}
                 marks
                 min={0}
-                max={40000}
+                max={3000}
               ></Slider>
             </Box>
 
             <Box sx={{ m: 1, width: 300 }}>
-              <label>Train Miles Per Year</label>
+              <label>Train Miles Per Month</label>
               <Slider
-                aria-label="Bus Miles"
-                defaultValue={0}
+                aria-label="Train Miles"
+                defaultValue={500}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="trainMiles"
-                step={10000}
+                step={50}
                 marks
                 min={0}
-                max={40000}
+                max={1000}
               ></Slider>
             </Box>
 
             <Box sx={{ m: 1, width: 300 }}>
-              <label>Plane Miles</label>
+              <label>Plane Miles Per Month</label>
               <Slider
-                aria-label="Bus Miles"
+                aria-label="Plane Miles"
                 defaultValue={0}
                 onChange={handleChange}
                 valueLabelDisplay="on"
                 name="planeMiles"
-                step={2000}
+                step={100}
                 marks
                 min={0}
-                max={10000}
+                max={4000}
               ></Slider>
             </Box>
           </div>
@@ -366,17 +365,17 @@ const Calculator = () => {
               </FormControl>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Number of Showers Per Year</label>
+                <label>Number of Showers Per Week</label>
                 <Slider
                   aria-label="Number of Showers"
-                  defaultValue={0}
+                  defaultValue={8}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="showerNumber"
-                  step={400}
+                  step={4}
                   marks
                   min={0}
-                  max={2000}
+                  max={24}
                 ></Slider>
               </Box>
 
@@ -384,7 +383,7 @@ const Calculator = () => {
                 <label>Time spent in the Shower (Minutes)</label>
                 <Slider
                   aria-label="Time spent in Shower"
-                  defaultValue={0}
+                  defaultValue={10}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="minutes"
@@ -396,107 +395,107 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Loads of Laundry Per Year</label>
+                <label>Loads of Laundry Per Month</label>
                 <Slider
                   aria-label="Loads of Laundry"
-                  defaultValue={0}
+                  defaultValue={10}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="laundry"
-                  step={50}
+                  step={5}
                   marks
                   min={0}
-                  max={600}
+                  max={60}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Number of Flushes Per Year</label>
+                <label>Number of Flushes Per Day</label>
                 <Slider
                   aria-label="Flushes"
-                  defaultValue={0}
+                  defaultValue={5}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="flushes"
-                  step={500}
+                  step={1}
                   marks
                   min={0}
-                  max={5000}
+                  max={10}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Bottles of Water Per Year</label>
+                <label>Bottles of Water From the Sink Per Week</label>
                 <Slider
                   aria-label="Bottles of Water"
-                  defaultValue={0}
+                  defaultValue={14}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="bottles"
-                  step={500}
+                  step={1}
                   marks
                   min={0}
-                  max={3000}
+                  max={21}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of TV Per Year</label>
+                <label>Hours of TV Per Day</label>
                 <Slider
-                  aria-label="Hours of TV Watched Per Year"
-                  defaultValue={0}
+                  aria-label="Hours of TV"
+                  defaultValue={4}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="TV"
-                  step={100}
+                  step={2}
                   marks
                   min={0}
-                  max={5000}
+                  max={12}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of Laptop Use (Plugged In) Per Year</label>
+                <label>Hours of Laptop Use (Plugged In) Per Day</label>
                 <Slider
                   aria-label="Hours of Laptop"
-                  defaultValue={0}
+                  defaultValue={2}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="laptop"
-                  step={100}
+                  step={1}
                   marks
                   min={0}
-                  max={5000}
+                  max={24}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of Desktop Use Per Year</label>
+                <label>Hours of Desktop Use Per Day</label>
                 <Slider
                   aria-label="Hours of Desktop"
-                  defaultValue={0}
+                  defaultValue={8}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="desktop"
-                  step={100}
+                  step={4}
                   marks
                   min={0}
-                  max={5000}
+                  max={16}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of Monitor Use Per Year</label>
+                <label>Hours of Monitor Use Per Day</label>
                 <Slider
                   aria-label="Hours of Monitor"
-                  defaultValue={0}
+                  defaultValue={6}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="monitor"
-                  step={100}
+                  step={3}
                   marks
                   min={0}
-                  max={5000}
+                  max={12}
                 ></Slider>
               </Box>
 
@@ -504,7 +503,7 @@ const Calculator = () => {
                 <label>Square Feet of Your Residence</label>
                 <Slider
                   aria-label="Square Feet"
-                  defaultValue={0}
+                  defaultValue={2000}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="size"
@@ -516,10 +515,10 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your A/C</label>
+                <label>Days You Run Your A/C (at Full Blast)</label>
                 <Slider
                   aria-label="AC Days"
-                  defaultValue={0}
+                  defaultValue={150}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="acDays"
@@ -531,10 +530,10 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your Heat (Natural Gas)</label>
+                <label>Days You Run Your Heat (Natural Gas, at Full Blast)</label>
                 <Slider
                   aria-label="Gas Days"
-                  defaultValue={0}
+                  defaultValue={150}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="gasDays"
@@ -546,10 +545,10 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your Heat (Oil)</label>
+                <label>Days You Run Your Heat (Oil, at Full Blast)</label>
                 <Slider
                   aria-label="Oil Days"
-                  defaultValue={0}
+                  defaultValue={150}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="oilDays"
