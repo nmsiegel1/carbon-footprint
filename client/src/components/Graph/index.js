@@ -61,7 +61,7 @@ export function Graph(graphData) {
         data={data}
         height={'400px'}
         width={'400px'}
-        options={{ maintainAspectRatio: false }}
+        options={{ maintainAspectRatio: false, resizeDelay: 0 }}
       ></Doughnut>
     </div>
   );
