@@ -15,8 +15,8 @@ const Calculator = () => {
   const [formState, setFormState] = useState({
     carType: 'SUV',
     carMiles: 1000,
-    busMiles: 1000,
-    trainMiles: 500,
+    busMiles: 0,
+    trainMiles: 0,
     planeMiles: 0,
     showerNumber: 8,
     minutes: 10,
@@ -246,10 +246,9 @@ const Calculator = () => {
       <h2>Carbon Footprint Calculator</h2>
       <p className="description">
         Click each dropdown or slider and then the "Find My Footprint" button
-        below to calculate your carbon footprint. The numbers you see are the
-        average American's data. You can use those numbers to help you figure
-        out your own usage! Disclaimer: Plane miles are set to 0 to reflect the
-        decrease in air travel due to COVID.
+        below to calculate your carbon footprint. Just calculate for yourself,
+        not your household. The numbers you see are the average American's data.
+        You can use those numbers to help you figure out your own usage!
       </p>
       <section className="slider-sections">
         <form onSubmit={handleSubmit}>
@@ -319,7 +318,7 @@ const Calculator = () => {
                     },
                   }}
                   aria-label="Bus Miles"
-                  defaultValue={1000}
+                  defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="busMiles"
@@ -345,7 +344,7 @@ const Calculator = () => {
                     },
                   }}
                   aria-label="Train Miles"
-                  defaultValue={500}
+                  defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="trainMiles"
