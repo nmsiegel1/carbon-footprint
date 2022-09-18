@@ -18,7 +18,7 @@ const MyPledges = () => {
   const { data, loading } = useQuery(QUERY_ME);
   const myPledges = data?.me.pledgeData || [];
 
-  // state for recording completed pledge ids
+  // state for recording completed pledge ids to change button text
   const [completedPledgeIds, setCompletedPledgeIds] = useState(
     getCompletedPledgeIds()
   );
