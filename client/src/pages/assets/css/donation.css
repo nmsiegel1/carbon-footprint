@@ -58,12 +58,12 @@ p {
 }
 
 .resource {
-  margin: 50px 25px 0 25px;
+  margin: 50px 25px 0px 25px;
   font-size: 30px;
 }
 
 .resources {
-  margin: 25px;
+  margin: 25px 25px 0px 25px;
 }
 
 .resources a {
