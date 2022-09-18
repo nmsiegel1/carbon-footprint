@@ -22,7 +22,7 @@ const Calculator = () => {
     minutes: 10,
     laundry: 10,
     flushes: 5,
-    bottles: 2,
+    bottles: 14,
     fridge: 'Yes',
     TV: 4,
     laptop: 2,
@@ -30,9 +30,9 @@ const Calculator = () => {
     monitor: 6,
     climate: 'Warm',
     size: 2000,
-    acDays: 243,
-    gasDays: 180,
-    oilDays: 180,
+    acDays: 150,
+    gasDays: 150,
+    oilDays: 150,
   });
   let {
     carType,
@@ -160,27 +160,27 @@ const Calculator = () => {
     let ACEmissions, gasEmissions, oilEmissions;
     switch (climate) {
       case 'cold':
-        ACEmissions = 0.0126 * size * acDays;
+        ACEmissions = 0 * size * acDays;
         gasEmissions = ((0.07644 * size) / 365) * gasDays;
         oilEmissions = ((32.68055 * size) / 365) * oilDays;
         break;
       case 'cool':
-        ACEmissions = 0.0252 * size * acDays;
+        ACEmissions =  0.0125 * size * acDays;
         gasEmissions = ((0.0637 * size) / 365) * gasDays;
         oilEmissions = ((26.68412 * size) / 365) * oilDays;
         break;
       case 'moderate':
-        ACEmissions = 0.0504 * size * acDays;
+        ACEmissions =  0.0252 * size * acDays;
         gasEmissions = ((0.05733 * size) / 365) * gasDays;
         oilEmissions = ((20.68769 * size) / 365) * oilDays;
         break;
       case 'warm':
-        ACEmissions = 0.06301 * size * acDays;
+        ACEmissions =  0.0504 * size * acDays;
         gasEmissions = ((0.05096 * size) / 365) * gasDays;
         oilEmissions = ((13.9919 * size) / 365) * oilDays;
         break;
       default:
-        ACEmissions = 0.07561 * size * acDays;
+        ACEmissions = 0.06301 * size * acDays;
         gasEmissions = ((0.0446 * size) / 365) * gasDays;
         oilEmissions = ((8.09518 * size) / 365) * oilDays;
         break;
@@ -425,24 +425,24 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Bottles of Water From the Sink Per Day</label>
+                <label>Bottles of Water From the Sink Per Week</label>
                 <Slider
                   aria-label="Bottles of Water"
-                  defaultValue={2}
+                  defaultValue={14}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="bottles"
                   step={1}
                   marks
                   min={0}
-                  max={10}
+                  max={21}
                 ></Slider>
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of TV Per Year</label>
+                <label>Hours of TV Per Day</label>
                 <Slider
-                  aria-label="Hours of TV Watched Per Day"
+                  aria-label="Hours of TV"
                   defaultValue={4}
                   onChange={handleChange}
                   valueLabelDisplay="on"
@@ -515,10 +515,10 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your A/C</label>
+                <label>Days You Run Your A/C (at Full Blast)</label>
                 <Slider
                   aria-label="AC Days"
-                  defaultValue={243}
+                  defaultValue={150}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="acDays"
@@ -530,10 +530,10 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your Heat (Natural Gas)</label>
+                <label>Days You Run Your Heat (Natural Gas, at Full Blast)</label>
                 <Slider
                   aria-label="Gas Days"
-                  defaultValue={180}
+                  defaultValue={150}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="gasDays"
@@ -545,10 +545,10 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your Heat (Oil)</label>
+                <label>Days You Run Your Heat (Oil, at Full Blast)</label>
                 <Slider
                   aria-label="Oil Days"
-                  defaultValue={180}
+                  defaultValue={150}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="oilDays"
