@@ -73,6 +73,16 @@
   color: var(--white);
 }
 
+.add-btn {
+  margin: 20px;
+}
+
+.add-btn button {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+}
+
 @media screen and (min-width: 650px) {
   .my-pledges-main {
     height: 110vh;

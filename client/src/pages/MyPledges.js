@@ -109,11 +109,19 @@ const MyPledges = () => {
           </div>
         ))}
       </div>
-      <div className="btn-link">
-        <Link to="/myfootprint">
-          <button>Add More Pledges</button>
-        </Link>
-      </div>
+      {myPledges.length ? (
+        <div className="btn-link">
+          <Link to="/myfootprint">
+            <button>Add More Pledges</button>
+          </Link>
+        </div>
+      ) : (
+        <div className="add-btn">
+          <Link to="/myfootprint">
+            <button>Add Pledges</button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
