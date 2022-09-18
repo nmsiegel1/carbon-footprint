@@ -4,14 +4,14 @@ import './assets/css/footprint.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
+import { Graph } from '../components/Graph';
+
 const MyFootprint = () => {
   const { data, loading } = useQuery(QUERY_ME);
-  console.log('data', data);
+
   const { username, homeData, travelData } = data?.me || [];
 
-  console.log(username);
-  console.log(homeData);
-  console.log(travelData);
+
 
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -56,8 +56,9 @@ const MyFootprint = () => {
             </h2>
           )}
         </div>
-
-        <div className="graph">{/* GRAPH GOES HERE */}</div>
+        <div className="graph">
+          <Graph graphData={{homeData, travelData}}/>
+        </div>
       </section>
       <section>
         {homeData.length || travelData.length ? <Pledges /> : ''}
