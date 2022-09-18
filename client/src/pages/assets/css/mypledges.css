@@ -1,0 +1,93 @@
+.my-pledges-main {
+  background-image: url(../images/bottom-wave-blue.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.my-pledges-main h2 {
+  margin: 20px;
+  font-size: 40px;
+}
+
+.my-pledges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.my-pledge {
+  border: solid 2px var(--dark-blue);
+  border-radius: 10px;
+  margin: 15px 20px;
+  flex: 25%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: var(--white);
+  position: relative;
+}
+
+.delete {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.my-pledge-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.my-pledge-btn {
+  background-color: var(--dark-blue);
+  border: none;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+.my-pledge-btn:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
+
+.my-pledge a {
+  color: var(--dark-blue);
+}
+
+.btn-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.btn-link button {
+  border: var(--dark-blue) solid 2px;
+}
+
+.btn-link button:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.add-btn {
+  margin: 20px;
+}
+
+.add-btn button {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+@media screen and (min-width: 650px) {
+  .my-pledges-main {
+    height: 110vh;
+  }
+}
