@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useQuery, useMutation } from '@apollo/client';
+import Confetti from 'react-dom-confetti';
 
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_PLEDGE } from '../utils/mutations';
@@ -21,6 +22,22 @@ const MyPledges = () => {
   useEffect(() => {
     return () => completePledgeIds(completedPledgeIds);
   });
+
+  const [active, setActive] = useState(false);
+
+  const config = {
+    angle: 90,
+    spread: 360,
+    startVelocity: 40,
+    elementCount: 70,
+    dragFriction: 0.12,
+    duration: 3000,
+    stagger: 3,
+    width: '10px',
+    height: '10px',
+    perspective: '500px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+  };
 
   const [removePledge] = useMutation(REMOVE_PLEDGE, {
     update(cache) {
@@ -43,6 +60,7 @@ const MyPledges = () => {
 
     try {
       setCompletedPledgeIds([...completedPledgeIds, markComplete._id]);
+      setActive(true);
     } catch (err) {
       console.error(err);
     }
@@ -98,6 +116,7 @@ const MyPledges = () => {
               ? 'Complete!'
               : 'Mark as Complete'}
           </button>
+          <Confetti active={active} config={config} />
         </div>
       ))}
     </div>
