@@ -56,13 +56,13 @@ export function Graph(graphData) {
   };
 
   return (
-    <div>
+    <div style={{position: 'relative', height:'40vh', width:'80vw'}}>
       <Doughnut
         data={data}
         height={'400px'}
-        width={'400px'}
-        options={{ maintainAspectRatio: false, resizeDelay: 0 }}
-      ></Doughnut>
+        options={{ maintainAspectRatio: false, resizeDelay: 0, responsive: true }}
+      >
+      </Doughnut>
     </div>
   );
 }
