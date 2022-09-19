@@ -29,6 +29,15 @@
   padding: 10px 30px;
 }
 
+.home-references {
+  margin-left: 40px;
+}
+
+.home-references a {
+  font-size: small;
+  color: var(--dark-blue);
+}
+
 .footprint-average {
   align-items: flex-end;
 }
