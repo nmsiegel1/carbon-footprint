@@ -1,5 +1,6 @@
 import React from 'react';
 import './assets/css/home.css';
+import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
 // import './assets/js/home.js';
 
@@ -28,13 +29,36 @@ const Home = () => {
         </div>
       </div>
       <section className="footprint-data">
-        <div>
-          <h2>The average American household carbon footprint is</h2>
+        <div className="calculations">
+          <h2 className="footprint-title">
+            Per capita carbon emissions in the world's largest economies in
+            2016* in metric tons
+          </h2>
+          <MeanCountry />
         </div>
         <div className="graph">
+          <h2 className="footprint-title">
+            Per capita carbon emmisions in the USA**
+          </h2>
           <MeanIndividual />
         </div>
       </section>
+      <section className="home-references">
+        <h3>
+          <a
+            href="https://www.weforum.org/agenda/2019/01/chart-of-the-day-these-countries-have-the-largest-carbon-footprints/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            *WeForum
+          </a>
+          <br />
+          <a href="/" rel="noreferrer" target="_blank">
+            **Average per capita
+          </a>
+        </h3>
+      </section>
+      <br />
     </main>
   );
 };
