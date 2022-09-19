@@ -63,12 +63,15 @@ export const data = {
 
 const MeanCountry = () => {
   return (
-    <div>
+    <div style={{ position: 'relative', height: '40vh', width: '40vw' }}>
       <Bar
         data={data}
         height={'400px'}
-        width={'400px'}
-        options={{ maintainAspectRatio: false, resizeDelay: 0 }}
+        options={{
+          maintainAspectRatio: false,
+          resizeDelay: 0,
+          responsive: true,
+        }}
       ></Bar>
     </div>
   );

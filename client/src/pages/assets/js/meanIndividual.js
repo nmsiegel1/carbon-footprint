@@ -40,12 +40,15 @@ export const data = {
 
 const MeanIndividual = () => {
   return (
-    <div>
+    <div style={{ position: 'relative', height: '40vh', width: '40vw' }}>
       <Doughnut
         data={data}
         height={'400px'}
-        width={'400px'}
-        options={{ maintainAspectRatio: false, resizeDelay: 0 }}
+        options={{
+          maintainAspectRatio: false,
+          resizeDelay: 0,
+          responsive: true,
+        }}
       ></Doughnut>
     </div>
   );
