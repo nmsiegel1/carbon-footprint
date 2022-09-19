@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Pledges from '../components/Pledges';
 import { Graph } from '../components/Graph';
 import { addCommas } from '../utils/helpers.js';
@@ -81,7 +82,14 @@ const MyFootprint = () => {
           </section>
         </div>
       ) : (
-        <h2 className="no-info-title">Log in to see your carbon footprint!</h2>
+        <div className="not-logged-in">
+          <h2 className="no-info-title">
+            Log in to see your carbon footprint!
+          </h2>
+          <Link to="/login">
+            <button type="submit">Log In</button>
+          </Link>
+        </div>
       )}
     </div>
   );

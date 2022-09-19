@@ -54,3 +54,21 @@
 .footprint-average {
   align-items: flex-end;
 }
+
+.login-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+
+.login-btn button {
+  border: var(--dark-blue) solid 2px;
+}
+
+.login-btn button:hover {
+  border: none;
+  background-color: var(--green);
+  color: var(--white);
+}

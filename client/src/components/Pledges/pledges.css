@@ -57,3 +57,22 @@
   background-color: var(--light-blue);
   color: var(--dark-blue);
 }
+
+.goto-pledge-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.goto-pledge-btn button {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  border: none;
+}
+
+.goto-pledge-btn button:hover {
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
+}
