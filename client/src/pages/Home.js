@@ -39,10 +39,7 @@ const Home = () => {
       </div>
       <section className="footprint-data">
         <div className="calculations">
-          <h2 className="footprint-title">
-            Per capita carbon emissions in the world's largest economies in
-            2016* in metric tons
-          </h2>
+          <h2 className="footprint-title">Per capita carbon emissions 2020*</h2>
           <MeanCountry />
         </div>
         <div className="graph">
