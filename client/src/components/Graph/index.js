@@ -56,7 +56,7 @@ export function Graph(graphData) {
   };
 
   return (
-    <div style={{position: 'relative', height:'40vh', width:'80vw'}}>
+    <div style={{position: 'relative', height:'40vh', width:'40vw'}}>
       <Doughnut
         data={data}
         height={'400px'}
