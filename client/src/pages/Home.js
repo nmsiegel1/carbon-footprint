@@ -1,5 +1,6 @@
 import React from 'react';
 import './assets/css/home.css';
+import { Link } from 'react-router-dom';
 import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
 // import './assets/js/home.js';
@@ -18,13 +19,20 @@ const Home = () => {
             Curious what your <span>IMPACT</span> on the world is?
           </p>
         </div>
+        <section className="login-btn">
+          <Link to="/login">
+            <button type="submit">
+              Log In To Calculate Your Carbon Footprint!
+            </button>
+          </Link>
+        </section>
         <div className="home-p">
           <p>
             Greenhouse gas emissions from human activities strengthen the
             greenhouse effect, contributing to climate change. Most is carbon
             dioxide from burning fossil fuels: coal, oil, and natural gas. The
             largest emitters include coal in China and large oil and gas
-            companies, many state-owned by OPEC and Russia
+            companies, many state-owned by OPEC and Russia.
           </p>
         </div>
       </div>
@@ -38,11 +46,12 @@ const Home = () => {
         </div>
         <div className="graph">
           <h2 className="footprint-title">
-            Per capita carbon emmisions in the USA**
+            Per capita carbon emissions in the USA**
           </h2>
           <MeanIndividual />
         </div>
       </section>
+
       <section className="home-references">
         <h3>
           <a

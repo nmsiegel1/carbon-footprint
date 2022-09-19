@@ -42,3 +42,22 @@
   margin: 20px;
   font-size: 35px;
 }
+
+.not-logged-in {
+  background-image: url(../images/right-wave-green.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.not-logged-in button {
+  margin: 20px;
+  border: var(--dark-blue) 2px solid;
+}
+
+.not-logged-in button:hover {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+}

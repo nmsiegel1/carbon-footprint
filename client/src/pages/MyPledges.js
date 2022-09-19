@@ -120,6 +120,7 @@ const MyPledges = () => {
             </span>
             <h3 className="my-pledge-title">
               <Icon icon={pledge.icon} color="#243B4A" width="25" height="25" />
+              {'  '}
               {pledge.action}
             </h3>
             <p>{pledge.description}</p>
