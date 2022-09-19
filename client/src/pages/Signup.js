@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import './assets/css/signup_login.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -38,44 +40,46 @@ const Signup = () => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <h2 className="">Sign Up</h2>
-        <div className="">
-          <form onSubmit={handleFormSubmit}>
-            <input
-              className="signup-input"
-              placeholder="Your username"
-              name="username"
-              type="username"
-              id="username"
-              value={formState.username}
-              onChange={handleChange}
-            />
-            <input
-              className="signup-input"
-              placeholder="Your email"
-              name="email"
-              type="email"
-              id="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-            <input
-              className="signup-input"
-              placeholder="******"
-              name="password"
-              type="password"
-              id="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-            <button className="" type="submit">
-              Submit
-            </button>
-            {error && <div>Sign up failed</div>}
-          </form>
-        </div>
+    <main className="signup-main">
+      <div className="signup">
+        <h2>Sign Up</h2>
+        <form className="signup-form" onSubmit={handleFormSubmit}>
+          <input
+            className="signup-input"
+            placeholder="Your username"
+            name="username"
+            type="username"
+            id="username"
+            value={formState.username}
+            onChange={handleChange}
+          />
+          <input
+            className="signup-input"
+            placeholder="Your email"
+            name="email"
+            type="email"
+            id="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <input
+            className="signup-input"
+            placeholder="******"
+            name="password"
+            type="password"
+            id="password"
+            value={formState.password}
+            onChange={handleChange}
+          />
+          <button type="submit">Submit</button>
+          {error && <p>Sign up failed</p>}
+        </form>
+        <p>
+          Already have an account?{' '}
+          <Link to="/login" className="signup-link">
+            Log in
+          </Link>
+        </p>
       </div>
     </main>
   );

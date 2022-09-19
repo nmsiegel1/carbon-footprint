@@ -1,0 +1,59 @@
+.pledge-main {
+  background-image: url(./right-wave-green.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.pledge-main h2 {
+  font-size: 30px;
+  margin: 20px;
+}
+
+.pledge-info {
+  margin: 0 20px;
+}
+
+.pledge-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.pledge {
+  border: solid 2px var(--dark-blue);
+  border-radius: 10px;
+  margin: 15px 20px;
+  flex: 25%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: var(--white);
+}
+
+.pledge-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.pledge a {
+  /* text-decoration: none; */
+  color: var(--dark-blue);
+}
+
+.pledge-btn {
+  background-color: var(--dark-blue);
+  border: none;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+.pledge-btn:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
