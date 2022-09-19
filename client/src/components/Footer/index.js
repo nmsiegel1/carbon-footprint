@@ -19,7 +19,7 @@ function Footer(props) {
               <a href="/contact">Contact Us</a>
             </li>
             <li>
-              <a href="/signup">signup</a>
+              <a href="/signup">Signup</a>
             </li>
           </ul>
         </section>
@@ -40,7 +40,7 @@ function Footer(props) {
               <a href="/donation">Donate</a>
             </li>
             <li>
-              <a href="/mypledges">My pledges</a>
+              <a href="/mypledges">My Pledges</a>
             </li>
           </ul>
         </section>

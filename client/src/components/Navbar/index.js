@@ -46,14 +46,14 @@ const Navbar = () => {
             <a href="/">
               <li>Home</li>
             </a>
-            <a href="/mypledges">
-              <li>My Pledges</li>
-            </a>
             <a href="/calculator">
               <li>Footprint Calculator</li>
             </a>
             <a href="/myfootprint">
               <li>My Footprint</li>
+            </a>
+            <a href="/mypledges">
+              <li>My Pledges</li>
             </a>
             <a href="/donation">
               <li>Want To Do More?</li>

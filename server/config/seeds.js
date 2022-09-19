@@ -29,7 +29,7 @@ db.once('open', async () => {
     {
       action: 'Purchase Green Electricity',
       description:
-        "One in four utilites are now offering a green power upgrade option. If you have not joined yet, it's a simple and effective way to power your home more sustainably.",
+        "One in four utilities are now offering a green power upgrade option. If you have not joined yet, it's a simple and effective way to power your home more sustainably.",
       icon: 'healthicons:electricity-outline',
       link: 'https://www.epa.gov/greenpower',
     },

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { useQuery, useMutation } from '@apollo/client';
 import './pledges.css';
@@ -86,6 +87,11 @@ const Pledges = () => {
             </button>
           </div>
         ))}
+      </div>
+      <div className="goto-pledge-btn">
+        <Link to="/mypledges">
+          <button type="submit">See Your Pledges</button>
+        </Link>
       </div>
     </div>
   );

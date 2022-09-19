@@ -1,5 +1,6 @@
 import React from 'react';
 import './assets/css/home.css';
+import { Link } from 'react-router-dom';
 import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
 import Logo from './assets/images/logo.png';
@@ -27,6 +28,11 @@ const Home = () => {
             Curious what your <span>IMPACT</span> on the world is?
           </p>
         </div>
+        <section className="login-btn">
+          <Link to="/login">
+            <button type="submit">Calculate Your Carbon Footprint!</button>
+          </Link>
+        </section>
         <div className="home-p">
           <p>
             Climate Change is one of the largest issues facing our lives. The
@@ -44,11 +50,12 @@ const Home = () => {
         </div>
         <div className="graph">
           <h2 className="footprint-title">
-            Per capita carbon emmisions in the USA**
+            Per capita carbon emissions in the USA**
           </h2>
           <MeanIndividual />
         </div>
       </section>
+
       <section className="home-references">
         <h3>
           <a
