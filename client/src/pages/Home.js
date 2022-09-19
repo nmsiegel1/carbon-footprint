@@ -30,9 +30,7 @@ const Home = () => {
         </div>
         <section className="login-btn">
           <Link to="/login">
-            <button type="submit">
-              Log In To Calculate Your Carbon Footprint!
-            </button>
+            <button type="submit">Calculate Your Carbon Footprint!</button>
           </Link>
         </section>
         <div className="home-p">
