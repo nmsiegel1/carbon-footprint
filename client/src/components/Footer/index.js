@@ -16,9 +16,6 @@ function Footer(props) {
               <a href="/calculator">Calculator</a>
             </li>
             <li>
-              <a href="/contact">Contact Us</a>
-            </li>
-            <li>
               <a href="/signup">Signup</a>
             </li>
           </ul>

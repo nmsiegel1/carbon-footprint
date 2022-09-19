@@ -32,7 +32,7 @@ const Calculator = () => {
     size: 2000,
     acDays: 150,
     gasDays: 150,
-    oilDays: 150,
+    oilDays: 0,
   });
   let {
     carType,
@@ -755,7 +755,7 @@ const Calculator = () => {
                     },
                   }}
                   aria-label="Oil Days"
-                  defaultValue={150}
+                  defaultValue={0}
                   onChange={handleChange}
                   valueLabelDisplay="on"
                   name="oilDays"
