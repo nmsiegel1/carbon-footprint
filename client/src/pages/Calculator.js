@@ -15,8 +15,8 @@ const Calculator = () => {
   const [formState, setFormState] = useState({
     carType: 'SUV',
     carMiles: 1000,
-    busMiles: 1000,
-    trainMiles: 500,
+    busMiles: 0,
+    trainMiles: 0,
     planeMiles: 0,
     showerNumber: 8,
     minutes: 10,
@@ -84,8 +84,7 @@ const Calculator = () => {
           query: QUERY_ME,
           data: { me: { ...me, homeData: [...me.homeData] } },
         });
-      }
-      catch (e) {
+      } catch (e) {
         console.warn(e);
       }
     },
@@ -165,17 +164,17 @@ const Calculator = () => {
         oilEmissions = ((32.68055 * size) / 365) * oilDays;
         break;
       case 'cool':
-        ACEmissions =  0.0125 * size * acDays;
+        ACEmissions = 0.0125 * size * acDays;
         gasEmissions = ((0.0637 * size) / 365) * gasDays;
         oilEmissions = ((26.68412 * size) / 365) * oilDays;
         break;
       case 'moderate':
-        ACEmissions =  0.0252 * size * acDays;
+        ACEmissions = 0.0252 * size * acDays;
         gasEmissions = ((0.05733 * size) / 365) * gasDays;
         oilEmissions = ((20.68769 * size) / 365) * oilDays;
         break;
       case 'warm':
-        ACEmissions =  0.0504 * size * acDays;
+        ACEmissions = 0.0504 * size * acDays;
         gasEmissions = ((0.05096 * size) / 365) * gasDays;
         oilEmissions = ((13.9919 * size) / 365) * oilDays;
         break;
@@ -244,96 +243,154 @@ const Calculator = () => {
 
   return (
     <main className="calculator-main">
-      <h2>My Carbon Footprint</h2>
-      <h3>Click each dropdown and slider and then the button below to calculate your carbon footprint. The numbers you see are the average American's data. You can use those numbers to help you figure out your own usage! Disclaimer: Plane miles are set to 0 to reflect the decrease in air travel due to COVID.</h3>
+      <h2>Carbon Footprint Calculator</h2>
+      <p className="description">
+        Click each dropdown or slider and then the "Find My Footprint" button
+        below to calculate your carbon footprint. Just calculate for yourself,
+        not your household. The numbers you see are the average American's data.
+        You can use those numbers to help you figure out your own usage!
+      </p>
       <section className="slider-sections">
-        <h3>My Travel</h3>
         <form onSubmit={handleSubmit}>
-          <div>
-            <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="car-type">Car Type</InputLabel>
-              <Select
-                labelId="car-type"
-                id="carType"
-                name="carType"
-                defaultValue={carType}
-                value={carType}
-                onChange={handleChange}
-              >
-                <MenuItem value={'Small'}>Small</MenuItem>
-                <MenuItem value={'Average'}>Average</MenuItem>
-                <MenuItem value={'SUV'}>SUV</MenuItem>
-                <MenuItem value={'Hybrid'}>Hybrid</MenuItem>
-              </Select>
-            </FormControl>
+          <div className="calculator">
+            <div className="travel">
+              <h3>My Travel</h3>
+              <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="car-type">Car Type</InputLabel>
+                <Select
+                  sx={{
+                    color: '#243b4a',
+                    margin: '0 0 15px 0',
+                  }}
+                  labelId="car-type"
+                  id="carType"
+                  name="carType"
+                  defaultValue={carType}
+                  value={carType}
+                  onChange={handleChange}
+                  className="car-type"
+                >
+                  <MenuItem value={'Small'}>Small</MenuItem>
+                  <MenuItem value={'Average'}>Average</MenuItem>
+                  <MenuItem value={'SUV'}>SUV</MenuItem>
+                  <MenuItem value={'Hybrid'}>Hybrid</MenuItem>
+                </Select>
+              </FormControl>
 
-            <Box sx={{ m: 1, width: 300 }}>
-              <label>Car Miles Per Month</label>
-              <Slider
-                aria-label="Car Miles"
-                defaultValue={1000}
-                onChange={handleChange}
-                valueLabelDisplay="on"
-                name="carMiles"
-                step={500}
-                marks
-                min={0}
-                max={3000}
-              ></Slider>
-            </Box>
+              <Box sx={{ m: 1, width: 300 }}>
+                <label className="slider">Car Miles Per Month</label>
+                <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
+                  aria-label="Car Miles"
+                  defaultValue={1000}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name="carMiles"
+                  step={500}
+                  marks
+                  min={0}
+                  max={3000}
+                ></Slider>
+              </Box>
 
-            <Box sx={{ m: 1, width: 300 }}>
-              <label>Bus Miles Per Month</label>
-              <Slider
-                aria-label="Bus Miles"
-                defaultValue={1000}
-                onChange={handleChange}
-                valueLabelDisplay="on"
-                name="busMiles"
-                step={500}
-                marks
-                min={0}
-                max={3000}
-              ></Slider>
-            </Box>
+              <Box sx={{ m: 1, width: 300 }}>
+                <label>Bus Miles Per Month</label>
+                <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
+                  aria-label="Bus Miles"
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name="busMiles"
+                  step={500}
+                  marks
+                  min={0}
+                  max={3000}
+                ></Slider>
+              </Box>
 
-            <Box sx={{ m: 1, width: 300 }}>
-              <label>Train Miles Per Month</label>
-              <Slider
-                aria-label="Train Miles"
-                defaultValue={500}
-                onChange={handleChange}
-                valueLabelDisplay="on"
-                name="trainMiles"
-                step={50}
-                marks
-                min={0}
-                max={1000}
-              ></Slider>
-            </Box>
+              <Box sx={{ m: 1, width: 300 }}>
+                <label>Train Miles Per Month</label>
+                <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
+                  aria-label="Train Miles"
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name="trainMiles"
+                  step={50}
+                  marks
+                  min={0}
+                  max={1000}
+                ></Slider>
+              </Box>
 
-            <Box sx={{ m: 1, width: 300 }}>
-              <label>Plane Miles Per Month</label>
-              <Slider
-                aria-label="Plane Miles"
-                defaultValue={0}
-                onChange={handleChange}
-                valueLabelDisplay="on"
-                name="planeMiles"
-                step={100}
-                marks
-                min={0}
-                max={4000}
-              ></Slider>
-            </Box>
-          </div>
+              <Box sx={{ m: 1, width: 300 }}>
+                <label>Plane Miles Per Month</label>
+                <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
+                  aria-label="Plane Miles"
+                  defaultValue={0}
+                  onChange={handleChange}
+                  valueLabelDisplay="on"
+                  name="planeMiles"
+                  step={100}
+                  marks
+                  min={0}
+                  max={4000}
+                ></Slider>
+              </Box>
+            </div>
 
-          <div>
-            <h3>My Home</h3>
-            <div>
+            <div className="home1">
+              <h3>My Home</h3>
               <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="fridgeLabel">Fridge</InputLabel>
                 <Select
+                  sx={{
+                    color: '#243b4a',
+                    margin: '0 0 15px 0',
+                  }}
                   labelId="fridgeLabel"
                   id="fridge"
                   name="fridge"
@@ -349,6 +406,10 @@ const Calculator = () => {
               <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="climate">Climate</InputLabel>
                 <Select
+                  sx={{
+                    color: '#243b4a',
+                    margin: '0 0 15px 0',
+                  }}
                   labelId="fridgeLabel"
                   id="fridge"
                   name="climate"
@@ -367,6 +428,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Number of Showers Per Week</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Number of Showers"
                   defaultValue={8}
                   onChange={handleChange}
@@ -382,6 +454,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Time spent in the Shower (Minutes)</label>
                 <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Time spent in Shower"
                   defaultValue={10}
                   onChange={handleChange}
@@ -397,6 +480,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Loads of Laundry Per Month</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Loads of Laundry"
                   defaultValue={10}
                   onChange={handleChange}
@@ -412,6 +506,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Number of Flushes Per Day</label>
                 <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Flushes"
                   defaultValue={5}
                   onChange={handleChange}
@@ -427,6 +532,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Bottles of Water From the Sink Per Week</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Bottles of Water"
                   defaultValue={14}
                   onChange={handleChange}
@@ -442,6 +558,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Hours of TV Per Day</label>
                 <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Hours of TV"
                   defaultValue={4}
                   onChange={handleChange}
@@ -453,10 +580,22 @@ const Calculator = () => {
                   max={12}
                 ></Slider>
               </Box>
-
+            </div>
+            <div className="home2">
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Hours of Laptop Use (Plugged In) Per Day</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Hours of Laptop"
                   defaultValue={2}
                   onChange={handleChange}
@@ -472,6 +611,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Hours of Desktop Use Per Day</label>
                 <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Hours of Desktop"
                   defaultValue={8}
                   onChange={handleChange}
@@ -487,6 +637,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Hours of Monitor Use Per Day</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Hours of Monitor"
                   defaultValue={6}
                   onChange={handleChange}
@@ -502,6 +663,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Square Feet of Your Residence</label>
                 <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Square Feet"
                   defaultValue={2000}
                   onChange={handleChange}
@@ -517,6 +689,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Days You Run Your A/C (at Full Blast)</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="AC Days"
                   defaultValue={150}
                   onChange={handleChange}
@@ -530,8 +713,21 @@ const Calculator = () => {
               </Box>
 
               <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your Heat (Natural Gas, at Full Blast)</label>
+                <label>
+                  Days You Run Your Heat (Natural Gas, at Full Blast)
+                </label>
                 <Slider
+                  sx={{
+                    color: '#2C82B3',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: '#2C82B3',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Gas Days"
                   defaultValue={150}
                   onChange={handleChange}
@@ -547,6 +743,17 @@ const Calculator = () => {
               <Box sx={{ m: 1, width: 300 }}>
                 <label>Days You Run Your Heat (Oil, at Full Blast)</label>
                 <Slider
+                  sx={{
+                    color: 'green',
+                    margin: '40px 0 15px 0',
+                    '& .MuiSlider-valueLabel': {
+                      borderRadius: '15px',
+                      backgroundColor: 'green',
+                    },
+                    '& .MuiSlider-rail': {
+                      padding: '5px',
+                    },
+                  }}
                   aria-label="Oil Days"
                   defaultValue={150}
                   onChange={handleChange}
@@ -560,8 +767,9 @@ const Calculator = () => {
               </Box>
             </div>
           </div>
-
-          <button type="submit">Find My Footprint</button>
+          <div className="calculator-btn">
+            <button type="submit">Find My Footprint</button>
+          </div>
         </form>
       </section>
     </main>

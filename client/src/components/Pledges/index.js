@@ -8,15 +8,19 @@ import { ADD_PLEDGE } from '../../utils/mutations';
 import { savePledgeIds, getSavedPledgeIds } from '../../utils/localStorage';
 
 const Pledges = () => {
+  // get data from pledge query
   const { data } = useQuery(QUERY_PLEDGES);
+  // target pledge data for mapping
   const pledges = data?.pledges || [];
 
+  // state for targeting ids to change text of button
   const [savedPledgeIds, setSavedPledgeIds] = useState(getSavedPledgeIds());
 
   useEffect(() => {
     return () => savePledgeIds(savedPledgeIds);
   });
 
+  // add pledge mutation
   const [addPledge] = useMutation(ADD_PLEDGE, {
     update(cache) {
       try {
@@ -31,16 +35,18 @@ const Pledges = () => {
     },
   });
 
-  // create function to handle saving a pledge to our database
+  // function to handle saving a pledge to our database
   const handleSavedPledge = async (pledgeId) => {
     // find pledge in the in state by matching id
     const pledgeToSave = pledges.find((pledge) => pledge._id === pledgeId);
 
     try {
       await addPledge({
+        // save to array
         variables: { pledgeData: pledgeId },
       });
 
+      // save ids to local storage to change text on button
       setSavedPledgeIds([...savedPledgeIds, pledgeToSave._id]);
     } catch (err) {
       console.error(err);
@@ -52,8 +58,8 @@ const Pledges = () => {
       <h2>Take action to reduce your carbon footprint!</h2>
       <p className="pledge-info">
         Choose which pledges below you want to commit to by clicking "Make This
-        Pledge"! See your pledges in the My Pledges section of the site update
-        them to complete when you've accomplished a task!
+        Pledge" See your pledges in the My Pledges section of the site and mark
+        them as complete when you've accomplished a task!
       </p>
       <div className="pledge-data">
         {pledges.map((pledge) => (

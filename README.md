@@ -23,6 +23,7 @@ This application is for an enviromentally-conscious user who wants to calculate 
 - [Installation](#installation)
 - [Links](#links)
 - [Usage](#usage)
+- [Technologies](#Technologies)
 - [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
@@ -76,6 +77,24 @@ into the terminal. To just run Apollo Studio, cd into the server directory and t
 npm run watch
 ``````````````
 into the terminal.
+
+## Technologies
+Below are the main technologies used in the application:
+* Figma
+* Prettier
+* ESLint
+* Node and Express
+* MongoDB and Mongoose
+* Apollo
+* BCrypt
+* JSON Web Token
+* GraphQL
+* Iconify
+* React
+* React Router
+* MUI
+* Chart.JS
+* React Dom Confetti
 
 ## Credits
 The following links were used for
