@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import logo from './images/logo.png';
-// import { Icon } from '@iconify/react';
+import Auth from '../../utils/auth';
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -44,7 +44,7 @@ const Navbar = () => {
             <a href="/login">
               <li>Log in</li>
             </a>
-            <a href="/logout">
+            <a href="/" onClick={() => Auth.logout()}>
               <li>Log out</li>
             </a>
           </ul>
