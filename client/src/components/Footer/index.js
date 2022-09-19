@@ -1,65 +1,58 @@
 import React from 'react';
 import './style.css';
+import { Icon } from '@iconify/react';
 
 function Footer(props) {
   return (
     <footer className="footer">
-      <div className="contain">
-        <div className="col">
-          <h1>Carbon Footsteps</h1>
+      <section className="footer-info">
+        <section className="footer-info-left">
+          <h3 className="footer-info-menu">Carbon Footsteps</h3>
           <ul>
-            <li>About</li>
-            <li>Calculator</li>
-            <li>Contact Us</li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/calculator">Calculator</a>
+            </li>
+            <li>
+              <a href="/contact">Contact Us</a>
+            </li>
+            <li>
+              <a href="/signup">signup</a>
+            </li>
           </ul>
-          {/* <p className="mb-0">
-            <a
-              href="https://github.com/nmsiegel1/carbon-footprint"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <i className="fa fa-github fa-lg" aria-hidden="true"></i>
-            </a>
-            <a href="/donation">
-              <i className="fa fa-wallet fa-lg" aria-hidden="true"></i>
-            </a>
-            <a href="/mypledges">
-              <i className="fa fa-check fa-lg" aria-hidden="true"></i>
-            </a>
-          </p> */}
-        </div>
-      </div>
-      <div className="col">
-        <h1>Learn More</h1>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/nmsiegel1/carbon-footprint"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <i className="fa fa-github fa-md" aria-hidden="true"></i>
-              Github Repository
-            </a>
-          </li>
-          <li>
-            <a href="/donation">
-              <i className="fa fa-wallet fa-md" aria-hidden="true"></i>
-              Donate
-            </a>
-          </li>
-          <li>
-            <a href="/mypledges">
-              <i className="fa fa-check fa-md" aria-hidden="true"></i>
-              My pledges
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className=" col copyright">
-        <i className="fa fa-copyright" aria-hidden="true"></i> 2022 Copyright
-      </div>
-      <div className="clearfix"></div>
+        </section>
+
+        <section className="footer-info-center">
+          <h3 className="footer-info-learn">Learn More</h3>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/nmsiegel1/carbon-footprint"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Github Repository
+              </a>
+            </li>
+            <li>
+              <a href="/donation">Donate</a>
+            </li>
+            <li>
+              <a href="/mypledges">My pledges</a>
+            </li>
+          </ul>
+        </section>
+
+        <section className=" footer-info-right">
+          <div className="footer-info-copyright">
+            <Icon icon="mdi:copyright" color="#243B4A" width="20" height="12" />{' '}
+            2022 Copyright
+          </div>
+        </section>
+      </section>
+      <hr className="footer-separator" />
     </footer>
   );
 }
