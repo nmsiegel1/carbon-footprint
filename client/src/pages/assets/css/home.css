@@ -29,16 +29,6 @@
   padding: 10px 30px;
 }
 
-.stats .col {
-  width: 30vw;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 20px;
-}
-
-.example {
-  position: relative;
-  height: 40vh;
-  width: 80vw;
+.footprint-average {
+  align-items: flex-end;
 }
