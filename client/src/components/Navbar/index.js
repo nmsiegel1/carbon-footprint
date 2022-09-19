@@ -3,6 +3,23 @@ import './style.css';
 import logo from './images/logo.png';
 import Auth from '../../utils/auth';
 
+function NavLoggedIn({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return (
+      <li className="logIn">
+        <a href="/login"> Log In/Sign Up</a>
+      </li>
+    );
+  }
+  return (
+    <li className="logOut">
+      <a href="/" onClick={() => Auth.logout()}>
+        Log Out
+      </a>
+    </li>
+  );
+}
+
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -39,14 +56,9 @@ const Navbar = () => {
               <li>My Footprint</li>
             </a>
             <a href="/donation">
-              <li>Donate</li>
+              <li>Want To Do More?</li>
             </a>
-            <a href="/login">
-              <li>Log in</li>
-            </a>
-            <a href="/" onClick={() => Auth.logout()}>
-              <li>Log out</li>
-            </a>
+            <NavLoggedIn isLoggedIn={!Auth.loggedIn()} />
           </ul>
         </div>
       </div>
