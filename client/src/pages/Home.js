@@ -3,17 +3,26 @@ import './assets/css/home.css';
 import { Link } from 'react-router-dom';
 import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
-// import './assets/js/home.js';
-
-// import Example from './assets/js/home.js';
+import Logo from './assets/images/logo.png';
 
 const Home = () => {
   return (
     <main className="home-main">
       <div>
-        <h1 className="home-title">
-          Carbon <span>Footsteps</span>
-        </h1>
+        <section className="home-header">
+          <div className="home-logo">
+            <img
+              src={Logo}
+              alt="logo of a foot oultine with the earth inside it "
+            ></img>
+          </div>
+          <div className="home-title">
+            <h1>
+              Carbon <span>Footsteps</span>
+            </h1>
+          </div>
+        </section>
+
         <div className="home-tagline">
           <p>
             Curious what your <span>IMPACT</span> on the world is?
@@ -28,20 +37,17 @@ const Home = () => {
         </section>
         <div className="home-p">
           <p>
-            Greenhouse gas emissions from human activities strengthen the
-            greenhouse effect, contributing to climate change. Most is carbon
-            dioxide from burning fossil fuels: coal, oil, and natural gas. The
-            largest emitters include coal in China and large oil and gas
-            companies, many state-owned by OPEC and Russia.
+            Climate Change is one of the largest issues facing our lives. The
+            everyday activties that we do create greenhouse gas emissions that
+            then strengthen the greenhouse effect. One of the most common
+            emissions come from Carbon Dioxide which is created from burning
+            fossil fuesl such as oal, oil, and natural gas.
           </p>
         </div>
       </div>
       <section className="footprint-data">
         <div className="calculations">
-          <h2 className="footprint-title">
-            Per capita carbon emissions in the world's largest economies in
-            2016* in metric tons
-          </h2>
+          <h2 className="footprint-title">Per capita carbon emissions 2020*</h2>
           <MeanCountry />
         </div>
         <div className="graph">

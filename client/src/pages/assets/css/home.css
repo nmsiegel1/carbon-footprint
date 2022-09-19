@@ -12,11 +12,24 @@
   color: var(--green);
 }
 
-.home-title {
+.home-header {
+  margin: 10px 0 20px 0;
+
+  align-content: center;
+}
+
+.home-title h1 {
   text-align: center;
-  margin: 10px 25px 35px 25px;
-  font-size: 40px;
+  font-size: 35px;
   text-transform: uppercase;
+}
+
+.home-logo {
+  text-align: center;
+}
+
+.home-logo img {
+  height: 4rem;
 }
 
 .home-tagline {
