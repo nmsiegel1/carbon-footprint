@@ -4,6 +4,7 @@
   background-position: center;
   height: 100%;
   background-repeat: no-repeat;
+  padding: 20px;
 }
 
 .pledge-main h2 {
@@ -38,6 +39,11 @@
 .pledge-title {
   font-size: 22px;
   margin-bottom: 10px;
+}
+
+.pledge a {
+  /* text-decoration: none; */
+  color: var(--dark-blue);
 }
 
 .pledge-btn {
