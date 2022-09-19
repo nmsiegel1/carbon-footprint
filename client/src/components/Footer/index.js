@@ -42,6 +42,9 @@ function Footer(props) {
             <li>
               <a href="/mypledges">My pledges</a>
             </li>
+            <li>
+              <a href="/references">References</a>
+            </li>
           </ul>
         </section>
 

@@ -1,0 +1,24 @@
+.references-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.refernces-button {
+  background-color: #1c87c9;
+  border: none;
+  color: white;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container > a {
+  flex: 50%;
+  box-shadow: 0 0 0 1px black;
+  margin-bottom: 10px;
+}
