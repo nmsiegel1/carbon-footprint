@@ -97,9 +97,9 @@ const MyPledges = () => {
   }
 
   return (
-    <div>
+    <div className="my-pledges-main">
       {Auth.loggedIn() ? (
-        <div className="my-pledges-main">
+        <div>
           <h2>
             {myPledges.length
               ? 'My Pledges'

@@ -42,7 +42,6 @@
 }
 
 .pledge a {
-  /* text-decoration: none; */
   color: var(--dark-blue);
 }
 
@@ -75,4 +74,12 @@
 .goto-pledge-btn button:hover {
   color: var(--dark-blue);
   background-color: var(--light-blue);
+}
+
+@media screen and (max-width: 600px) {
+  .pledge-data {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
