@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
 import Logo from './assets/images/logo.png';
+import Auth from '../utils/auth';
 
 const Home = () => {
   return (
@@ -28,18 +29,23 @@ const Home = () => {
             Curious what your <span>IMPACT</span> on the world is?
           </p>
         </div>
-        <section className="login-btn">
-          <Link to="/login">
-            <button type="submit">Calculate Your Carbon Footprint!</button>
-          </Link>
-        </section>
+        {Auth.loggedIn() ? (
+          ''
+        ) : (
+          <section className="login-btn">
+            <Link to="/login">
+              <button type="submit">Calculate Your Carbon Footprint!</button>
+            </Link>
+          </section>
+        )}
+
         <div className="home-p">
           <p>
             Climate Change is one of the largest issues facing our lives. The
-            everyday activties that we do create greenhouse gas emissions that
+            everyday activities that we do create greenhouse gas emissions that
             then strengthen the greenhouse effect. One of the most common
             emissions come from Carbon Dioxide which is created from burning
-            fossil fuesl such as oal, oil, and natural gas.
+            fossil fuels such as coal, oil, and natural gas.
           </p>
         </div>
       </div>
