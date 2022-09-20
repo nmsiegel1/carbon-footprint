@@ -3,26 +3,63 @@ import './style.css';
 import logo from './images/logo.png';
 import Auth from '../../utils/auth';
 
-function NavLoggedIn({ isLoggedIn }) {
-  if (isLoggedIn) {
-    return (
-      <li className="logIn">
-        <a href="/login"> Log In/Sign Up</a>
-      </li>
-    );
-  }
-  return (
-    <li className="logOut">
-      <a href="/" onClick={() => Auth.logout()}>
-        Log Out
-      </a>
-    </li>
-  );
-}
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+          <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+            <ul>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/calculator">
+                <li>Footprint Calculator</li>
+              </a>
+              <a href="/myfootprint">
+                <li>My Footprint</li>
+              </a>
+              <a href="/mypledges">
+                <li>My Pledges</li>
+              </a>
+              <a href="/about">
+                <li>About</li>
+              </a>
+              <a href="/donation">
+                <li>Want To Do More?</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+        <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+          <ul>
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="/login">
+              <li>Log In/Sign Up</li>
+            </a>
+            <a href="/about">
+                <li>About</li>
+            </a>
+            <a href="/donation">
+              <li>Want To Do More?</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      )
+    }
+  }
 
   return (
     <nav className="navBar">
@@ -40,28 +77,7 @@ const Navbar = () => {
           setIsMenuClicked(!isMenuClicked);
         }}
       ></button>
-      <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
-        <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
-          <ul>
-            <a href="/">
-              <li>Home</li>
-            </a>
-            <a href="/calculator">
-              <li>Footprint Calculator</li>
-            </a>
-            <a href="/myfootprint">
-              <li>My Footprint</li>
-            </a>
-            <a href="/mypledges">
-              <li>My Pledges</li>
-            </a>
-            <a href="/donation">
-              <li>Want To Do More?</li>
-            </a>
-            <NavLoggedIn isLoggedIn={!Auth.loggedIn()} />
-          </ul>
-        </div>
-      </div>
+      {showNavigation()}
     </nav>
   );
 };
