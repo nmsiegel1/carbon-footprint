@@ -14,12 +14,24 @@ function Footer(props) {
               <a href="/about">About</a>
             </li>
             <li>
-              <a href="/signup">Signup</a>
+              <a
+                href="https://github.com/nmsiegel1/carbon-footprint"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Github Repository
+              </a>
             </li>
+            <li>
+              <a href="/references">References</a>
+            </li>
+            {/* <li>
+              <a href="/signup">Signup</a>
+            </li> */}
           </ul>
         </section>
 
-        <section className="footer-info-center">
+        {/* <section className="footer-info-center">
           <h3 className="footer-info-learn">Learn More</h3>
           <ul>
             <li>
@@ -32,13 +44,10 @@ function Footer(props) {
               </a>
             </li>
             <li>
-              <a href="/donation">Donate</a>
-            </li>
-            <li>
               <a href="/references">References</a>
             </li>
           </ul>
-        </section>
+        </section> */}
 
         <section className=" footer-info-right">
           <div className="footer-info-copyright">

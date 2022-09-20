@@ -32,7 +32,11 @@ export const data = {
   datasets: [
     {
       label: 'Carbon Emissions in Metric Tons',
-      data: [14.24, 7.41, 7.69, 8.51, 10.81, 0.99, 2.31],
+      data: [
+        7712770573, 10667887453, 644310352, 1030775384, 1577136041, 1326043539,
+        994160327,
+      ],
+
       backgroundColor: [
         'rgba(162, 213, 159, 1)',
         'rgba(98, 187, 160, 1)',
@@ -65,7 +69,7 @@ export const data = {
   ],
 };
 
-const MeanCountry = () => {
+const MeanCountryAnnual = () => {
   return (
     <div style={{ position: 'relative', height: '40vh', width: '40vw' }}>
       <Bar
@@ -81,4 +85,4 @@ const MeanCountry = () => {
   );
 };
 
-export default MeanCountry;
+export default MeanCountryAnnual;

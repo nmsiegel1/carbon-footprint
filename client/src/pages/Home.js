@@ -3,6 +3,8 @@ import './assets/css/home.css';
 import { Link } from 'react-router-dom';
 import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
+import MeanCountryAnnual from './assets/js/meanCountryAnnual';
+import MeanHousehold from './assets/js/meanHousehold';
 import Logo from './assets/images/logo.png';
 import Auth from '../utils/auth';
 
@@ -23,12 +25,34 @@ const Home = () => {
             </h1>
           </div>
         </section>
-
         <div className="home-tagline">
           <h2>
             Curious what your <span>IMPACT</span> on the world is?
           </h2>
         </div>
+        <div className="home-p">
+          <p>
+            Climate Change is one of the largest issues facing our lives today.
+            The long-term shifts in temperature and weather patterns globally
+            have huge ramifications and are in large part caused by human
+            activity. Our everyday activities produce carbon dioxide and methane
+            emissions (also called carbon emissions) which are directly causing
+            this shift in climate. The amount of carbon emissions produced by an
+            individual or organization is called a carbon footprint.
+          </p>
+          <br />
+          <p>
+            So what do we do about it? Small changes to our daily routine can
+            make a big impact on our carbon footprints. Any reduction in carbon
+            emissions can help slow climate change and hopefully stop any
+            further climate disasters. We know this can all feel like a lot so
+            we are here to guide you through taking your first footsteps towards
+            change. First use our calculator tool to see your carbon footprint.
+            Then make pledges to make small changes to your daily routine and in
+            turn reduce your carbon footprint!
+          </p>
+        </div>
+
         {Auth.loggedIn() ? (
           ''
         ) : (
@@ -38,25 +62,31 @@ const Home = () => {
             </Link>
           </section>
         )}
-
-        <div className="home-p">
-          <p>
-            Climate Change is one of the largest issues facing our lives. The
-            everyday activities that we do create greenhouse gas emissions that
-            then strengthen the greenhouse effect. One of the most common
-            emissions come from Carbon Dioxide which is created from burning
-            fossil fuels such as coal, oil, and natural gas.
-          </p>
-        </div>
       </div>
       <section className="footprint-data">
+        <div className="graph">
+          <h2>Annual Carbon Emissions in 2020*</h2>
+          <br />
+          <h4>Global annual carbon emissions: 34,807,259,099 metric tons</h4>
+          <br />
+          <MeanCountryAnnual />
+        </div>
         <div className="calculations">
-          <h2>Per capita carbon emissions 2020*</h2>
+          <h2>Annual Per Capita Carbon Emissions in 2020*</h2>
+          <br />
+          <h4>Global annual per capita carbon emissions: 4.47 metric tons</h4>
           <br />
           <MeanCountry />
         </div>
+      </section>
+      <section className="footprint-data">
+        <div className="calculations">
+          <h2>Per-Household Annual Carbon Emissions in the United States**</h2>
+          <br />
+          <MeanHousehold />
+        </div>
         <div className="graph">
-          <h2>Per capita carbon emissions in the USA**</h2>
+          <h2>Breakdown of the Average American's Carbon Footprint***</h2>
           <br />
           <MeanIndividual />
         </div>
@@ -65,15 +95,27 @@ const Home = () => {
       <section className="home-references">
         <h3>
           <a
-            href="https://www.weforum.org/agenda/2019/01/chart-of-the-day-these-countries-have-the-largest-carbon-footprints/"
+            href="https://ourworldindata.org/co2/"
             rel="noreferrer"
             target="_blank"
           >
-            *WeForum
+            *World Data
           </a>
           <br />
-          <a href="/" rel="noreferrer" target="_blank">
-            **Average per capita
+          <a
+            href="https://www.zerofy.net/2022/04/04/household-co2-emissions.html"
+            rel="noreferrer"
+            target="_blank"
+          >
+            **Per Household Footprint
+          </a>
+          <br />
+          <a
+            href="https://suncommon.com/understanding-your-carbon-footprint/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            ***Average Footprint Breakdown
           </a>
         </h3>
       </section>
