@@ -9,6 +9,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_TRAVEL, ADD_HOME } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import { Box } from '@mui/system';
+import Auth from '../utils/auth';
 
 const Calculator = () => {
   // set state of user form
@@ -242,6 +243,7 @@ const Calculator = () => {
   }
 
   return (
+    //  {Auth.loggedIn() ? (
     <main className="calculator-main">
       <h1>Carbon Footprint Calculator</h1>
       <p className="description">
@@ -250,6 +252,12 @@ const Calculator = () => {
         not your household. The numbers you see are the average American's data.
         You can use those numbers to help you figure out your own usage!
       </p>
+      <h4>
+        * Note: This is a paired down carbon footprint calculator. There are
+        many more factors that contribute to your footprint that we have not
+        taken into consideration such as diet, shopping habits and accounting
+        for all of the members of your household.
+      </h4>
       <section className="slider-sections">
         <form onSubmit={handleSubmit}>
           <div className="calculator">
@@ -773,6 +781,16 @@ const Calculator = () => {
         </form>
       </section>
     </main>
+    // ) : (
+    //   <div className="not-logged-in">
+    //     <h2 className="no-info-title">
+    //       Log in to use our carbon footprint calculator!
+    //     </h2>
+    //     <Link to="/login">
+    //       <button type="submit">Log In</button>
+    //     </Link>
+    //   </div>
+    // )}
   );
 };
 

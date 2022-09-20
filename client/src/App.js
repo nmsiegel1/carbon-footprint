@@ -19,7 +19,6 @@ import NoMatch from './pages/NoMatch';
 import Donation from './pages/Donation';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import References from './pages/References';
 import About from './pages/About';
 
 const httpLink = createHttpLink({
@@ -55,7 +54,6 @@ function App() {
             <Route path="/myfootprint" element={<MyFootprint />} />
             <Route path="/mypledges" element={<MyPledges />} />
             <Route path="/donation" element={<Donation />} />
-            <Route path="/references" element={<References />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
