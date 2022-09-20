@@ -1,4 +1,6 @@
 import React from 'react';
+import './assets/css/about.css';
+import { Icon } from '@iconify/react';
 
 const About = () => {
   const team = [
@@ -35,36 +37,56 @@ const About = () => {
   ];
 
   return (
-    <section>
-      <h2>Take Your First Carbon Footsteps With Us!</h2>
+    <section className="team-main">
+      <h1>
+        Take Your First <span>Carbon Footsteps</span> With Us!
+      </h1>
       <p>
-        We here at Carbon Footsteps believe that it is important for all of us
-        to reduce our contributions to climate change. This team of full-stack
-        developers was inspired to answer the question: Where do we start to
-        lower our CO2 emissions? After searching for a carbon footprint
-        calculator that had everything we needed, we decided to research and
-        make our own! Each piece of the calculator, each graph, each pledge was
-        crafted by the team below. We know it can be tough and guilt-inducing to
-        learn about your carbon footprint. We are here to help you take the baby
-        steps to offset your emissions and feel proud to fulfill your goals!
-        Contact any member of the team below to get your questions answered, and
-        click on our GitHub repositories to see more of our work.
+        We here at <span>Carbon Footsteps</span> believe that it is important
+        for all of us to reduce our contributions to climate change. This team
+        of full-stack developers was inspired to answer the question: Where do
+        we start to lower our CO2 emissions? After searching for a carbon
+        footprint calculator that had everything we needed, we decided to
+        research and make our own! Each piece of the calculator, each graph,
+        each pledge was crafted by the team below. We know it can be tough and
+        guilt-inducing to learn about your carbon footprint. We are here to help
+        you take the baby steps to offset your emissions and feel proud to
+        fulfill your goals! Contact any member of the team below to get your
+        questions answered, and click on our GitHub repositories to see more of
+        our work.
       </p>
-      <div>
+      <div className="team-info">
         {team.map((teammate) => (
-          <div key={teammate.name}>
+          <div className="team-container" key={teammate.name}>
             <img
               src={teammate.src}
               alt={teammate.name}
-              style={{ width: 150 }}
+              style={{ width: 200 }}
             ></img>
-            <h3>{teammate.name}</h3>
-            <a href="mailto:{teammate.email}">
-              <h4>{teammate.name}'s Email</h4>
-            </a>
-            <a href={teammate.href} target="_blank" rel="noopener noreferrer">
-              <h5>{teammate.name}'s GitHub Repository</h5>
-            </a>
+            <h2>{teammate.name}'s</h2>
+            <div className="links-row">
+              <div className="links-col">
+                <a href="mailto:{teammate.email}">
+                  <h3>
+                    {/* {teammate.name}'s Email */}
+                    <Icon icon="clarity:email-line" color="#243B4A" />
+                  </h3>
+                </a>
+              </div>
+              <div className="links-col">
+                <a
+                  href={teammate.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h4>
+                    {/* {teammate.name}'s GitHub Repository */}
+                    <Icon icon="akar-icons:github-fill" color="#243B4A" />
+                  </h4>
+                </a>
+              </div>
+            </div>
+            <br />
           </div>
         ))}
       </div>

@@ -1,0 +1,70 @@
+.team-main {
+  margin-bottom: 1rem;
+  background-image: url(../images/right-blue-blue.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.team-main h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.team-main span {
+  font-weight: bolder;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.team-main p {
+  margin: 2rem 2rem 0 2rem;
+  font-size: 1.5rem;
+}
+
+.team-container {
+  margin: 2rem 4rem 4rem;
+}
+
+.team-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+}
+
+.team-info img {
+  border-radius: 5rem;
+  border: 0.03rem solid var(--dark-blue);
+}
+
+.team-info h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.links-row {
+  display: table;
+}
+
+.links-col {
+  float: left;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+}
+
+/* .links-col a:hover {
+  color: #566e3d;
+} */
+
+.team-info h3 {
+  font-size: 3.5rem;
+}
+
+.team-info h4 {
+  font-size: 3.5rem;
+}
