@@ -28,7 +28,6 @@ export const data = {
     'Russia',
     'Continent of Africa',
     'Conitnent of South America',
-    // 'World',
   ],
   datasets: [
     {
@@ -46,7 +45,6 @@ export const data = {
         'rgba(44, 130, 179, 1)',
         'rgba(155, 209, 229, 1)',
         'rgba(164, 66, 141, 1)',
-        // 'rgba(144, 29, 21, 1)',
       ],
       borderColor: [
         'rgba(36, 59, 74, 1)',
@@ -56,7 +54,6 @@ export const data = {
         'rgba(36, 59, 74, 1)',
         'rgba(36, 59, 74, 1)',
         'rgba(36, 59, 74, 1)',
-        // 'rgba(36, 59, 74, 1)',
       ],
       borderWidth: 1,
       hoverBackgroundColor: [
@@ -67,7 +64,6 @@ export const data = {
         'rgba(44, 130, 179, 0.4)',
         'rgba(155, 209, 229, 0.4)',
         'rgba(164, 66, 141, 0.4)',
-        // 'rgba(144, 29, 21, 0.4)',
       ],
     },
   ],

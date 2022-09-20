@@ -52,17 +52,19 @@ const Home = () => {
         </div>
       </div>
       <section className="footprint-data">
-        <div className="calculations">
-          <h2>Annual Per Capita Carbon Emissions in 2020*</h2>
-          <h4>Global annual per capita carbon emissions: 4.47 metric tons</h4>
-          <br />
-          <MeanCountry />
-        </div>
         <div className="graph">
           <h2>Annual Carbon Emissions in 2020*</h2>
+          <br />
           <h4>Global annual carbon emissions: 34,807,259,099 metric tons</h4>
           <br />
           <MeanCountryAnnual />
+        </div>
+        <div className="calculations">
+          <h2>Annual Per Capita Carbon Emissions in 2020*</h2>
+          <br />
+          <h4>Global annual per capita carbon emissions: 4.47 metric tons</h4>
+          <br />
+          <MeanCountry />
         </div>
       </section>
       <section className="footprint-data">
