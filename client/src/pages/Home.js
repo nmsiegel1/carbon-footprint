@@ -62,7 +62,7 @@ const Home = () => {
           <h2>Annual Carbon Emissions in 2020*</h2>
           <h4>Global annual carbon emissions: 34,807,259,099 metric tons</h4>
           <br />
-          {/* <MeanCountryAnnual /> */}
+          <MeanCountryAnnual />
         </div>
       </section>
       <section className="footprint-data">
