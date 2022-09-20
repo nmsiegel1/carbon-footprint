@@ -6,17 +6,16 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
   labels: [
-    'Electricity Emissions',
-    'Vehicle Emissions',
-    'Plane Emissions',
-    'Water Emissions',
-    'Heat Emissions',
-    'Public Transit Emissions',
+    'Food: 15%',
+    'Home Heating and Cooling: 17%',
+    'Transportation: 28%',
+    'Stuff You Buy: 26%',
+    'Other Home Energy Use: 15%',
   ],
   datasets: [
     {
       label: '# of Votes',
-      data: [13120, 7405, 3000, 13120, 6690, 500],
+      data: [14, 17, 28, 26, 15],
       backgroundColor: [
         'rgba(162, 213, 159, 1)',
         'rgba(98, 187, 160, 1)',

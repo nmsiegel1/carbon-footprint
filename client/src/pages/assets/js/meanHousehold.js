@@ -21,32 +21,20 @@ ChartJS.register(
 
 export const data = {
   labels: [
-    'United States',
-    'China',
-    'Germany',
-    'Japan',
-    'Russia',
-    'Continent of Africa',
-    'Conitnent of South America',
+    'Low Footprint Household',
+    'Medium Footprint Household',
+    'High Footprint Household',
   ],
   datasets: [
     {
       label: 'Carbon Emissions in Metric tons',
-      data: [14.24, 7.41, 7.69, 8.51, 10.81, 0.99, 2.31],
+      data: [20, 30, 85],
       backgroundColor: [
         'rgba(162, 213, 159, 1)',
         'rgba(98, 187, 160, 1)',
         'rgba(72, 139, 118, 1)',
-        'rgba(27, 80, 109, 1)',
-        'rgba(44, 130, 179, 1)',
-        'rgba(155, 209, 229, 1)',
-        'rgba(164, 66, 141, 1)',
       ],
       borderColor: [
-        'rgba(36, 59, 74, 1)',
-        'rgba(36, 59, 74, 1)',
-        'rgba(36, 59, 74, 1)',
-        'rgba(36, 59, 74, 1)',
         'rgba(36, 59, 74, 1)',
         'rgba(36, 59, 74, 1)',
         'rgba(36, 59, 74, 1)',
@@ -56,16 +44,12 @@ export const data = {
         'rgba(162, 213, 159, 0.4)',
         'rgba(98, 187, 160, 0.4)',
         'rgba(72, 139, 118, 0.4)',
-        'rgba(27, 80, 109, 0.4)',
-        'rgba(44, 130, 179, 0.4)',
-        'rgba(155, 209, 229, 0.4)',
-        'rgba(164, 66, 141, 0.4)',
       ],
     },
   ],
 };
 
-const MeanCountry = () => {
+const MeanHousehold = () => {
   return (
     <div style={{ position: 'relative', height: '40vh', width: '40vw' }}>
       <Bar
@@ -81,4 +65,4 @@ const MeanCountry = () => {
   );
 };
 
-export default MeanCountry;
+export default MeanHousehold;
