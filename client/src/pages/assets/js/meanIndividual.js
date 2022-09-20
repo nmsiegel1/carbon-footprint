@@ -6,11 +6,11 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
   labels: [
-    'Food: 15%',
-    'Home Heating and Cooling: 17%',
-    'Transportation: 28%',
-    'Stuff You Buy: 26%',
-    'Other Home Energy Use: 15%',
+    'Food',
+    'Home Heating and Cooling',
+    'Transportation',
+    'Stuff You Buy',
+    'Other Home Energy Use',
   ],
   datasets: [
     {
