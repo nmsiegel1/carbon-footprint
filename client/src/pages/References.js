@@ -41,14 +41,6 @@ function References() {
           Heating and Cooling Climate Zones
         </a>
         <a
-          href="https://thebrandboy.com/65-creative-green-company-names/"
-          rel="noreferrer"
-          target="_blank"
-          className="ref-button"
-        >
-          65 Creative Green Company Names
-        </a>
-        <a
           href="https://impactful.ninja/best-charities-for-climate-change/"
           rel="noreferrer"
           target="_blank"
