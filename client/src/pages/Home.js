@@ -64,15 +64,15 @@ const Home = () => {
         )}
       </div>
       <section className="footprint-data">
-        <div className="graph">
-          <h2>Annual Carbon Emissions in 2020*</h2>
+        <div className="graph chart">
+          <h2>Annual Carbon Emissions in Metric Tons from 2020*</h2>
           <br />
           <h4>Global annual carbon emissions: 34,807,259,099 metric tons</h4>
           <br />
           <MeanCountryAnnual />
         </div>
-        <div className="calculations">
-          <h2>Annual Per Capita Carbon Emissions in 2020*</h2>
+        <div className="calculations chart">
+          <h2>Annual Per Capita Carbon Emissions in Metric Tons from 2020*</h2>
           <br />
           <h4>Global annual per capita carbon emissions: 4.47 metric tons</h4>
           <br />
@@ -80,12 +80,15 @@ const Home = () => {
         </div>
       </section>
       <section className="footprint-data">
-        <div className="calculations">
-          <h2>Per-Household Annual Carbon Emissions in the United States**</h2>
+        <div className="calculations chart">
+          <h2>
+            Per-Household Annual Carbon Emissions in the United States in Metric
+            Tons**
+          </h2>
           <br />
           <MeanHousehold />
         </div>
-        <div className="graph">
+        <div className="graph chart">
           <h2>Breakdown of the Average American's Carbon Footprint***</h2>
           <br />
           <MeanIndividual />
