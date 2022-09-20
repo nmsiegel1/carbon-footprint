@@ -23,7 +23,7 @@ function Footer(props) {
               </a>
             </li>
             <li>
-              <a href="/references">References</a>
+              <a href="/donation">References</a>
             </li>
             {/* <li>
               <a href="/signup">Signup</a>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './assets/css/calculator.css';
 
 import Select from '@mui/material/Select';
@@ -9,6 +10,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_TRAVEL, ADD_HOME } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import { Box } from '@mui/system';
+import Auth from '../utils/auth';
 
 const Calculator = () => {
   // set state of user form
@@ -242,537 +244,560 @@ const Calculator = () => {
   }
 
   return (
-    <main className="calculator-main">
-      <h1>Carbon Footprint Calculator</h1>
-      <p className="description">
-        Click each dropdown or slider and then the "Find My Footprint" button
-        below to calculate your carbon footprint. Just calculate for yourself,
-        not your household. The numbers you see are the average American's data.
-        You can use those numbers to help you figure out your own usage!
-      </p>
-      <section className="slider-sections">
-        <form onSubmit={handleSubmit}>
-          <div className="calculator">
-            <div className="travel">
-              <h2>My Travel</h2>
-              <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="car-type">Car Type</InputLabel>
-                <Select
-                  sx={{
-                    color: '#243b4a',
-                    margin: '0 0 15px 0',
-                  }}
-                  labelId="car-type"
-                  id="carType"
-                  name="carType"
-                  defaultValue={carType}
-                  value={carType}
-                  onChange={handleChange}
-                  className="car-type"
-                >
-                  <MenuItem value={'Small'}>Small</MenuItem>
-                  <MenuItem value={'Average'}>Average</MenuItem>
-                  <MenuItem value={'SUV'}>SUV</MenuItem>
-                  <MenuItem value={'Hybrid'}>Hybrid</MenuItem>
-                </Select>
-              </FormControl>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label className="slider">Car Miles Per Month</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Car Miles"
-                  defaultValue={1000}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="carMiles"
-                  step={500}
-                  marks
-                  min={0}
-                  max={3000}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Bus Miles Per Month</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Bus Miles"
-                  defaultValue={0}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="busMiles"
-                  step={500}
-                  marks
-                  min={0}
-                  max={3000}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Train Miles Per Month</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Train Miles"
-                  defaultValue={0}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="trainMiles"
-                  step={50}
-                  marks
-                  min={0}
-                  max={1000}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Plane Miles Per Month</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Plane Miles"
-                  defaultValue={0}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="planeMiles"
-                  step={100}
-                  marks
-                  min={0}
-                  max={4000}
-                ></Slider>
-              </Box>
-            </div>
-
-            <div className="home1">
-              <h2>My Home</h2>
-              <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="fridgeLabel">Fridge</InputLabel>
-                <Select
-                  sx={{
-                    color: '#243b4a',
-                    margin: '0 0 15px 0',
-                  }}
-                  labelId="fridgeLabel"
-                  id="fridge"
-                  name="fridge"
-                  defaultValue={fridge}
-                  value={fridge}
-                  onChange={handleChange}
-                >
-                  <MenuItem value={'Yes'}>Yes</MenuItem>
-                  <MenuItem value={'No'}>No</MenuItem>
-                </Select>
-              </FormControl>
-
-              <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="climate">Climate</InputLabel>
-                <Select
-                  sx={{
-                    color: '#243b4a',
-                    margin: '0 0 15px 0',
-                  }}
-                  labelId="fridgeLabel"
-                  id="fridge"
-                  name="climate"
-                  defaultValue={climate}
-                  value={climate}
-                  onChange={handleChange}
-                >
-                  <MenuItem value={'Cold'}>Cold</MenuItem>
-                  <MenuItem value={'Cool'}>Cool</MenuItem>
-                  <MenuItem value={'Moderate'}>Moderate</MenuItem>
-                  <MenuItem value={'Warm'}>Warm</MenuItem>
-                  <MenuItem value={'Hot'}>Hot</MenuItem>
-                </Select>
-              </FormControl>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Number of Showers Per Week</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Number of Showers"
-                  defaultValue={8}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="showerNumber"
-                  step={4}
-                  marks
-                  min={0}
-                  max={24}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Time spent in the Shower (Minutes)</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Time spent in Shower"
-                  defaultValue={10}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="minutes"
-                  step={10}
-                  marks
-                  min={0}
-                  max={120}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Loads of Laundry Per Month</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Loads of Laundry"
-                  defaultValue={10}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="laundry"
-                  step={5}
-                  marks
-                  min={0}
-                  max={60}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Number of Flushes Per Day</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Flushes"
-                  defaultValue={5}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="flushes"
-                  step={1}
-                  marks
-                  min={0}
-                  max={10}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Bottles of Water From the Sink Per Week</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Bottles of Water"
-                  defaultValue={14}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="bottles"
-                  step={1}
-                  marks
-                  min={0}
-                  max={21}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of TV Per Day</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Hours of TV"
-                  defaultValue={4}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="TV"
-                  step={2}
-                  marks
-                  min={0}
-                  max={12}
-                ></Slider>
-              </Box>
-            </div>
-            <div className="home2">
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of Laptop Use (Plugged In) Per Day</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Hours of Laptop"
-                  defaultValue={2}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="laptop"
-                  step={1}
-                  marks
-                  min={0}
-                  max={24}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of Desktop Use Per Day</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Hours of Desktop"
-                  defaultValue={8}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="desktop"
-                  step={4}
-                  marks
-                  min={0}
-                  max={16}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Hours of Monitor Use Per Day</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Hours of Monitor"
-                  defaultValue={6}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="monitor"
-                  step={3}
-                  marks
-                  min={0}
-                  max={12}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Square Feet of Your Residence</label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Square Feet"
-                  defaultValue={2000}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="size"
-                  step={500}
-                  marks
-                  min={0}
-                  max={8000}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your A/C (at Full Blast)</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="AC Days"
-                  defaultValue={150}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="acDays"
-                  step={5}
-                  marks
-                  min={0}
-                  max={365}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>
-                  Days You Run Your Heat (Natural Gas, at Full Blast)
-                </label>
-                <Slider
-                  sx={{
-                    color: '#2C82B3',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: '#2C82B3',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Gas Days"
-                  defaultValue={150}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="gasDays"
-                  step={5}
-                  marks
-                  min={0}
-                  max={365}
-                ></Slider>
-              </Box>
-
-              <Box sx={{ m: 1, width: 300 }}>
-                <label>Days You Run Your Heat (Oil, at Full Blast)</label>
-                <Slider
-                  sx={{
-                    color: 'green',
-                    margin: '40px 0 15px 0',
-                    '& .MuiSlider-valueLabel': {
-                      borderRadius: '15px',
-                      backgroundColor: 'green',
-                    },
-                    '& .MuiSlider-rail': {
-                      padding: '5px',
-                    },
-                  }}
-                  aria-label="Oil Days"
-                  defaultValue={0}
-                  onChange={handleChange}
-                  valueLabelDisplay="on"
-                  name="oilDays"
-                  step={5}
-                  marks
-                  min={0}
-                  max={365}
-                ></Slider>
-              </Box>
-            </div>
+    <div>
+      {Auth.loggedIn() ? (
+        <main className="calculator-main">
+          <h1>Carbon Footprint Calculator</h1>
+          <div className="description">
+            <p>
+              Click each dropdown or slider and then the "Find My Footprint"
+              button below to calculate your carbon footprint. Just calculate
+              for yourself, not your household. The numbers you see are the
+              average American's data. You can use those numbers to help you
+              figure out your own usage!
+            </p>
+            <p>
+              * Note: This is a paired down carbon footprint calculator. There
+              are many more factors that contribute to your footprint that we
+              have not taken into consideration such as diet, shopping habits
+              and accounting for all of the members of your household. Your
+              carbon footprint may change onces these habits are calculated.
+            </p>
           </div>
-          <div className="calculator-btn">
-            <button type="submit">Find My Footprint</button>
-          </div>
-        </form>
-      </section>
-    </main>
+          <section className="slider-sections">
+            <form onSubmit={handleSubmit}>
+              <div className="calculator">
+                <div className="travel">
+                  <h2>My Travel</h2>
+                  <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="car-type">Car Type</InputLabel>
+                    <Select
+                      sx={{
+                        color: '#243b4a',
+                        margin: '0 0 15px 0',
+                      }}
+                      labelId="car-type"
+                      id="carType"
+                      name="carType"
+                      defaultValue={carType}
+                      value={carType}
+                      onChange={handleChange}
+                      className="car-type"
+                    >
+                      <MenuItem value={'Small'}>Small</MenuItem>
+                      <MenuItem value={'Average'}>Average</MenuItem>
+                      <MenuItem value={'SUV'}>SUV</MenuItem>
+                      <MenuItem value={'Hybrid'}>Hybrid</MenuItem>
+                    </Select>
+                  </FormControl>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label className="slider">Car Miles Per Month</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Car Miles"
+                      defaultValue={1000}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="carMiles"
+                      step={500}
+                      marks
+                      min={0}
+                      max={3000}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Bus Miles Per Month</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Bus Miles"
+                      defaultValue={0}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="busMiles"
+                      step={500}
+                      marks
+                      min={0}
+                      max={3000}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Train Miles Per Month</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Train Miles"
+                      defaultValue={0}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="trainMiles"
+                      step={50}
+                      marks
+                      min={0}
+                      max={1000}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Plane Miles Per Month</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Plane Miles"
+                      defaultValue={0}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="planeMiles"
+                      step={100}
+                      marks
+                      min={0}
+                      max={4000}
+                    ></Slider>
+                  </Box>
+                </div>
+
+                <div className="home1">
+                  <h2>My Home</h2>
+                  <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="fridgeLabel">Fridge</InputLabel>
+                    <Select
+                      sx={{
+                        color: '#243b4a',
+                        margin: '0 0 15px 0',
+                      }}
+                      labelId="fridgeLabel"
+                      id="fridge"
+                      name="fridge"
+                      defaultValue={fridge}
+                      value={fridge}
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={'Yes'}>Yes</MenuItem>
+                      <MenuItem value={'No'}>No</MenuItem>
+                    </Select>
+                  </FormControl>
+
+                  <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="climate">Climate</InputLabel>
+                    <Select
+                      sx={{
+                        color: '#243b4a',
+                        margin: '0 0 15px 0',
+                      }}
+                      labelId="fridgeLabel"
+                      id="fridge"
+                      name="climate"
+                      defaultValue={climate}
+                      value={climate}
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={'Cold'}>Cold</MenuItem>
+                      <MenuItem value={'Cool'}>Cool</MenuItem>
+                      <MenuItem value={'Moderate'}>Moderate</MenuItem>
+                      <MenuItem value={'Warm'}>Warm</MenuItem>
+                      <MenuItem value={'Hot'}>Hot</MenuItem>
+                    </Select>
+                  </FormControl>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Number of Showers Per Week</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Number of Showers"
+                      defaultValue={8}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="showerNumber"
+                      step={4}
+                      marks
+                      min={0}
+                      max={24}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Time spent in the Shower (Minutes)</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Time spent in Shower"
+                      defaultValue={10}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="minutes"
+                      step={10}
+                      marks
+                      min={0}
+                      max={120}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Loads of Laundry Per Month</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Loads of Laundry"
+                      defaultValue={10}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="laundry"
+                      step={5}
+                      marks
+                      min={0}
+                      max={60}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Number of Flushes Per Day</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Flushes"
+                      defaultValue={5}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="flushes"
+                      step={1}
+                      marks
+                      min={0}
+                      max={10}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Bottles of Water From the Sink Per Week</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Bottles of Water"
+                      defaultValue={14}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="bottles"
+                      step={1}
+                      marks
+                      min={0}
+                      max={21}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Hours of TV Per Day</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Hours of TV"
+                      defaultValue={4}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="TV"
+                      step={2}
+                      marks
+                      min={0}
+                      max={12}
+                    ></Slider>
+                  </Box>
+                </div>
+                <div className="home2">
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Hours of Laptop Use (Plugged In) Per Day</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Hours of Laptop"
+                      defaultValue={2}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="laptop"
+                      step={1}
+                      marks
+                      min={0}
+                      max={24}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Hours of Desktop Use Per Day</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Hours of Desktop"
+                      defaultValue={8}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="desktop"
+                      step={4}
+                      marks
+                      min={0}
+                      max={16}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Hours of Monitor Use Per Day</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Hours of Monitor"
+                      defaultValue={6}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="monitor"
+                      step={3}
+                      marks
+                      min={0}
+                      max={12}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Square Feet of Your Residence</label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Square Feet"
+                      defaultValue={2000}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="size"
+                      step={500}
+                      marks
+                      min={0}
+                      max={8000}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Days You Run Your A/C (at Full Blast)</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="AC Days"
+                      defaultValue={150}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="acDays"
+                      step={5}
+                      marks
+                      min={0}
+                      max={365}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>
+                      Days You Run Your Heat (Natural Gas, at Full Blast)
+                    </label>
+                    <Slider
+                      sx={{
+                        color: '#2C82B3',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: '#2C82B3',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Gas Days"
+                      defaultValue={150}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="gasDays"
+                      step={5}
+                      marks
+                      min={0}
+                      max={365}
+                    ></Slider>
+                  </Box>
+
+                  <Box sx={{ m: 1, width: 300 }}>
+                    <label>Days You Run Your Heat (Oil, at Full Blast)</label>
+                    <Slider
+                      sx={{
+                        color: 'green',
+                        margin: '40px 0 15px 0',
+                        '& .MuiSlider-valueLabel': {
+                          borderRadius: '15px',
+                          backgroundColor: 'green',
+                        },
+                        '& .MuiSlider-rail': {
+                          padding: '5px',
+                        },
+                      }}
+                      aria-label="Oil Days"
+                      defaultValue={0}
+                      onChange={handleChange}
+                      valueLabelDisplay="on"
+                      name="oilDays"
+                      step={5}
+                      marks
+                      min={0}
+                      max={365}
+                    ></Slider>
+                  </Box>
+                </div>
+              </div>
+              <div className="calculator-btn">
+                <button type="submit">Find My Footprint</button>
+              </div>
+            </form>
+          </section>
+        </main>
+      ) : (
+        <div className="not-logged-in">
+          <h2 className="no-info-title">
+            Log in to use our carbon footprint calculator!
+          </h2>
+          <Link to="/login">
+            <button type="submit">Log In</button>
+          </Link>
+        </div>
+      )}
+    </div>
   );
 };
 
