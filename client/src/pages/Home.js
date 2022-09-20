@@ -54,7 +54,11 @@ const Home = () => {
         </div>
 
         {Auth.loggedIn() ? (
-          ''
+          <section className="login-btn">
+            <Link to="/calculator">
+              <button type="submit">Calculate Your Carbon Footprint!</button>
+            </Link>
+          </section>
         ) : (
           <section className="login-btn">
             <Link to="/login">

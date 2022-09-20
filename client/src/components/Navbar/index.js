@@ -3,7 +3,6 @@ import './style.css';
 import logo from './images/logo.png';
 import Auth from '../../utils/auth';
 
-
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -20,6 +19,9 @@ const Navbar = () => {
               <a href="/" onClick={() => Auth.logout()}>
                 <li>Logout</li>
               </a>
+              <a href="/about">
+                <li>About</li>
+              </a>
               <a href="/calculator">
                 <li>Footprint Calculator</li>
               </a>
@@ -28,6 +30,24 @@ const Navbar = () => {
               </a>
               <a href="/mypledges">
                 <li>My Pledges</li>
+              </a>
+              <a href="/donation">
+                <li>Want To Do More?</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+          <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+            <ul>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/login">
+                <li>Log In/Sign Up</li>
               </a>
               <a href="/about">
                 <li>About</li>
@@ -38,29 +58,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      )
-    }
-    else {
-      return (
-        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
-        <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
-          <ul>
-            <a href="/">
-              <li>Home</li>
-            </a>
-            <a href="/login">
-              <li>Log In/Sign Up</li>
-            </a>
-            <a href="/about">
-                <li>About</li>
-            </a>
-            <a href="/donation">
-              <li>Want To Do More?</li>
-            </a>
-          </ul>
-        </div>
-      </div>
-      )
+      );
     }
   }
 
