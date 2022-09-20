@@ -26,6 +26,9 @@ const Navbar = () => {
               <a href="/mypledges">
                 <li>My Pledges</li>
               </a>
+              <a href="/about">
+                <li>About</li>
+              </a>
               <a href="/donation">
                 <li>Want To Do More?</li>
               </a>
@@ -44,6 +47,9 @@ const Navbar = () => {
             </a>
             <a href="/login">
               <li>Log In/Sign Up</li>
+            </a>
+            <a href="/about">
+                <li>About</li>
             </a>
             <a href="/donation">
               <li>Want To Do More?</li>
