@@ -54,14 +54,11 @@ label {
   font-weight: bold;
 }
 
-/* @media screen and (max-width: 990px) {
+@media screen and (max-width: 990px) {
   .calculator {
-    justify-content: flex-end;
-  }
-} */
-
-@media screen and (max-width: 660px) {
-  .calculator {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 }
