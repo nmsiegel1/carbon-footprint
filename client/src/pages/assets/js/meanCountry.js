@@ -31,7 +31,7 @@ export const data = {
   ],
   datasets: [
     {
-      label: 'Carbon Emissions in Metric tons',
+      label: 'Carbon Emissions in Metric Tons',
       data: [14.24, 7.41, 7.69, 8.51, 10.81, 0.99, 2.31],
       backgroundColor: [
         'rgba(162, 213, 159, 1)',
