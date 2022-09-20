@@ -43,11 +43,24 @@ const Home = () => {
 
         <div className="home-p">
           <p>
-            Climate Change is one of the largest issues facing our lives. The
-            everyday activities that we do create greenhouse gas emissions that
-            then strengthen the greenhouse effect. One of the most common
-            emissions come from Carbon Dioxide which is created from burning
-            fossil fuels such as coal, oil, and natural gas.
+            Climate Change is one of the largest issues facing our lives today.
+            The long-term shifts in temperature and weather patterns globally
+            have huge ramifications and are in large part caused by human
+            activity. Our everyday activities produce carbon dioxide and methane
+            emissions (also called carbon emissions) which are directly causing
+            this shift in climate. The amount of carbon emissions produced by an
+            individual or organization is called a carbon footprint.
+          </p>
+          <br />
+          <p>
+            So what do we do about it? Small changes to our daily routine can
+            make a big impact on our carbon footprints. Any reduction in carbon
+            emissions can help slow climate change and hopefully stop any
+            further climate disasters. We know this can all feel like a lot so
+            we are here to guide you through taking your first footsteps towards
+            change. First use our calculator tool to see your carbon footprint.
+            Then make pledges to make small changes to your daily routine and in
+            turn reduce your carbon footprint!
           </p>
         </div>
       </div>
