@@ -28,7 +28,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/donation">References</a>
+                <a href="/donation">Fight Climate Change</a>
               </li>
             </ul>
           </div>
