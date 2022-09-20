@@ -17,6 +17,9 @@ const Navbar = () => {
               <a href="/">
                 <li>Home</li>
               </a>
+              <a href="/" onClick={() => Auth.logout()}>
+                <li>Logout</li>
+              </a>
               <a href="/calculator">
                 <li>Footprint Calculator</li>
               </a>
