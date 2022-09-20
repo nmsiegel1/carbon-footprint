@@ -75,6 +75,11 @@ const MeanCountry = () => {
           maintainAspectRatio: false,
           resizeDelay: 0,
           responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          }
         }}
       ></Bar>
     </div>
