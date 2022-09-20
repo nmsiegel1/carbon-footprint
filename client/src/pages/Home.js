@@ -65,62 +65,64 @@ const Home = () => {
       </div>
       <section className="footprint-data">
         <div className="graph chart">
-          <h2>Annual Carbon Emissions in Metric Tons from 2020*</h2>
+          <h2>Annual Carbon Emissions - Metric Tons</h2>
           <br />
-          <h4>Global annual carbon emissions: 34,807,259,099 metric tons</h4>
+          <h4>
+            Global annual carbon emissions from 2020: 34,807,259,099 metric tons
+          </h4>
           <br />
-          <MeanCountryAnnual />
-        </div>
-        <div className="calculations chart">
-          <h2>Annual Per Capita Carbon Emissions in Metric Tons from 2020*</h2>
-          <br />
-          <h4>Global annual per capita carbon emissions: 4.47 metric tons</h4>
-          <br />
-          <MeanCountry />
-        </div>
-      </section>
-      <section className="footprint-data">
-        <div className="calculations chart">
-          <h2>
-            Per-Household Annual Carbon Emissions in the United States in Metric
-            Tons**
-          </h2>
-          <br />
-          <MeanHousehold />
-        </div>
-        <div className="graph chart">
-          <h2>Breakdown of the Average American's Carbon Footprint***</h2>
-          <br />
-          <MeanIndividual />
-        </div>
-      </section>
-
-      <section className="home-references">
-        <h3>
           <a
             href="https://ourworldindata.org/co2/"
             rel="noreferrer"
             target="_blank"
           >
-            *World Data
+            <MeanCountryAnnual />
           </a>
+        </div>
+
+        <div className="calculations chart">
+          <h2>Annual Per Capita Carbon Emissions - Metric Tons</h2>
+          <br />
+          <h4>
+            Global annual per capita carbon emissions from 2020: 4.47 metric
+            tons
+          </h4>
+          <br />
+          <a
+            href="https://ourworldindata.org/co2/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <MeanCountry />
+          </a>
+        </div>
+      </section>
+      <section className="footprint-data">
+        <div className="calculations chart">
+          <h2>
+            Per-Household Annual Carbon Emissions in the United States - Metric
+            Tons
+          </h2>
           <br />
           <a
             href="https://www.zerofy.net/2022/04/04/household-co2-emissions.html"
             rel="noreferrer"
             target="_blank"
           >
-            **Per Household Footprint
+            <MeanHousehold />
           </a>
+        </div>
+        <div className="graph chart">
+          <h2>Breakdown of the Average American's Carbon Footprint</h2>
           <br />
           <a
             href="https://suncommon.com/understanding-your-carbon-footprint/"
             rel="noreferrer"
             target="_blank"
           >
-            ***Average Footprint Breakdown
+            <MeanIndividual />
           </a>
-        </h3>
+        </div>
       </section>
       <br />
     </main>
