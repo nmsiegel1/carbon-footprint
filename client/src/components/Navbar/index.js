@@ -3,22 +3,6 @@ import './style.css';
 import logo from './images/logo.png';
 import Auth from '../../utils/auth';
 
-function NavLoggedIn({ isLoggedIn }) {
-  if (isLoggedIn) {
-    return (
-      <li className="logIn">
-        <a href="/login"> Log In/Sign Up</a>
-      </li>
-    );
-  }
-  return (
-    <li className="logOut">
-      <a href="/" onClick={() => Auth.logout()}>
-        Log Out
-      </a>
-    </li>
-  );
-}
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -58,7 +42,6 @@ const Navbar = () => {
             <a href="/donation">
               <li>Want To Do More?</li>
             </a>
-            <NavLoggedIn isLoggedIn={!Auth.loggedIn()} />
           </ul>
         </div>
       </div>
