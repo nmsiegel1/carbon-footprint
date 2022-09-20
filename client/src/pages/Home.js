@@ -25,22 +25,11 @@ const Home = () => {
             </h1>
           </div>
         </section>
-
         <div className="home-tagline">
           <h2>
             Curious what your <span>IMPACT</span> on the world is?
           </h2>
         </div>
-        {Auth.loggedIn() ? (
-          ''
-        ) : (
-          <section className="login-btn">
-            <Link to="/login">
-              <button type="submit">Calculate Your Carbon Footprint!</button>
-            </Link>
-          </section>
-        )}
-
         <div className="home-p">
           <p>
             Climate Change is one of the largest issues facing our lives today.
@@ -63,6 +52,16 @@ const Home = () => {
             turn reduce your carbon footprint!
           </p>
         </div>
+
+        {Auth.loggedIn() ? (
+          ''
+        ) : (
+          <section className="login-btn">
+            <Link to="/login">
+              <button type="submit">Calculate Your Carbon Footprint!</button>
+            </Link>
+          </section>
+        )}
       </div>
       <section className="footprint-data">
         <div className="graph">
