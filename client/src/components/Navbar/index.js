@@ -8,6 +8,53 @@ const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
 
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+          <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+            <ul>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/calculator">
+                <li>Footprint Calculator</li>
+              </a>
+              <a href="/myfootprint">
+                <li>My Footprint</li>
+              </a>
+              <a href="/mypledges">
+                <li>My Pledges</li>
+              </a>
+              <a href="/donation">
+                <li>Want To Do More?</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+        <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+          <ul>
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="/login">
+              <li>Log In/Sign Up</li>
+            </a>
+            <a href="/donation">
+              <li>Want To Do More?</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      )
+    }
+  }
+
   return (
     <nav className="navBar">
       <a href="/" className="brand-name">
@@ -24,27 +71,7 @@ const Navbar = () => {
           setIsMenuClicked(!isMenuClicked);
         }}
       ></button>
-      <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
-        <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
-          <ul>
-            <a href="/">
-              <li>Home</li>
-            </a>
-            <a href="/calculator">
-              <li>Footprint Calculator</li>
-            </a>
-            <a href="/myfootprint">
-              <li>My Footprint</li>
-            </a>
-            <a href="/mypledges">
-              <li>My Pledges</li>
-            </a>
-            <a href="/donation">
-              <li>Want To Do More?</li>
-            </a>
-          </ul>
-        </div>
-      </div>
+      {showNavigation()}
     </nav>
   );
 };
