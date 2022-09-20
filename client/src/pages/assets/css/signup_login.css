@@ -1,5 +1,6 @@
 .signup-main {
   background-image: url(../images/right-blue-blue.png);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -8,6 +9,7 @@
 
 .login-main {
   background-image: url(../images/left-green-blue.png);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -23,12 +25,12 @@
   align-items: center;
 }
 
-.signup h2 {
+.signup h1 {
   font-size: 35px;
   color: var(--dark-blue);
 }
 
-.login h2 {
+.login h1 {
   font-size: 35px;
   color: var(--green);
 }

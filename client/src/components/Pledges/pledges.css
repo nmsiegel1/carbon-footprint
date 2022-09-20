@@ -42,7 +42,6 @@
 }
 
 .pledge a {
-  /* text-decoration: none; */
   color: var(--dark-blue);
 }
 
@@ -56,4 +55,31 @@
 .pledge-btn:hover {
   background-color: var(--light-blue);
   color: var(--dark-blue);
+}
+
+.goto-pledge-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.goto-pledge-btn button {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  border: none;
+}
+
+.goto-pledge-btn button:hover {
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
+}
+
+@media screen and (max-width: 600px) {
+  .pledge-data {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

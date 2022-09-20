@@ -1,5 +1,6 @@
 .donation-main {
   background-image: url(../images/left-green-blue.png);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -8,12 +9,13 @@
 
 .donation-title {
   margin: 10px 25px 45px 25px;
-  font-size: 35px;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .donate {
   margin: 10px 25px 0 25px;
-  font-size: 30px;
+  font-size: 1.8rem;
 }
 
 .donation {
@@ -57,12 +59,12 @@ p {
 }
 
 .resource {
-  margin: 50px 25px 0 25px;
-  font-size: 30px;
+  margin: 50px 25px 0px 25px;
+  font-size: 1.8rem;
 }
 
 .resources {
-  margin: 25px;
+  margin: 25px 25px 0px 25px;
 }
 
 .resources a {

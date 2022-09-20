@@ -1,10 +1,66 @@
 import React, { useState } from 'react';
 import './style.css';
-import menu_icon from './images/menu.png';
 import logo from './images/logo.png';
+import Auth from '../../utils/auth';
 
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+          <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+            <ul>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/" onClick={() => Auth.logout()}>
+                <li>Logout</li>
+              </a>
+              <a href="/about">
+                <li>About</li>
+              </a>
+              <a href="/calculator">
+                <li>Footprint Calculator</li>
+              </a>
+              <a href="/myfootprint">
+                <li>My Footprint</li>
+              </a>
+              <a href="/mypledges">
+                <li>My Pledges</li>
+              </a>
+              <a href="/donation">
+                <li>Want To Do More?</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
+          <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
+            <ul>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/login">
+                <li>Log In/Sign Up</li>
+              </a>
+              <a href="/about">
+                <li>About</li>
+              </a>
+              <a href="/donation">
+                <li>Want To Do More?</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      );
+    }
+  }
 
   return (
     <nav className="navBar">
@@ -19,26 +75,10 @@ const Navbar = () => {
         className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded);
+          setIsMenuClicked(!isMenuClicked);
         }}
-      >
-        <img src={menu_icon} alt="3 lines to representing the menu" />
-      </button>
-      <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/mypledges">Pledges</a>
-          </li>
-          <li>
-            <a href="/calculator">Calculator</a>
-          </li>
-          <li>
-            <a href="/login">Log in</a>
-          </li>
-        </ul>
-      </div>
+      ></button>
+      {showNavigation()}
     </nav>
   );
 };

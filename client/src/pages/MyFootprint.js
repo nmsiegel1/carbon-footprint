@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Pledges from '../components/Pledges';
 import { Graph } from '../components/Graph';
 import { addCommas } from '../utils/helpers.js';
@@ -25,9 +26,9 @@ const MyFootprint = () => {
               {homeData.length || travelData.length ? (
                 <div className="footprint-data">
                   <div className="calculations">
-                    <h2 className="footprint-title">
+                    <h1 className="footprint-title">
                       {username}'s Carbon Footprint
-                    </h2>
+                    </h1>
                     <p>
                       Water emissions: {addCommas(homeData[0].waterEmissions)}{' '}
                       kg CO2
@@ -70,9 +71,16 @@ const MyFootprint = () => {
                   </div>
                 </div>
               ) : (
-                <h2 className="no-info-title">
-                  You haven't calculated your carbon footprint yet!
-                </h2>
+                <div>
+                  <h2 className="no-info-title">
+                    You haven't calculated your carbon footprint yet!
+                  </h2>
+                  <div className="add-btn">
+                    <Link to="/calculator">
+                      <button>Go to Calculator</button>
+                    </Link>
+                  </div>
+                </div>
               )}
             </div>
           </section>
@@ -81,7 +89,14 @@ const MyFootprint = () => {
           </section>
         </div>
       ) : (
-        <h2 className="no-info-title">Log in to see your carbon footprint!</h2>
+        <div className="not-logged-in">
+          <h2 className="no-info-title">
+            Log in to see your carbon footprint!
+          </h2>
+          <Link to="/login">
+            <button type="submit">Log In</button>
+          </Link>
+        </div>
       )}
     </div>
   );

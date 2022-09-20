@@ -5,22 +5,15 @@
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem 1rem 0rem;
-  background-color: rgba(247, 247, 255, 0.25);
-  /* position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 9999; */
+  background-color: var(--white);
+  z-index: 9999;
 }
 
 .navLogo {
-  height: 40px;
+  height: 50px;
+  margin-top: 18px;
+  margin-left: 10px;
 }
-/* .brand-name {
-  text-decoration: none;
-  color: #243b4a;
-  font-size: 1.3rem;
-  margin-left: 1rem;
-} */
 
 .menuNav {
   margin-left: auto;
@@ -30,49 +23,67 @@
 .menuNav ul {
   position: absolute;
   top: 60px;
-  left: 0;
+  right: 0;
   flex-direction: column;
   width: 100%;
   height: calc(100vh - 77px);
   display: none;
+  list-style: none;
 }
 
 .menuNav.expanded ul {
   display: block;
+  background-image: url(../../pages/assets/images/bottom-wave-blue.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200vh;
+  background-color: var(--white);
+}
+
+.menu-icon-open::after {
+  content: url('https://api.iconify.design/charm/menu-hamburger.svg?color=%23243b4a&width=45&height=40');
+  /* charm:menu-hamburger */
+}
+
+.menu-icon-close::after {
+  content: url('https://api.iconify.design/bi/x-lg.svg?color=%23243b4a&width=45&height=40');
+  /* html bi:x-lg */
 }
 
 .menuNav li {
   text-align: center;
-  margin: 0;
-  padding: 2rem;
-  font-size: larger;
+  margin: 25px 0 20px 0;
+  padding: 0.8rem;
+  font-size: 40px;
+  color: var(--dark-blue);
 }
 
-.menuNav li a {
-  color: black;
-  width: 100%;
+.menuNav a {
+  color: var(--dark-blue);
   text-decoration: none;
 }
 
 .menuNav li:hover {
-  background-color: #bdd5ea;
-}
-
-.menuNav a:hover {
-  background-color: #bdd5ea;
+  background-color: var(--light-blue);
 }
 
 .hamburger {
   border: 0;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 45px;
   padding: 1rem;
   cursor: pointer;
   position: absolute;
-  top: 0%;
-  right: 25px;
-  transform: translateY(-50%);
+  top: 30%;
+  right: 0;
+  transform: translateY(-30%);
+  background-color: transparent;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
+  .menuNav.expanded ul {
+    height: 400vh;
+  }
 }

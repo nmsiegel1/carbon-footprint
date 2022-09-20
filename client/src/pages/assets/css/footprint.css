@@ -15,11 +15,12 @@
   border: solid var(--dark-blue) 2px;
   border-radius: 10px;
   padding: 15px;
+  background-color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .footprint-title {
-  font-size: 35px;
+  font-size: 2rem;
   padding-bottom: 20px;
 }
 
@@ -35,10 +36,30 @@
   border-radius: 10px;
   margin: 20px;
   padding: 15px;
+  background-color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .no-info-title {
   margin: 20px;
-  font-size: 35px;
+  font-size: 2rem;
+}
+
+.not-logged-in {
+  background-image: url(../images/right-wave-green.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.not-logged-in button {
+  margin: 20px;
+  border: var(--dark-blue) 2px solid;
+}
+
+.not-logged-in button:hover {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
 }

@@ -1,14 +1,16 @@
 .calculator-main {
   background-image: url(../images/right-blue-blue.png);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100%;
   background-repeat: no-repeat;
 }
 
-.calculator-main h2 {
+.calculator-main h1 {
   margin: 20px;
-  font-size: 35px;
+  font-size: 2.3rem;
+  text-align: center;
 }
 
 .description {
@@ -17,12 +19,12 @@
 }
 
 .slider-sections {
-  margin: 20px;
+  margin: 20px 20px 10px 20px;
 }
 
-.slider-sections h3 {
+.slider-sections h2 {
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 1.8rem;
 }
 
 .calculator {
@@ -52,14 +54,11 @@ label {
   font-weight: bold;
 }
 
-/* @media screen and (max-width: 990px) {
+@media screen and (max-width: 990px) {
   .calculator {
-    justify-content: flex-end;
-  }
-} */
-
-@media screen and (max-width: 660px) {
-  .calculator {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 }

@@ -1,0 +1,84 @@
+.home-main {
+  background-image: url(../images/left-green-blue.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home-main span {
+  color: var(--green);
+}
+
+.home-header {
+  margin: 10px 0 20px 0;
+
+  align-content: center;
+}
+
+.home-title h1 {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.home-logo {
+  text-align: center;
+}
+
+.home-logo img {
+  height: 4rem;
+}
+
+.home-tagline {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-tagline h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.home-p {
+  text-align: center;
+  padding: 10px 30px;
+  font-weight: bold;
+}
+
+.home-references {
+  margin-left: 40px;
+}
+
+.home-references a {
+  font-size: small;
+  color: var(--dark-blue);
+}
+
+.footprint-average {
+  align-items: flex-end;
+}
+.graph h2,
+.calculations h2 {
+  font-size: 1.5rem;
+}
+
+.login-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+
+.login-btn button {
+  border: var(--dark-blue) solid 0.05rem;
+}
+
+.login-btn button:hover {
+  border: none;
+  background-color: var(--green);
+  color: var(--white);
+}

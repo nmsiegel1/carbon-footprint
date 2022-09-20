@@ -18,6 +18,8 @@ import MyPledges from './pages/MyPledges';
 import NoMatch from './pages/NoMatch';
 import Donation from './pages/Donation';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import About from './pages/About';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -52,10 +54,12 @@ function App() {
             <Route path="/myfootprint" element={<MyFootprint />} />
             <Route path="/mypledges" element={<MyPledges />} />
             <Route path="/donation" element={<Donation />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }
