@@ -71,9 +71,16 @@ const MyFootprint = () => {
                   </div>
                 </div>
               ) : (
-                <h2 className="no-info-title">
-                  You haven't calculated your carbon footprint yet!
-                </h2>
+                <div>
+                  <h2 className="no-info-title">
+                    You haven't calculated your carbon footprint yet!
+                  </h2>
+                  <div className="add-btn">
+                    <Link to="/calculator">
+                      <button>Go to Calculator</button>
+                    </Link>
+                  </div>
+                </div>
               )}
             </div>
           </section>
