@@ -14,12 +14,6 @@ function Footer(props) {
               <a href="/about">About</a>
             </li>
             <li>
-              <a href="/calculator">Calculator</a>
-            </li>
-            <li>
-              <a href="/contact">Contact Us</a>
-            </li>
-            <li>
               <a href="/signup">Signup</a>
             </li>
           </ul>
@@ -39,9 +33,6 @@ function Footer(props) {
             </li>
             <li>
               <a href="/donation">Donate</a>
-            </li>
-            <li>
-              <a href="/mypledges">My Pledges</a>
             </li>
             <li>
               <a href="/references">References</a>
