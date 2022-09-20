@@ -20,7 +20,7 @@
 
 .home-title h1 {
   text-align: center;
-  font-size: 35px;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 
@@ -34,12 +34,18 @@
 
 .home-tagline {
   text-align: center;
-  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.home-tagline h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 .home-p {
   text-align: center;
   padding: 10px 30px;
+  font-weight: bold;
 }
 
 .home-references {
@@ -54,6 +60,10 @@
 .footprint-average {
   align-items: flex-end;
 }
+.graph h2,
+.calculations h2 {
+  font-size: 1.5rem;
+}
 
 .login-btn {
   display: flex;
@@ -64,7 +74,7 @@
 }
 
 .login-btn button {
-  border: var(--dark-blue) solid 2px;
+  border: var(--dark-blue) solid 0.05rem;
 }
 
 .login-btn button:hover {

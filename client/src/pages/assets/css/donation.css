@@ -9,12 +9,13 @@
 
 .donation-title {
   margin: 10px 25px 45px 25px;
-  font-size: 35px;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .donate {
   margin: 10px 25px 0 25px;
-  font-size: 30px;
+  font-size: 1.8rem;
 }
 
 .donation {
@@ -59,7 +60,7 @@ p {
 
 .resource {
   margin: 50px 25px 0px 25px;
-  font-size: 30px;
+  font-size: 1.8rem;
 }
 
 .resources {

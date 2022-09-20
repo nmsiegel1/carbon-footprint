@@ -243,7 +243,7 @@ const Calculator = () => {
 
   return (
     <main className="calculator-main">
-      <h2>Carbon Footprint Calculator</h2>
+      <h1>Carbon Footprint Calculator</h1>
       <p className="description">
         Click each dropdown or slider and then the "Find My Footprint" button
         below to calculate your carbon footprint. Just calculate for yourself,
@@ -254,7 +254,7 @@ const Calculator = () => {
         <form onSubmit={handleSubmit}>
           <div className="calculator">
             <div className="travel">
-              <h3>My Travel</h3>
+              <h2>My Travel</h2>
               <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="car-type">Car Type</InputLabel>
                 <Select
@@ -383,7 +383,7 @@ const Calculator = () => {
             </div>
 
             <div className="home1">
-              <h3>My Home</h3>
+              <h2>My Home</h2>
               <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="fridgeLabel">Fridge</InputLabel>
                 <Select

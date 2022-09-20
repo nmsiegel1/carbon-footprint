@@ -43,10 +43,10 @@ const Donation = () => {
   return (
     <main className="donation-main">
       <div>
-        <h2 className="donation-title">
+        <h1 className="donation-title">
           Looking for more ways to help the environment?
-        </h2>
-        <h3 className="donate">Donate to fight climate change:</h3>
+        </h1>
+        <h2 className="donate">Donate to fight climate change:</h2>
         <div className="donation">
           {donations.map(({ title, link, description }) => (
             <div className="donation-card" key={title}>
@@ -60,9 +60,9 @@ const Donation = () => {
         </div>
       </div>
       <div>
-        <h3 className="resource">
+        <h2 className="resource">
           Learn more about lowering your carbon footprint:
-        </h3>
+        </h2>
         <div className="resources">
           {resources.map(({ link, title }) => (
             <a key={title} href={link} target="_blank" rel="noreferrer">

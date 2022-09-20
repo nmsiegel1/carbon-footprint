@@ -24,9 +24,9 @@ const Home = () => {
         </section>
 
         <div className="home-tagline">
-          <p>
+          <h2>
             Curious what your <span>IMPACT</span> on the world is?
-          </p>
+          </h2>
         </div>
         <section className="login-btn">
           <Link to="/login">
@@ -45,13 +45,13 @@ const Home = () => {
       </div>
       <section className="footprint-data">
         <div className="calculations">
-          <h2 className="footprint-title">Per capita carbon emissions 2020*</h2>
+          <h2>Per capita carbon emissions 2020*</h2>
+          <br />
           <MeanCountry />
         </div>
         <div className="graph">
-          <h2 className="footprint-title">
-            Per capita carbon emissions in the USA**
-          </h2>
+          <h2>Per capita carbon emissions in the USA**</h2>
+          <br />
           <MeanIndividual />
         </div>
       </section>

@@ -26,9 +26,9 @@ const MyFootprint = () => {
               {homeData.length || travelData.length ? (
                 <div className="footprint-data">
                   <div className="calculations">
-                    <h2 className="footprint-title">
+                    <h1 className="footprint-title">
                       {username}'s Carbon Footprint
-                    </h2>
+                    </h1>
                     <p>
                       Water emissions: {addCommas(homeData[0].waterEmissions)}{' '}
                       kg CO2

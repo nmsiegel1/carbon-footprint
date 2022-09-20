@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import Logo from '../Navbar/images/logo.png';
 import { Icon } from '@iconify/react';
 
 function Footer(props) {
@@ -52,6 +53,12 @@ function Footer(props) {
           <div className="footer-info-copyright">
             <Icon icon="mdi:copyright" color="#243B4A" width="20" height="12" />{' '}
             2022 Copyright
+          </div>
+          <div className="footer-logo">
+            <img
+              src={Logo}
+              alt="logo of a foot oultine with the earth inside it "
+            ></img>
           </div>
         </section>
       </section>

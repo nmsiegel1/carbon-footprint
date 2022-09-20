@@ -25,12 +25,12 @@
   align-items: center;
 }
 
-.signup h2 {
+.signup h1 {
   font-size: 35px;
   color: var(--dark-blue);
 }
 
-.login h2 {
+.login h1 {
   font-size: 35px;
   color: var(--green);
 }

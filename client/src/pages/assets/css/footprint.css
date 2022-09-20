@@ -19,7 +19,7 @@
 }
 
 .footprint-title {
-  font-size: 35px;
+  font-size: 2rem;
   padding-bottom: 20px;
 }
 
@@ -40,7 +40,7 @@
 
 .no-info-title {
   margin: 20px;
-  font-size: 35px;
+  font-size: 2rem;
 }
 
 .not-logged-in {

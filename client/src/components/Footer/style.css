@@ -73,6 +73,15 @@
 }
 
 .footer-info-right {
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: end;
+}
+
+.footer-logo {
+  text-align: end;
+  margin-right: 2rem;
+}
+
+.footer-logo img {
+  height: 3rem;
 }
