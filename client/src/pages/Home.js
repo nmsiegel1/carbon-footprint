@@ -5,7 +5,6 @@ import MeanCountry from './assets/js/meanCountry';
 import MeanIndividual from './assets/js/meanIndividual';
 import MeanCountryAnnual from './assets/js/meanCountryAnnual';
 import MeanHousehold from './assets/js/meanHousehold';
-import Logo from './assets/images/logo.png';
 import Auth from '../utils/auth';
 
 const Home = () => {
@@ -13,12 +12,6 @@ const Home = () => {
     <main className="home-main">
       <div>
         <section className="home-header">
-          <div className="home-logo">
-            <img
-              src={Logo}
-              alt="logo of a foot oultine with the earth inside it "
-            ></img>
-          </div>
           <div className="home-title">
             <h1>
               Carbon <span>Footsteps</span>
@@ -32,7 +25,7 @@ const Home = () => {
         </div>
         <div className="home-p">
           <p>
-            Climate Change is one of the largest issues facing our lives today.
+            Climate change is one of the largest issues facing our lives today.
             The long-term shifts in temperature and weather patterns globally
             have huge ramifications and are in large part caused by human
             activity. Our everyday activities produce carbon dioxide and methane
