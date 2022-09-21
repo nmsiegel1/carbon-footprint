@@ -39,7 +39,7 @@ function Footer() {
           </div>
         </section>
       </section>
-      <hr className="footer-separator" />
+      {/* <hr className="footer-separator" /> */}
     </footer>
   );
 }

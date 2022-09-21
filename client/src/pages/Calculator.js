@@ -248,21 +248,23 @@ const Calculator = () => {
       {Auth.loggedIn() ? (
         <main className="calculator-main">
           <h1>Carbon Footprint Calculator</h1>
-          <div className="description">
-            <p>
-              Click each dropdown or slider and then the "Find My Footprint"
-              button below to calculate your carbon footprint. Just calculate
-              for yourself, not your household. The numbers you see are the
-              average American's data. You can use those numbers to help you
-              figure out your own usage!
-            </p>
-            <p>
-              * Note: This is a paired down carbon footprint calculator. There
-              are many more factors that contribute to your footprint that we
-              have not taken into consideration such as diet, shopping habits
-              and accounting for all of the members of your household. Your
-              carbon footprint may change onces these habits are calculated.
-            </p>
+          <div className="text">
+            <div className="description">
+              <p>
+                Click each dropdown or slider and then the "Find My Footprint"
+                button below to calculate your carbon footprint. Just calculate
+                for yourself, not your household. The numbers you see are the
+                average American's data. You can use those numbers to help you
+                figure out your own usage!
+              </p>
+              <p>
+                * Note: This is a paired down carbon footprint calculator. There
+                are many more factors that contribute to your footprint that we
+                have not taken into consideration such as diet, shopping habits
+                and accounting for all of the members of your household. Your
+                carbon footprint may change onces these habits are calculated.
+              </p>
+            </div>
           </div>
           <section className="slider-sections">
             <form onSubmit={handleSubmit}>
