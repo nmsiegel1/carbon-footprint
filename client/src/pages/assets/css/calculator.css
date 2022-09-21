@@ -9,13 +9,23 @@
 
 .calculator-main h1 {
   margin: 20px;
-  font-size: 2.3rem;
+  font-size: 40px;
   text-align: center;
+}
+
+.text {
+  padding: 20px 60px;
 }
 
 .description {
   font-size: 18px;
   margin: 20px;
+  border: solid var(--dark-blue) 2px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  line-height: 1.5;
 }
 
 .slider-sections {
@@ -31,6 +41,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 40px;
 }
 
 .calculator-btn {
