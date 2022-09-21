@@ -20,18 +20,17 @@ const Home = () => {
         </section>
         <div className="home-tagline">
           <h2>
-            Curious what your <span>IMPACT</span> on the world is?
+            What your <span>IMPACT</span> on the world?
           </h2>
         </div>
         <div className="home-p">
           <p>
-            Climate change is one of the largest issues facing our lives today.
-            The long-term shifts in temperature and weather patterns globally
-            have huge ramifications and are in large part caused by human
-            activity. Our everyday activities produce carbon dioxide and methane
-            emissions (also called carbon emissions) which are directly causing
-            this shift in climate. The amount of carbon emissions produced by an
-            individual or organization is called a carbon footprint.
+            What is a carbon footprint? Our everyday activities produce carbon
+            dioxide and methane emissions (also called carbon emissions) which
+            directly contribute to climate change and the worsening climate
+            disasters experienced around the world almost daily. The amount of
+            carbon emissions produced by an individual or organization is called
+            a carbon footprint.
           </p>
           <br />
           <p>
