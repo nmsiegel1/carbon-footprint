@@ -23,7 +23,6 @@
   border: solid var(--dark-blue) 2px;
   border-radius: 10px;
   padding: 15px;
-  background-color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   line-height: 1.5;
 }
