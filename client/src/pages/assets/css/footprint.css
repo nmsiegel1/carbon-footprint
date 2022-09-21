@@ -52,6 +52,7 @@
   background-position: center;
   height: 100vh;
   background-repeat: no-repeat;
+  padding: 10px 40px;
 }
 
 .not-logged-in button {
