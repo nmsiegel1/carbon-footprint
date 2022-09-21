@@ -17,8 +17,8 @@
     "eslint": "^8.23.0"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1",
-    "concurrently": "^5.1.0"
+    "prettier": "^2.7.1"
   }
 }
