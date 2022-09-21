@@ -20,47 +20,51 @@ const Home = () => {
         </section>
         <div className="home-tagline">
           <h2>
-            What your <span>IMPACT</span> on the world?
+            Curious what your <span>IMPACT</span> is on the world?
           </h2>
         </div>
-        <div className="home-p">
-          <p>
-            What is a carbon footprint? Our everyday activities produce carbon
-            dioxide and methane emissions (also called carbon emissions) which
-            directly contribute to climate change and the worsening climate
-            disasters experienced around the world almost daily. The amount of
-            carbon emissions produced by an individual or organization is called
-            a carbon footprint.
-          </p>
-          <br />
-          <p>
-            So what do we do about it? Small changes to our daily routine can
-            make a big impact on our carbon footprints. Any reduction in carbon
-            emissions can help slow climate change and hopefully stop any
-            further climate disasters. We know this can all feel like a lot so
-            we are here to guide you through taking your first footsteps towards
-            change. First use our calculator tool to see your carbon footprint.
-            Then make pledges to make small changes to your daily routine and in
-            turn reduce your carbon footprint!
-          </p>
-        </div>
-
         {Auth.loggedIn() ? (
           <section className="login-btn">
             <Link to="/calculator">
-              <button type="submit">Calculate Your Carbon Footprint!</button>
+              <button type="submit">Calculate Your Footprint!</button>
             </Link>
           </section>
         ) : (
           <section className="login-btn">
             <Link to="/login">
-              <button type="submit">Calculate Your Carbon Footprint!</button>
+              <button type="submit">Calculate Your Footprint!</button>
             </Link>
           </section>
         )}
+        <div className="intro-text">
+          <div className="home-p">
+            <p>
+              What is a carbon footprint? Our everyday activities produce carbon
+              dioxide and methane emissions (also called carbon emissions) which
+              directly contribute to climate change and the worsening climate
+              disasters experienced around the world almost daily. The amount of
+              carbon emissions produced by an individual or organization is
+              called a carbon footprint.
+            </p>
+            <br />
+            <p>
+              So what do we do about it? Small changes to our daily routine can
+              make a big impact on our carbon footprints. Any reduction in
+              carbon emissions can help slow climate change and hopefully stop
+              any further climate disasters. We know this can all feel like a
+              lot so we are here to guide you through taking your first
+              footsteps towards change. First use our calculator tool to see
+              your carbon footprint. Then make pledges to make small changes to
+              your daily routine and in turn reduce your carbon footprint!
+            </p>
+          </div>
+        </div>
       </div>
-      <section className="footprint-data">
-        <div className="graph chart">
+      <div className="subtitle">
+        <h2>Does your carbon footprint beat global averages?</h2>
+      </div>
+      <section className="chart-data">
+        <div className="chart">
           <h2>Annual Carbon Emissions - Metric Tons</h2>
           <br />
           <h4>
@@ -76,7 +80,7 @@ const Home = () => {
           </a>
         </div>
 
-        <div className="calculations chart">
+        <div className="chart">
           <h2>Annual Per Capita Carbon Emissions - Metric Tons</h2>
           <br />
           <h4>
@@ -92,9 +96,8 @@ const Home = () => {
             <MeanCountry />
           </a>
         </div>
-      </section>
-      <section className="footprint-data">
-        <div className="calculations chart">
+
+        <div className="chart">
           <h2>
             Per-Household Annual Carbon Emissions in the United States - Metric
             Tons
@@ -108,7 +111,7 @@ const Home = () => {
             <MeanHousehold />
           </a>
         </div>
-        <div className="graph chart">
+        <div className="chart">
           <h2>Breakdown of the Average American's Carbon Footprint</h2>
           <br />
           <a

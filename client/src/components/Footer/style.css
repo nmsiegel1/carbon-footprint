@@ -1,5 +1,5 @@
 .footer {
-  margin: 20px 0 30px 0;
+  padding: 20px 15px;
   font-weight: bold;
 }
 
@@ -25,17 +25,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 10px;
 }
 
 .footer-info-left {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  line-height: 1.5;
 }
 
 .footer-logo {
-  height: 4rem;
+  height: 5rem;
 }
 
 .footer-info-menu {

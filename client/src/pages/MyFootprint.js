@@ -80,6 +80,7 @@ const MyFootprint = () => {
                       <button>Go to Calculator</button>
                     </Link>
                   </div>
+                  <Pledges />
                 </div>
               )}
             </div>
