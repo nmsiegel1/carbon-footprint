@@ -1,0 +1,3 @@
+SECRET= ''
+NODE_ENV= ''
+MONGODB_URI= ''
