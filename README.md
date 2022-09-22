@@ -65,7 +65,7 @@ The application has the React app in the client directory, which contains the pu
 
 The application accesses the database via the server directory, which contains the config, models, schemas, and utils directories along with the .gitignore, the package.json, and server.js files. The server file details how the application will access the back-end server and instantiates Express and Apollo. The config directory has connection.js, which details how the MongoDB database is accessed, and the seeds.js file to seed mock data. The models directory has the Mongoose schemas (User, Travel, Home, and Pledge) and the index.js file to export them. The schema directory has the typeDefs and resolvers files along with an index.js file to export them. The utils directory contains the auth.js file for authorization on the backend with JWTs. The root of the application contains the .eslintignore, the .eslintrc.json, the .gitignore, the .prettierignore, the .prettierrc.json, the package.json, and the README files.
 
-A user will need to create a .env file (and add it to the .gitignore file) so that their info will not be shared to the public. The .envExample will be a guide to what information is needed.
+If necessary a user can create a .env file and add their JWT secret so that their info will not be shared to the public.
 
 The entire app is run in the terminal with the concurrent server in the root directory by typing
 ````````````````
