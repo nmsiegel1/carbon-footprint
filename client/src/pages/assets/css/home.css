@@ -20,8 +20,7 @@
 
 .home-title h1 {
   text-align: center;
-  font-size: 2rem;
-  text-transform: uppercase;
+  font-size: 3rem;
 }
 
 .home-logo {
@@ -42,10 +41,44 @@
   font-weight: normal;
 }
 
+.intro-text {
+  padding: 20px 40px;
+}
+
 .home-p {
+  text-align: left;
+  font-weight: normal;
+  line-height: 1.5;
+  border: solid var(--dark-blue) 2px;
+  border-radius: 10px;
+  margin: 20px 50px;
+  padding: 25px 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 18px;
+  background-color: var(--white);
+}
+.home-p2 {
   text-align: center;
-  padding: 10px 30px;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.home-h3 {
+  text-align: left;
   font-weight: bold;
+  line-height: 1.5;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+
+.home-footer {
+  text-align: center;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.5;
+  font-size: 16px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .home-references {
@@ -70,15 +103,42 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 20px 0;
+  margin: 20px;
 }
 
 .login-btn button {
-  border: var(--dark-blue) solid 0.05rem;
-}
-
-.login-btn button:hover {
+  /* border: var(--dark-blue) solid 0.05rem; */
   border: none;
   background-color: var(--green);
   color: var(--white);
+}
+
+.login-btn button:hover {
+  background-color: var(--dark-blue);
+}
+
+.subtitle {
+  padding: 10px 40px;
+}
+
+.subtitle h2 {
+  margin: 20px 20px 0 20px;
+  font-size: 30px;
+}
+
+.chart-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+.chart {
+  flex: 40%;
+  border: solid var(--dark-blue) 2px;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 15px;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

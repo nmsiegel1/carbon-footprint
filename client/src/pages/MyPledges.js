@@ -97,10 +97,22 @@ const MyPledges = () => {
   }
 
   return (
-    <div className="my-pledges-main">
+    <div
+      className={
+        myPledges.length >= 13
+          ? 'my-pledges-main tall'
+          : myPledges.length >= 10
+          ? 'my-pledges-main medium'
+          : myPledges.length >= 7
+          ? 'my-pledges-main small'
+          : myPledges.length >= 4
+          ? 'my-pledges-main xsmall'
+          : 'my-pledges-main original'
+      }
+    >
       {Auth.loggedIn() ? (
         <div>
-          <h2>
+          <h2 className="my-pledges-main-title">
             {myPledges.length
               ? 'My Pledges'
               : "You haven't saved any pledges yet!"}
@@ -165,10 +177,12 @@ const MyPledges = () => {
           )}
         </div>
       ) : (
-        <div className="not-logged-in">
+        <div>
           <h2 className="no-info-title">Log in to see your saved pledges!</h2>
           <Link to="/login">
-            <button type="submit">Log In</button>
+            <button className="pledge-login-btn" type="submit">
+              Log In
+            </button>
           </Link>
         </div>
       )}

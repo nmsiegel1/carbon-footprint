@@ -1,13 +1,33 @@
 .my-pledges-main {
   background-image: url(../images/bottom-wave-blue.png);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 100%;
   background-repeat: no-repeat;
-  padding: 0 20px 20px 20px;
+  padding: 10px 40px;
 }
 
-.my-pledges-main h2 {
+.original {
+  height: 80vh;
+}
+
+.xsmall {
+  height: 115vh;
+}
+
+.small {
+  height: 150vh;
+}
+
+.medium {
+  height: 195vh;
+}
+
+.tall {
+  height: 240vh;
+}
+
+.my-pledges-main-title {
   margin: 20px;
   font-size: 40px;
 }
@@ -92,6 +112,11 @@
   margin-left: auto;
   margin-right: auto;
   width: 8em;
+}
+
+.pledge-login-btn {
+  border: var(--dark-blue) solid 2px;
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 930px) {

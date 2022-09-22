@@ -13,7 +13,9 @@ function Footer() {
             alt="logo of a foot oultine with the earth inside it"
           ></img>
           <div>
-            <h3 className="footer-info-menu">Carbon Footsteps</h3>
+            <h3 className="footer-info-menu">
+              Carbon <span>Footsteps</span>
+            </h3>
             <ul>
               <li>
                 <a href="/about">About</a>
@@ -35,11 +37,11 @@ function Footer() {
         </section>
         <section className=" footer-info-right">
           <div className="footer-info-copyright">
-            &copy; 2022 Carbon Footsteps
+            &copy; 2022 Carbon <span>Footsteps</span>
           </div>
         </section>
       </section>
-      <hr className="footer-separator" />
+      {/* <hr className="footer-separator" /> */}
     </footer>
   );
 }
