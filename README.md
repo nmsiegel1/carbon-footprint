@@ -55,11 +55,11 @@ Signup Page:
 Calculator Page:
 ![Calculator](/client/src/pages/assets/images/calculator.png)
 
-My Results Page (with Emissions, Graph, and Pledges):
-![Results](/client/src/assets/images/results.png)
+My Footprint Page (with Emissions, Graph, and Pledges):
+![Footprint](/client/src/pages/assets/images/footprint.png)
 
 My Pledges Page (with Selected Pledges):
-![Pledges](/client/src/assets/images/pledges.png)
+![Pledges](/client/src/pages/assets/images/pledges.png)
 
 The application has the React app in the client directory, which contains the public directory, the src directory, the .gitignore file, and the package.json file. The public directory contains the index.html file, where the root div (from index.js in the root of src) is rendered, along with the React icons/logos, the manifest.json, and robots.txt. The src directory contains the components directory, the pages directory, the utils directory, App.js (where all of the components are rendered), App.css (the main style sheet), and index.js (for rendering App). The components directory contains directories for each component that contains an index.js for rendering each. The pages directory contains the assets directory and the JS files for each page component (routed in App.js). The assets directory contains the css and images directories. The css directory contains the styling sheets for each page. The images directory contains the background images and the README images. The utils directory contains the JS files for authorization with JWTs, the localStorage functions, the mutations, and the queries.
 
