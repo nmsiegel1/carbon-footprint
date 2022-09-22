@@ -12,7 +12,7 @@ const Donation = () => {
     {
       title: 'Cool Earth',
       description:
-        'Cool Earth funds indigenous rainforest communities to tackle the root causes of deforestation and invest in projects that protect vital carbon sinks. The cash funds are used by local communities to run sustainability education programs which have led to the development of solar energy farms, bee-keeping projects, and sustainable waste solutions.',
+        'Cool Earth funds indigenous rainforest communities who tackle the root causes of deforestation and invest in projects that protect vital carbon sinks. Funds are used by local communities to run sustainability education programs, which have led to the development of solar energy farms, beekeeping projects, and sustainable waste solutions.',
       link: 'https://www.coolearth.org/',
     },
     {
@@ -46,14 +46,14 @@ const Donation = () => {
         <h1 className="donation-title">
           Looking for more ways to help the environment?
         </h1>
-        <h2 className="donate">Donate to fight climate change:</h2>
+        <h2 className="donate">Donate to fight climate change</h2>
         <div className="donation">
           {donations.map(({ title, link, description }) => (
             <div className="donation-card" key={title}>
               <h4 className="donation-card-title">{title}</h4>
               <p>{description}</p>
               <a href={link} target="_blank" rel="noreferrer">
-                <button type="submit">Donate Now!</button>
+                <button type="submit">Donate Now</button>
               </a>
             </div>
           ))}
@@ -61,7 +61,7 @@ const Donation = () => {
       </div>
       <div>
         <h2 className="resource">
-          Learn more about lowering your carbon footprint:
+          Learn more about lowering your carbon footprint
         </h2>
         <div className="resources">
           {resources.map(({ link, title }) => (

@@ -20,7 +20,7 @@ const Home = () => {
         </section>
         <div className="home-tagline">
           <h2>
-            Curious what your <span>IMPACT</span> is on the world?
+            Find your carbon <span>footprint</span>.
           </h2>
         </div>
         {Auth.loggedIn() ? (
@@ -38,25 +38,32 @@ const Home = () => {
         )}
         <div className="intro-text">
           <div className="home-p">
+            <div className="home-h3">What is a carbon footprint?</div>
             <p>
-              What is a carbon footprint? Our everyday activities produce carbon
-              dioxide and methane emissions (also called carbon emissions) which
-              directly contribute to climate change and the worsening climate
-              disasters experienced around the world almost daily. The amount of
-              carbon emissions produced by an individual or organization is
-              called a carbon footprint.
+              Your carbon footprint is a measurement of your contribution to
+              carbon emissions and climate change. Our everyday activities
+              produce carbon dioxide and methane through direct causes, like
+              driving a gas-powered car, or indirect causes, like using
+              electricity in your home. Everyone’s carbon emissions add up and
+              cause global climate change.
             </p>
             <br />
+            <div className="home-h3">What can you do about it?</div>
             <p>
-              So what do we do about it? Small changes to our daily routine can
-              make a big impact on our carbon footprints. Any reduction in
-              carbon emissions can help slow climate change and hopefully stop
-              any further climate disasters. We know this can all feel like a
-              lot so we are here to guide you through taking your first
-              footsteps towards change. First use our calculator tool to see
-              your carbon footprint. Then make pledges to make small changes to
-              your daily routine and in turn reduce your carbon footprint!
+              Small changes add up to a huge global impact. Change starts with
+              knowing your own carbon footprint and then changing what you can
+              to reduce it.
             </p>
+            <p className="home-p2">
+              <strong>Calculate</strong> your footprint.{' '}
+              <strong>Make a pledge</strong> to change. <strong>Do it</strong>.
+              Mark your pledge <strong>complete</strong>.
+            </p>
+            <div className="home-footer">
+              If you want to say thank you for this free service, donate to the
+              organizations who are driving real systemic progress in the fight
+              against climate change.
+            </div>
           </div>
         </div>
       </div>

@@ -58,9 +58,9 @@ const Pledges = () => {
     <div className="pledge-main">
       <h2>Take action to reduce your carbon footprint!</h2>
       <p className="pledge-info">
-        Choose which pledges below you want to commit to by clicking "Make This
-        Pledge" See your pledges in the My Pledges section of the site and mark
-        them as complete when you've accomplished a task!
+        Make pledges to commit to reducing your carbon footprint. View your
+        pledges in the My Pledges section and mark them complete when you
+        complete that task.
       </p>
       <div className="pledge-data">
         {pledges.map((pledge) => (
@@ -72,7 +72,7 @@ const Pledges = () => {
             </h3>
             <p>{pledge.description}</p>
             <a href={pledge.link} target="_blank" rel="noopener noreferrer">
-              Learn more about this action
+              Learn more about this pledge
             </a>
             <button
               id={pledge._id}
