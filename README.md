@@ -55,11 +55,11 @@ Signup Page:
 Calculator Page:
 ![Calculator](/client/src/pages/assets/images/calculator.png)
 
-My Results Page (with Emissions, Graph, and Pledges):
-![Results](/client/src/assets/images/results.png)
+My Footprint Page (with Emissions, Graph, and Pledges):
+![Footprint](/client/src/pages/assets/images/footprint.png)
 
 My Pledges Page (with Selected Pledges):
-![Pledges](/client/src/assets/images/pledges.png)
+![Pledges](/client/src/pages/assets/images/pledges.png)
 
 The application has the React app in the client directory, which contains the public directory, the src directory, the .gitignore file, and the package.json file. The public directory contains the index.html file, where the root div (from index.js in the root of src) is rendered, along with the React icons/logos, the manifest.json, and robots.txt. The src directory contains the components directory, the pages directory, the utils directory, App.js (where all of the components are rendered), App.css (the main style sheet), and index.js (for rendering App). The components directory contains directories for each component that contains an index.js for rendering each. The pages directory contains the assets directory and the JS files for each page component (routed in App.js). The assets directory contains the css and images directories. The css directory contains the styling sheets for each page. The images directory contains the background images and the README images. The utils directory contains the JS files for authorization with JWTs, the localStorage functions, the mutations, and the queries.
 
@@ -117,6 +117,14 @@ Donations:
 * [Clean Air Task Force](https://www.catf.us/)
 * [Cool Air](https://www.coolearth.org/)
 * [Carbon180](https://carbon180.org/)
+
+Other Climate Resources:
+* [Our World In Data](https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions)
+* [Typical Household CO2 Emissions](https://www.zerofy.net/2022/04/04/household-co2-emissions.html)
+* [Understanding Your Carbon Footprint](https://suncommon.com/understanding-your-carbon-footprint/)
+* [Top 20 Ways to Reduce Your Carbon Footprint](http://www.globalstewards.org/reduce-carbon-footprint.htm)
+* [GHG Reduction Programs and Strategies](https://www.epa.gov/climateleadership/ghg-reduction-programs-strategies)
+* [How You Can Help Reduce Greenhouse Gas Emissions at Home](https://www.nps.gov/pore/learn/nature/climatechange_action_home.htm)
 
 ## License
 The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.

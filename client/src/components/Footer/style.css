@@ -42,6 +42,10 @@
 .footer-info-menu {
   font-weight: bolder;
   font-size: 20px;
+}
+
+.footer span {
+  font-weight: bolder;
   color: var(--green);
 }
 
