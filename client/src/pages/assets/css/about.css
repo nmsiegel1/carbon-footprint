@@ -17,14 +17,34 @@
 .team-main span {
   font-weight: bolder;
   color: var(--green);
-  text-transform: uppercase;
 }
 
 .about-info {
   padding: 20px 60px;
 }
 
-.team-main p {
+.about-p {
+  text-align: left;
+  font-weight: normal;
+  line-height: 1.5;
+  border: solid var(--dark-blue) 2px;
+  border-radius: 10px;
+  margin: 20px 50px;
+  padding: 25px 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 18px;
+  background-color: var(--white);
+}
+
+.about-h3 {
+  text-align: left;
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+/*.team-main p {
   margin: 20px;
   border: solid var(--dark-blue) 2px;
   border-radius: 10px;
@@ -32,7 +52,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   line-height: 1.5;
   font-size: 18px;
-}
+}*/
 
 .team-info {
   display: flex;

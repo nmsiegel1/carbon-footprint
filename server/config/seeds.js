@@ -15,7 +15,7 @@ db.once('open', async () => {
     {
       action: 'Purchase Hybrid Vehicle',
       description:
-        'A typical passenger vehicle emits about 4.6 metric tons of carbon dioxide per year. This number can vary based on a vehicle’s fuel, fuel economy, and the number of miles driven per year. Tailpipe emissions of hybrid cars vary depending on battery capacity, how it is driven and how often it is charged but there is huge potential to reduce emissions from driving a hybrid.',
+        'Tailpipe emissions of hybrid cars vary depending on battery capacity, how it is driven, and how often it is charged but there is huge potential to reduce emissions from driving a hybrid.',
       icon: 'bxs:car',
       link: 'https://www.epa.gov/greenvehicles/explaining-electric-plug-hybrid-electric-vehicles',
     },
@@ -29,14 +29,14 @@ db.once('open', async () => {
     {
       action: 'Purchase Green Electricity',
       description:
-        "One in four utilities are now offering a green power upgrade option. If you have not joined yet, it's a simple and effective way to power your home more sustainably.",
+        "One in four utilities are now offering a green power upgrade option. It's a simple and effective way to power your home more sustainably.",
       icon: 'healthicons:electricity-outline',
       link: 'https://www.epa.gov/greenpower',
     },
     {
       action: 'Use Public Transportation',
       description:
-        'Roughly 17 percent of U.S. greenhouse gas emissions comes from cars and light-duty trucks. Using public transportation can help improve road congestions, reduce air pollution and lower greenhouse gas emissions.',
+        'Approximately 17% of U.S. greenhouse gas emissions comes from cars and light-duty trucks. Using public transportation can help improve road congestions, reduce air pollution, and lower greenhouse gas emissions.',
       icon: 'zondicons:travel-train',
       link: 'https://www.epa.gov/smartgrowth/smart-growth-and-transportation',
     },
@@ -50,63 +50,63 @@ db.once('open', async () => {
     {
       action: 'Use Energy Star Appliances',
       description:
-        'Many appliances for your home from refrigerators to air conditioners can be purchased with an ENERGY STAR rating. These products meet strict energy guidelines set by the EPA and can help save money on utility bills as well as protect the climate by reducing pollution and greenhouse gas emissions.',
+        'Many appliances for your home from refrigerators to air conditioners can be purchased with an ENERGY STAR rating. These products meet strict energy guidelines set by the EPA and can help save money on utility bills. They also protect the climate by reducing pollution and greenhouse gas emissions.',
       icon: 'cil:fridge',
       link: 'https://www.energystar.gov/products',
     },
     {
       action: 'Reduce Air Travel',
       description:
-        'A two hour flight produces emissions equal to about a month of typical driving. Reducing plane travel is one of the best things you can do to reduce your carbon footprint.',
+        'A two-hour flight produces emissions equal to about a month of typical driving. Reducing plane travel is one of the best things you can do to reduce your carbon footprint.',
       icon: 'fa6-solid:plane',
       link: 'https://www.epa.gov/regulations-emissions-vehicles-and-engines/regulations-greenhouse-gas-emissions-aircraft',
     },
     {
       action: 'Eat a Low Carbon Diet',
       description:
-        'A third of all food emissions in the United States come from red meat and dairy products, while chicken and vegetables have up to ten times smaller footprints per serving. Small diet changes can truly make a big impact!',
+        'A third of all food emissions in the United States comes from red meat and dairy production. Per serving, that’s as much as 10 times higher than chicken and vegetables. Small diet changes can truly make a big impact!',
       icon: 'fluent:food-24-filled',
       link: 'https://shrinkthatfootprint.com/food-carbon-footprint-diet/',
     },
     {
       action: 'Regulate Thermostat',
       description:
-        'Smart settings on your thermostat is one of the best things you can do to save energy because heating is the largest single contributor to energy use in typical homes, even in many moderate climates.',
+        'Smart settings on your thermostat are one of the best things you can do to save energy. Heating is the largest single contributor to energy use in typical homes, even in moderate climates.',
       icon: 'material-symbols:mode-heat-cool',
       link: 'https://www.energy.gov/energysaver/programmable-thermostats',
     },
     {
       action: 'Install Low Flow Showerhead',
       description:
-        'A typical showerhead uses about 3 gallons of water per minute while a low flow showerhead uses 2 gallons of water per minute. Switching to a low flow showerhead saves on average 8-10 gallons of water per shower.',
+        'A typical showerhead uses about 3 gallons of water per minute. A low-flow showerhead uses 2 gallons of water per minute. Switching to a low-flow showerhead saves on average 8-10 gallons of water per shower.',
       icon: 'bx:water',
       link: 'https://www.epa.gov/watersense/showerheads',
     },
     {
       action: 'Use LED Lightbulbs',
       description:
-        'LED lightbulbs use 75% less energy and last 25 times longer than incandescent lighting. Switching out the lightbulbs in your home can help save you money and energy consumption.',
+        'LED lightbulbs use 75% less energy and last 25 times longer than incandescent bulbs. Switching out the lightbulbs in your home can save you money and reduce your energy consumption.',
       icon: 'healthicons:electricity-outline',
       link: 'https://www.energy.gov/energysaver/lighting-choices-save-you-money',
     },
     {
       action: 'Use Rechargable Batteries',
       description:
-        'Battery production has a huge negative impact on the environment as a whole. Rechargeable batteries use up to 23 times less non-renewable natural resources, 28 times less of an impact on global warming, 30 times less of an impact on air pollution and 12 times less of an impact on water pollution than disposable batteries.',
+        'Battery production has a huge negative impact on the environment as a whole. Rechargeable batteries use 23x fewer non-renewable natural resources and have a 28x reduction in impact to global warming, a 30x reduction in impact to air pollution, and a 12x reduction in impact to water pollution versus disposable batteries.',
       icon: 'akar-icons:battery-charging',
       link: 'https://www.onegreenplanet.org/lifestyle/rechargeable-batteries-a-better-choice/',
     },
     {
       action: 'Install Water Efficient Landscaping',
       description:
-        'Water efficient landscapes can be obtained by introducing more drought-tolerant plants to your landscape and maintaining them more efficiently with drip-irrigation.',
+        'Water efficient landscapes have more drought-tolerant, local plants and can be efficiently maintained with drip-irrigation and natural rain fall.',
       icon: 'bx:water',
       link: 'https://www.energy.gov/energysaver/landscaping-water-conservation',
     },
     {
       action: 'Reduce Waste',
       description:
-        'The methane emissions from municipal solid waste landfills in 2020 were approximately equivalent to the greenhouse gas emissions from about 20.3 million passenger vehicles driven for one year or the CO2 emissions from nearly 11.9 million homes’ energy use for one year. Collectively reducing waste can help decrease emissions dramatically.',
+        'Methane emissions from solid waste landfills in 2020 were roughly equal to the greenhouse gas emissions from 20.3 million passenger vehicles driven for one year or energy use for 11.9 million homes for one year. Reducing solid waste can decrease emissions dramatically.',
       icon: 'fa6-solid:trash-can',
       link: 'https://www.epa.gov/lmop/basic-information-about-landfill-gas',
     },

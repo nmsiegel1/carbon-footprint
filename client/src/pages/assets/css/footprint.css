@@ -1,5 +1,4 @@
 .my-footprint {
-  margin-bottom: 25px;
   padding: 10px 20px;
 }
 
@@ -15,7 +14,7 @@
   flex: 40%;
   border: solid var(--dark-blue) 2px;
   border-radius: 10px;
-  padding: 15px;
+  padding: 25px;
   background-color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -36,7 +35,7 @@
   border: solid var(--dark-blue) 2px;
   border-radius: 10px;
   margin: 20px;
-  padding: 15px;
+  padding: 25px;
   background-color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

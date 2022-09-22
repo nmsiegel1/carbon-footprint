@@ -118,6 +118,14 @@ Donations:
 * [Cool Air](https://www.coolearth.org/)
 * [Carbon180](https://carbon180.org/)
 
+Other Climate Resources:
+* [Our World In Data](https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions)
+* [Typical Household CO2 Emissions](https://www.zerofy.net/2022/04/04/household-co2-emissions.html)
+* [Understanding Your Carbon Footprint](https://suncommon.com/understanding-your-carbon-footprint/)
+* [Top 20 Ways to Reduce Your Carbon Footprint](http://www.globalstewards.org/reduce-carbon-footprint.htm)
+* [GHG Reduction Programs and Strategies](https://www.epa.gov/climateleadership/ghg-reduction-programs-strategies)
+* [How You Can Help Reduce Greenhouse Gas Emissions at Home](https://www.nps.gov/pore/learn/nature/climatechange_action_home.htm)
+
 ## License
 The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.
 - [License: MIT](https://opensource.org/licenses/MIT)

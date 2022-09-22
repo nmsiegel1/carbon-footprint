@@ -250,19 +250,20 @@ const Calculator = () => {
           <h1>Carbon Footprint Calculator</h1>
           <div className="text">
             <div className="description">
+              <div className="calc-h3">
+                Fill out your individual travel and home information and click
+                Find My Footprint.
+              </div>
               <p>
-                Click each dropdown or slider and then the "Find My Footprint"
-                button below to calculate your carbon footprint. Just calculate
-                for yourself, not your household. The numbers you see are the
-                average American's data. You can use those numbers to help you
-                figure out your own usage!
+                Default values are the averages for an adult in the United
+                States. Enter values for your personal carbon footprint, not
+                your entire household.
               </p>
               <p>
-                * Note: This is a paired down carbon footprint calculator. There
-                are many more factors that contribute to your footprint that we
-                have not taken into consideration such as diet, shopping habits
-                and accounting for all of the members of your household. Your
-                carbon footprint may change onces these habits are calculated.
+                This is a simplified carbon footprint calculator using the most
+                common, significant factors. There are many factors that
+                contribute to your total carbon footprint, like diet and
+                shopping habits, that are not taken into consideration.
               </p>
             </div>
           </div>
@@ -284,7 +285,7 @@ const Calculator = () => {
                       defaultValue={carType}
                       value={carType}
                       onChange={handleChange}
-                      className="car-type"
+                      className="dropdown"
                     >
                       <MenuItem value={'Small'}>Small</MenuItem>
                       <MenuItem value={'Average'}>Average</MenuItem>
@@ -413,6 +414,7 @@ const Calculator = () => {
                       defaultValue={fridge}
                       value={fridge}
                       onChange={handleChange}
+                      className="dropdown"
                     >
                       <MenuItem value={'Yes'}>Yes</MenuItem>
                       <MenuItem value={'No'}>No</MenuItem>
@@ -426,12 +428,13 @@ const Calculator = () => {
                         color: '#243b4a',
                         margin: '0 0 15px 0',
                       }}
-                      labelId="fridgeLabel"
-                      id="fridge"
+                      labelId="climateLabel"
+                      id="climate"
                       name="climate"
                       defaultValue={climate}
                       value={climate}
                       onChange={handleChange}
+                      className="dropdown"
                     >
                       <MenuItem value={'Cold'}>Cold</MenuItem>
                       <MenuItem value={'Cool'}>Cool</MenuItem>

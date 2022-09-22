@@ -16,12 +16,6 @@ const Navbar = () => {
               <a href="/">
                 <li>Home</li>
               </a>
-              <a href="/" onClick={() => Auth.logout()}>
-                <li>Logout</li>
-              </a>
-              <a href="/about">
-                <li>About</li>
-              </a>
               <a href="/calculator">
                 <li>Footprint Calculator</li>
               </a>
@@ -33,6 +27,12 @@ const Navbar = () => {
               </a>
               <a href="/donation">
                 <li>Want To Do More?</li>
+              </a>
+              <a href="/about">
+                <li>About</li>
+              </a>
+              <a href="/" onClick={() => Auth.logout()}>
+                <li>Logout</li>
               </a>
             </ul>
           </div>
@@ -46,14 +46,14 @@ const Navbar = () => {
               <a href="/">
                 <li>Home</li>
               </a>
-              <a href="/login">
-                <li>Log In/Sign Up</li>
+              <a href="/donation">
+                <li>Want To Do More?</li>
               </a>
               <a href="/about">
                 <li>About</li>
               </a>
-              <a href="/donation">
-                <li>Want To Do More?</li>
+              <a href="/login">
+                <li>Log In/Sign Up</li>
               </a>
             </ul>
           </div>
